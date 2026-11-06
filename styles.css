@@ -94,3 +94,9 @@ footer.site a{color:var(--muted)}
 .offerimg{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;margin-bottom:18px;background:var(--deep)}
 .cardimg{display:block;width:calc(100% + 52px);margin:-26px -26px 18px;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:13px 13px 0 0;background:var(--deep)}
 .portrait{display:block;width:160px;height:160px;border-radius:50%;object-fit:cover;margin-bottom:24px;border:3px solid var(--accent-soft)}
+.pairs{display:grid;gap:6px;margin:28px 0;padding-left:18px;border-left:2px solid var(--accent)}
+.pairs p{margin:0;font-family:var(--display);font-size:21px}
+.band .pairs{border-left-color:var(--on-deep)}
+.signoff{margin-top:40px;font-family:var(--display);font-size:22px}
+.signoff span{font-family:var(--body);font-size:15px;opacity:.75}
+.band .quote{color:var(--on-deep)}
