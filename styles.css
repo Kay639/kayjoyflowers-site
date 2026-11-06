@@ -100,3 +100,27 @@ footer.site a{color:var(--muted)}
 .signoff{margin-top:40px;font-family:var(--display);font-size:22px}
 .signoff span{font-family:var(--body);font-size:15px;opacity:.75}
 .band .quote{color:var(--on-deep)}
+.launchline{margin-top:24px;font-size:16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+.launchline strong{font-family:var(--display);font-size:24px;color:var(--accent);font-weight:600}
+.launchline s{color:var(--muted)}
+.launchtag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--paper);padding:3px 10px;border-radius:999px}
+.offers2{display:grid;gap:24px;grid-template-columns:minmax(0,3fr) minmax(0,2fr);align-items:start;margin-top:32px}
+@media (max-width:820px){.offers2{grid-template-columns:1fr}}
+.offers2 .offer.feature .offerimg{aspect-ratio:16/10}
+.pricebox{background:var(--accent-soft);border-radius:14px;padding:20px 22px;margin:16px 0 20px;border-left:0}
+.pb-label{margin:0;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.pb-now{margin:2px 0 0;font-family:var(--display);font-size:clamp(48px,7vw,64px);line-height:1;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.pb-was{margin:8px 0 10px;color:var(--muted);font-size:16px}
+.pb-was s{font-size:20px;font-family:var(--display)}
+.pb-save{margin:0;display:inline-block;background:var(--accent);color:var(--paper);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.pb-intro{font-weight:500;margin-bottom:4px}
+.included{padding-left:20px;margin:10px 0 24px}
+.included li{margin-bottom:10px}
+.btn-block{display:block;text-align:center;width:100%}
+.pb-note{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
+.closeprice{font-family:var(--display);font-size:22px;margin:16px 0 10px}
+.closeprice strong{font-size:56px;font-weight:600;margin-right:10px}
+.closeprice s{opacity:.7}
+.band .pb-save{background:var(--on-deep);color:var(--deep)}
+.band .btn.onband{background:var(--on-deep);color:var(--deep);border-color:var(--on-deep)}
+.band .btn.onband:hover{opacity:.9;background:var(--on-deep)}
