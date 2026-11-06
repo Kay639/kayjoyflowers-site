@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Unfuckwithable Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* layout: one narrow reading column; home is a hub, each day is a guided page */
+  --bg:#F4F2F4; --paper:#FFFFFF; --ink:#1F1A22; --muted:#5F5866; --line:#DCD6DE;
+  --accent:#7A1F3D; --accent-soft:#F3E3E9; --sage:#4E6656; --sage-soft:#E3ECE5;
+  --display:"Bodoni Moda", Georgia, "Times New Roman", serif;
+  --body:"Karla", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17141A; --paper:#211D25; --ink:#EEEAF0; --muted:#ABA3B1; --line:#3A3440;
+    --accent:#E58AA8; --accent-soft:#3B2230; --sage:#9EC2A9; --sage-soft:#22302A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17141A; --paper:#211D25; --ink:#EEEAF0; --muted:#ABA3B1; --line:#3A3440;
+  --accent:#E58AA8; --accent-soft:#3B2230; --sage:#9EC2A9; --sage-soft:#22302A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.wrap{max-width:720px;margin:0 auto;padding:24px 20px 80px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.brand{font-family:var(--display);font-size:20px;color:var(--ink);text-decoration:none;font-weight:600}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:999px}
+nav a:hover,nav a.on{background:var(--accent-soft);color:var(--accent)}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:40px}
+h2{font-size:26px;margin-bottom:6px}
+h3{font-size:20px}
+.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 8px}
+.lede{font-family:var(--display);font-style:italic;font-size:21px;color:var(--muted);margin:10px 0 0}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+section{margin:36px 0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.stack{display:grid;gap:12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.principles{display:grid;gap:10px;margin-top:20px}
+.principles p{margin:0;padding-left:14px;border-left:2px solid var(--accent);font-family:var(--display);font-size:18px}
+button,.btn{font-family:var(--body);font-size:15px;font-weight:500;cursor:pointer;border-radius:999px;padding:9px 18px;border:1px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;display:inline-block;line-height:1.3}
+button:hover,.btn:hover{background:var(--accent-soft)}
+button.primary,.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+button.primary:hover{opacity:.9}
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.choice{text-align:left;border-radius:14px;padding:16px 18px;border:1px solid var(--line);background:var(--paper);width:100%}
+.choice strong{display:block;font-family:var(--display);font-size:19px;font-weight:500;margin-bottom:4px}
+.choice span{font-size:15px;color:var(--muted);font-weight:400}
+.choice.on{border-color:var(--accent);background:var(--accent-soft)}
+.panel{background:var(--sage-soft);border-radius:14px;padding:18px 20px;margin-top:14px}
+.panel h3{color:var(--sage);margin-bottom:6px}
+.days{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.day{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.day:hover{border-color:var(--accent)}
+.day .n{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:flex;justify-content:space-between}
+.day .t{font-family:var(--display);font-size:17px;display:block;margin-top:2px}
+.pill{font-size:11px;padding:1px 8px;border-radius:999px;background:var(--sage-soft);color:var(--sage);text-transform:none;letter-spacing:0;font-weight:600}
+.pill.started{background:var(--accent-soft);color:var(--accent)}
+.sit{display:block;text-align:left;width:100%;border-radius:12px;background:var(--paper);border:1px solid var(--line);padding:12px 16px;font-weight:400;font-family:var(--display);font-size:17px}
+.sit:hover{border-color:var(--accent);background:var(--paper)}
+.step{border-top:1px solid var(--line);padding:26px 0 6px}
+.step .label{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 4px}
+.q{font-family:var(--display);font-size:19px;margin:16px 0 6px;line-height:1.35}
+.hint{font-size:14px;color:var(--muted);margin:-2px 0 6px}
+textarea{width:100%;min-height:84px;font-family:var(--body);font-size:16px;line-height:1.55;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical}
+textarea:focus{border-color:var(--accent)}
+textarea.big{min-height:220px}
+.stmt{font-family:var(--display);font-size:24px;font-style:italic;margin:6px 0 4px}
+.mirror{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.mirror blockquote{margin:0 0 10px;padding-left:12px;border-left:2px solid var(--line);font-family:var(--display);font-style:italic;font-size:18px}
+.err{color:#B3261E;font-size:14px;margin-left:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.saved{font-size:13px;color:var(--sage)}
+.end{background:var(--accent-soft);border-radius:14px;padding:22px;margin-top:30px}
+.end p.q{margin-top:0}
+.back{background:var(--sage-soft);border-radius:12px;padding:12px 16px;margin:8px 0}
+.back .small{color:var(--sage);font-weight:600;margin:0 0 4px}
+.prac{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.prac h3{margin-bottom:4px}
+.prac ol{margin:8px 0;padding-left:20px}
+.prac .tag{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}
+.filters button.on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.cat{margin:28px 0 10px}
+.note{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:40px}
+pre.out{white-space:pre-wrap;font-family:var(--body);font-size:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:280px;overflow:auto}
+@media (max-width:480px){h1{font-size:32px}.lede{font-size:19px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#home">The Unfuckwithable Companion</a>
+  <nav>
+    <a href="#home" data-nav="home">Home</a>
+    <a href="#arsenal" data-nav="arsenal">Somatic Arsenal</a>
+    <a href="#journal" data-nav="journal">My journal</a>
+  </nav>
+</header>
+<main id="app"></main>
+<p class="note">This companion is for recognition and embodied awareness. It is not therapy, does not diagnose, and is not emergency support. If you are in danger or crisis, contact your local emergency services or a crisis line now.</p>
+</div>
+
+<script>
+const DAYS=[
+{n:1,title:"Naming survival",theme:"You can't exit what you won't name.",
+ check:[["Where in my body do I feel braced?"],["What part of me feels like it's still “on watch”?"]],
+ descent:["Where am I still acting like something is about to go wrong?","What do I believe will happen if I relax?","Who taught me that safety is temporary?"],
+ practice:{name:"Five-minute nervous system scan",text:"Lie down. Place one hand on your chest and one on your belly. Track your breath without changing it. Name sensations without fixing them."},
+ integ:[{label:"Survival kept me alive by…"},{label:"And now I am allowed to…"}]},
+{n:2,title:"The money reflex",theme:"Scarcity is often inherited, not chosen.",
+ check:[["What happens in my body when I look at my bank balance?","Tightness? Urgency? Numbness?"]],
+ descent:["What did I learn about money growing up?","Who was anxious about money?","Who was powerful with money?","Who was shamed around it?"],
+ practice:{name:"The long exhale",text:"Exhale longer than you inhale for three minutes. Signal safety before thinking strategy."},
+ integ:[{label:"Money does not determine my worth. It determines…"}]},
+{n:3,title:"Visibility without threat",theme:"Your body may still think being seen equals danger.",
+ check:[["What happens when I imagine speaking boldly?","Heat? Fear? Collapse?"]],
+ descent:["When did I learn it wasn't safe to shine?","Who was punished for being powerful?","What do I fear will happen if I take up space?"],
+ practice:{name:"Speaking your name",text:"Stand tall, with your feet grounded. Slowly speak your name out loud. Notice what rises."},
+ stmt:"I can be visible and safe at the same time.",stmtNote:"No affirmations. Just notice how that lands.",
+ integ:[{label:"How does it land?"}]},
+{n:4,title:"The performance loop",theme:"You are not required to earn belonging.",
+ check:[["Where am I over-functioning?"],["What feels performative in my life?"]],
+ descent:["Who did I have to be to receive love?","What version of me gets approval?","What happens if I stop performing?"],
+ practice:{name:"Slower than necessary",text:"Do one task today slower than necessary. Let your body feel non-urgency."},
+ stmt:"Belonging does not require performance.",stmtNote:"Notice resistance.",
+ integ:[{label:"What resistance do I notice?"}]},
+{n:5,title:"Authority in the body",theme:"Sovereignty is embodied, not declared.",
+ check:[["Do I trust my decisions? Or do I immediately look outside myself?"]],
+ descent:["When did I stop trusting my instincts?","Who benefited from my self-doubt?","What decision am I delaying out of fear?"],
+ practice:{name:"Hand on the solar plexus",text:"Place one hand on your solar plexus. Say internally: “My body knows before my mind does.”"},
+ stmtNote:"Make one small decision without outsourcing it.",
+ integ:[{label:"The decision I made, on my own authority:"}]},
+{n:6,title:"Ending the emergency",theme:"Not everything is urgent.",
+ check:[["What feels urgent right now?"],["Is it actually urgent… or familiar?"]],
+ descent:["Who modelled chaos as normal?","What feels uncomfortable about calm?"],
+ practice:{name:"The content-free walk",text:"Take a 20-minute walk without consuming content. No phone. Just rhythm."},
+ stmt:"I am allowed to build from steadiness.",
+ integ:[{label:"How does it land?"}]},
+{n:7,title:"The threshold",theme:"Survival ends when you stop feeding it.",
+ check:[["What feels different in my body from Day 1?"],["Where do I feel more grounded?"]],
+ descent:["What identity am I ready to retire?","What version of me is emerging?","What support aligns with who I'm becoming?"],
+ practice:{name:"A letter across the threshold",text:"Write a letter from Sovereign You to Survival You.",big:true},
+ stmt:"This is the moment I stop abandoning myself.",
+ integ:[{label:"How does it land?"}]}
+];
+
+const ARSENAL=[
+{id:1,cat:"Discharge",catNote:"When energy feels trapped or mobilised.",state:"mob",name:"The Lightning Shudder",when:"After shock or confrontation, when adrenaline is buzzing, when you feel wired but stuck.",how:["Stand or sit.","Allow the body to shake gently and deliberately.","Start small, with the jaw, shoulders or hands.","Allow the movement to spread naturally if comfortable.","Exhale audibly.","Stop before exhaustion."],why:"This is not about forcing catharsis. It is about allowing movement without demanding a particular result."},
+{id:2,cat:"Discharge",state:"mob",name:"Aggressive Exhale",when:"Irritation, anger being suppressed to remain pleasant, jaw tension.",how:["Exhale sharply through the mouth, as though fogging a mirror.","Repeat five to ten times, according to comfort.","Allow the shoulders to drop afterward."],why:"A deliberate exhale offers a physical outlet for tension and may help create space between the impulse and the response."},
+{id:3,cat:"Orientation",catNote:"When the environment feels unsafe or attention becomes narrowed.",state:"mob",name:"Left Eye, Upward Gaze and Soft Smile",when:"Social stress, fear of being seen, anticipation, public-speaking nerves.",how:["Gently cover the left eye without pressing on it.","Direct the right eye's gaze gently upward.","Allow a very slight, relaxed smile.","Continue for 30–60 seconds, provided it remains comfortable.","Release and notice what has changed."],why:"The smile is not a demand to feel happy. It is a small physical adjustment to explore."},
+{id:4,cat:"Orientation",state:"mob",name:"Room Mapping",when:"Feeling disconnected or not fully present, overwhelm.",how:["Slowly name five objects you can see.","Turn your head gently as you look around.","Allow the neck and eyes to move naturally.","Finish by noticing one object, colour or detail you find pleasant."],why:"Deliberately noticing the surrounding environment can broaden attention and support a renewed sense of present-moment orientation."},
+{id:5,cat:"Boundary and containment",catNote:"When feeling invaded, exposed or disconnected from personal boundaries.",state:"mob",name:"Fascia Press",when:"After time with emotionally demanding people, after emotional exposure, when feeling leaky or uncontained.",how:["Press your hands firmly into your thighs or gently against your chest.","Maintain comfortable pressure for 10–20 seconds.","Release slowly.","Repeat three times."],why:"Noticing the contact between your hands and body can help bring attention back to your physical boundaries."},
+{id:6,cat:"Boundary and containment",state:"mob",name:"Skin Sweep",when:"After social interaction, after therapy or coaching, when carrying other people's concerns.",how:["Sweep your hands slowly from your shoulders down your arms towards your hands.","Repeat along your legs, moving downward.","Keep the movement slow and intentional.","Notice the sensation of your hands moving across your skin.","If helpful, use the phrase: “Returning to myself.”"],why:"Intentional touch can help redirect attention towards your own physical experience after intense interaction."},
+{id:7,cat:"Collapse support",catNote:"When energy has dropped and movement feels difficult.",state:"col",name:"Micro-Movement Revival",when:"Numbness, freeze, collapse, when the internal response is “I can't”.",how:["Begin by wiggling your toes or fingers.","Keep the movements very small.","Allow movement to begin before adding any deliberate breath changes.","Continue only as long as the movement feels manageable.","Gradually notice whether you want to make another small movement."],why:"Collapse needs permission to move, not motivation."},
+{id:8,cat:"Collapse support",state:"col",name:"Weighted Rest",when:"Exhaustion, shame, after emotional release.",how:["Settle into a comfortable resting position.","Place a comfortably weighted blanket over your body, or rest a hand gently on your belly or chest.","Allow your breathing to remain natural.","If comfortable, let the exhale lengthen slightly without forcing it.","Rest for as long as feels supportive."],why:"The practice creates an opportunity to rest without requiring yourself to process, perform or solve anything."},
+{id:9,cat:"Expansion without overload",catNote:"When receiving, creating or moving beyond familiar limits.",state:"reg",name:"Receive and Pause",when:"Receiving compliments, money or support, encountering opportunities.",how:["When something positive is offered, pause before responding.","Do nothing for five seconds.","Notice your feet.","Notice the back of your body and the support beneath you.","Breathe naturally.","Then respond or act from your own choice."],why:"The pause builds the capacity to receive without immediately needing to do something."},
+{id:10,cat:"Expansion without overload",state:"reg",name:"Expansion and Return",when:"Creativity, visioning, after meditation.",how:["Allow yourself a brief moment to imagine, create or experience expansion.","Notice the sensations that accompany it.","Deliberately return attention to your feet, seat and breathing.","Notice the support of the ground or surface beneath you.","Finish by orienting to your immediate surroundings."],why:"The aim is not to avoid expansion. It is to explore expansion while retaining the ability to return."}
+];
+
+const SITUATIONS=[
+{q:"I feel like I'm still in survival mode even though life is stable.",day:1,p:4},
+{q:"Why do I brace when things are actually going well?",day:6,p:9},
+{q:"I keep over-functioning in relationships.",day:4,p:6},
+{q:"Money makes my whole body tighten.",day:2,p:9},
+{q:"Being seen feels dangerous.",day:3,p:3},
+{q:"I'm exhausted from holding everything together.",day:4,p:8},
+{q:"Something in my life is changing and I don't know what it means.",day:7,p:10}
+];
+
+const PATTERNS=[
+"Many people notice that even when life improves, their body still scans for the next problem.",
+"It is common for capable, self-aware women to keep carrying responsibility long after the crisis that required it has passed.",
+"Sometimes the nervous system learned to stay alert because it once had to."
+];
+const MICRO="Pause for a moment. Let your shoulders drop. Take one slow breath. What sensation shows up first in your body?";
+
+const KEY="fu-companion-v1";
+let store={answers:{},done:{},last:null};
+try{const s=localStorage.getItem(KEY);if(s)store=Object.assign(store,JSON.parse(s));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store));return true}catch(e){return false}}
+const app=document.getElementById("app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ans=k=>(store.answers[k]||"").trim();
+const area=(k,ph,big)=>`<textarea id="${k}" data-k="${k}" class="${big?"big":""}" placeholder="${esc(ph||"")}">${esc(store.answers[k]||"")}</textarea>`;
+const pr=id=>ARSENAL.find(a=>a.id===id);
+const dayStarted=n=>Object.keys(store.answers).some(k=>k.startsWith("d"+n+"_")&&ans(k));
+
+function practiceCard(a,compact){
+  return `<div class="prac"><p class="tag">${esc(a.cat)}</p><h3>${esc(a.name)}</h3>
+  <p class="small muted">When: ${esc(a.when)}</p>
+  <ol>${a.how.map(h=>`<li>${esc(h)}</li>`).join("")}</ol>
+  ${compact?"":`<p class="small muted" style="margin:0">${esc(a.why)}</p>`}</div>`;
+}
+
+function renderHome(){
+  const next=store.last||1;
+  const doneCount=Object.keys(store.done).filter(k=>store.done[k]).length;
+  app.innerHTML=`
+  <p class="eyebrow">Fearlessly Unfuckwithable</p>
+  <h1>From survival to sovereignty.</h1>
+  <p class="lede">A recognition mirror for the moment your nervous system realises the danger has passed.</p>
+  <div class="principles">
+    <p>The nervous system is intelligence, not pathology.</p>
+    <p>Confidence emerges after regulation, not before.</p>
+    <p>Regulation before strategy.</p>
+  </div>
+
+  <section>
+    <p class="eyebrow">Arrive</p>
+    <h2>Which feels closest right now?</h2>
+    <p class="muted">There's no right answer, and you can come back to this any time.</p>
+    <div class="stack" id="stages">
+      <button class="choice" data-st="descent"><strong>Descent</strong><span>Something still feels braced, urgent, scarce or exhausting, even if life has changed.</span></button>
+      <button class="choice" data-st="regulation"><strong>Regulation</strong><span>I'm curious about my patterns and willing to slow down and listen to my body.</span></button>
+      <button class="choice" data-st="sovereignty"><strong>Sovereignty</strong><span>I feel steadier and ready to make choices from my own authority.</span></button>
+    </div>
+    <div id="stageOut"></div>
+  </section>
+
+  <section>
+    <p class="eyebrow">The 7-day reset</p>
+    <h2>Survival to Sovereignty</h2>
+    <p class="muted">${doneCount?`${doneCount} of 7 days complete. `:""}One day at a time. Each day has a check-in, descent prompts, a regulation practice and an integration.</p>
+    <div class="row" style="margin:0 0 16px"><a class="btn primary" href="#day-${next}">${store.last?`Continue with Day ${next}`:"Begin Day 1"}</a></div>
+    <div class="days">${DAYS.map(d=>`<a class="day" href="#day-${d.n}"><span class="n">Day ${d.n}${store.done[d.n]?'<span class="pill">Complete</span>':dayStarted(d.n)?'<span class="pill started">Started</span>':""}</span><span class="t">${esc(d.title)}</span></a>`).join("")}</div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Start where you are</p>
+    <h2>What's happening for you?</h2>
+    <p class="muted">Choose what's closest. You'll get a practice for this moment and the day of the reset that speaks to it.</p>
+    <div class="stack" id="sits">${SITUATIONS.map((s,i)=>`<button class="sit" data-i="${i}">${esc(s.q)}</button>`).join("")}</div>
+    <div id="sitOut"></div>
+  </section>`;
+
+  document.querySelectorAll("#stages .choice").forEach(b=>b.onclick=()=>{
+    document.querySelectorAll("#stages .choice").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+    const st=b.dataset.st,o=document.getElementById("stageOut");
+    if(st==="descent")o.innerHTML=`<div class="panel"><h3>Nothing to fix here</h3><p>Recognition comes first. Start by meeting your body where it is.</p></div>
+      <p class="q">If you feel wired, buzzing or braced</p>${practiceCard(pr(1),true)}
+      <p class="q">If you feel flat, numb or heavy</p>${practiceCard(pr(7),true)}
+      <div class="row"><a class="btn" href="#day-1">When you're ready, go to Day 1</a></div>`;
+    if(st==="regulation")o.innerHTML=`<div class="panel"><h3>Let the body receive the update</h3><p>${MICRO}</p></div>
+      <p class="q">A practice for orienting</p>${practiceCard(pr(4),true)}
+      <div class="row"><a class="btn" href="#day-${next}">Continue the reset with Day ${next}</a></div>`;
+    if(st==="sovereignty")o.innerHTML=`<div class="panel"><h3>Choose from steadiness</h3><p>Sovereignty is embodied, not declared. Let a small choice come from your body today.</p></div>
+      <p class="q">A practice for receiving without overload</p>${practiceCard(pr(9),true)}
+      <div class="row"><a class="btn" href="#day-5">Go to Day 5: Authority in the body</a></div>`;
+  });
+  document.querySelectorAll("#sits .sit").forEach(b=>b.onclick=()=>{
+    const s=SITUATIONS[b.dataset.i],d=DAYS[s.day-1];
+    document.getElementById("sitOut").innerHTML=`<div class="panel"><h3>${esc(PATTERNS[b.dataset.i%3])}</h3><p style="margin:0">${MICRO}</p></div>
+      <p class="q">A practice for this moment</p>${practiceCard(pr(s.p),true)}
+      <div class="row"><a class="btn primary" href="#day-${d.n}">Go to Day ${d.n}: ${esc(d.title)}</a></div>`;
+    document.getElementById("sitOut").scrollIntoView({behavior:"smooth",block:"start"});
+  });
+}
+
+function renderDay(n){
+  const d=DAYS[n-1];store.last=n;save();
+  const k=s=>`d${n}_${s}`;
+  const checkHtml=d.check.map((c,i)=>`<p class="q">${esc(c[0])}</p>${c[1]?`<p class="hint">${esc(c[1])}</p>`:""}${area(k("c"+i))}`).join("");
+  let day1Back="";
+  if(n===7){
+    const prev=[["Where I felt braced on Day 1","d1_c0"],["What was still “on watch”","d1_c1"]].filter(x=>ans(x[1]));
+    day1Back=prev.length?`<p class="hint" style="margin-top:12px">What you wrote on Day 1:</p>${prev.map(x=>`<div class="back"><p class="small">${x[0]}</p><p style="margin:0">${esc(ans(x[1]))}</p></div>`).join("")}`:`<p class="hint" style="margin-top:12px">Your Day 1 check-in will appear here once you've written it.</p>`;
+  }
+  const integHtml=`${d.stmt?`<p class="stmt">“${esc(d.stmt)}”</p>`:""}${d.stmtNote?`<p class="${d.stmt?"hint":"q"}">${esc(d.stmtNote)}</p>`:""}
+    ${d.integ.map((g,i)=>`<p class="q">${esc(g.label)}</p>${area(k("i"+i))}`).join("")}`;
+  const nextBlock=n<7?`<div class="end"><p class="q">Would you like to continue to Day ${n+1}, or sit with today's reflection a little longer?</p>
+      <div class="row"><button class="primary" id="goNext">Continue to Day ${n+1}</button><button id="stay">Sit with it a little longer</button></div><p class="small muted" id="stayMsg" style="margin:10px 0 0"></p></div>`
+    :`<div class="end"><p class="q">You've reached the threshold.</p><p>Everything you've written lives in your journal. Come back to any day, any time.</p>
+      <div class="row"><button class="primary" id="finish">Mark the reset complete</button><a class="btn" href="#journal">Open my journal</a></div><p class="small muted" id="stayMsg" style="margin:10px 0 0"></p></div>`;
+
+  app.innerHTML=`
+  <p class="eyebrow">Day ${n} of 7</p>
+  <h1>${esc(d.title)}</h1>
+  <p class="lede">${esc(d.theme)}</p>
+  <div class="panel"><p style="margin:0">${MICRO}</p></div>
+
+  <div class="step"><p class="label">Somatic check-in</p>${checkHtml}${day1Back}</div>
+
+  <div class="step"><p class="label">Descent prompts</p><p class="small muted">Take one, or all of them. Recognition, not fixing.</p>
+    ${d.descent.map((q,i)=>`<p class="q">${esc(q)}</p>${area(k("d"+i))}`).join("")}
+    <div class="row"><button id="mirrorBtn">Read it back to me</button><span class="err" id="mErr"></span></div>
+    <div id="mirror"></div></div>
+
+  <div class="step"><p class="label">Regulation practice</p><h3>${esc(d.practice.name)}</h3><p style="margin-top:6px">${esc(d.practice.text)}</p>
+    <p class="q">${d.practice.big?"Your letter":"What did you notice? (optional)"}</p>${area(k("r"),d.practice.big?"Dear Survival Me,":"Name it. No fixing.",d.practice.big)}</div>
+
+  <div class="step"><p class="label">Sovereignty integration</p>${integHtml}
+    <div class="row"><span class="saved" id="savedMsg"></span></div></div>
+
+  <div class="step"><p class="label">Optional</p><h3>Go deeper with any AI</h3>
+    <p class="small muted">Creates a prompt with today's answers. Paste it into ChatGPT, Claude, Gemini or any AI you use, and it will respond to what you wrote in the spirit of the Guide.</p>
+    <div class="row"><button id="aiBtn">Create my prompt</button><span class="small muted" id="aiMsg"></span></div>
+    <pre class="out" id="aiOut" hidden></pre></div>
+
+  ${nextBlock}
+  <div class="row" style="margin-top:24px">${n>1?`<a class="btn" href="#day-${n-1}">Day ${n-1}</a>`:""}<a class="btn" href="#home">Home</a></div>`;
+
+  let t;
+  document.querySelectorAll("textarea[data-k]").forEach(a=>a.addEventListener("input",()=>{
+    store.answers[a.dataset.k]=a.value;document.getElementById("mErr").textContent="";
+    clearTimeout(t);t=setTimeout(()=>{document.getElementById("savedMsg").textContent=save()?"Saved on this device":"Couldn't save in this browser. Use My journal to copy your answers.";},500);
+  }));
+
+  document.getElementById("mirrorBtn").onclick=()=>{
+    const parts=[...d.check.map((_,i)=>ans(k("c"+i))),...d.descent.map((_,i)=>ans(k("d"+i)))].filter(Boolean);
+    if(!parts.length){document.getElementById("mErr").textContent="Write something in the check-in or prompts first";return;}
+    document.getElementById("mirror").innerHTML=`<div class="mirror"><p class="label" style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600">What you wrote</p>
+      ${parts.map(p=>`<blockquote>${esc(p)}</blockquote>`).join("")}
+      <p style="margin-top:14px">${esc(PATTERNS[(n-1)%3])}</p>
+      <p style="margin:0" class="q">${MICRO}</p></div>`;
+  };
+
+  document.getElementById("aiBtn").onclick=()=>{
+    const lines=[];
+    d.check.forEach((c,i)=>ans(k("c"+i))&&lines.push(c[0]+"\n"+ans(k("c"+i))));
+    d.descent.forEach((q,i)=>ans(k("d"+i))&&lines.push(q+"\n"+ans(k("d"+i))));
+    ans(k("r"))&&lines.push((d.practice.big?"My letter from Sovereign Me to Survival Me:":"What I noticed in the practice:")+"\n"+ans(k("r")));
+    d.integ.forEach((g,i)=>ans(k("i"+i))&&lines.push(g.label+"\n"+ans(k("i"+i))));
+    if(!lines.length){document.getElementById("aiMsg").textContent="Answer at least one prompt first";return;}
+    const prompt=`Please respond as a grounded, compassionate guide in the spirit of Fearlessly Unfuckwithable by Kay Joy Flowers. The nervous system is intelligence, not pathology. Your role is recognition, not fixing.
+
+How to respond:
+- Begin by reflecting my experience in one or two sentences, acknowledging my words and the possible nervous system state beneath them, without dramatising or labelling.
+- Gently normalise the pattern, without assuming my exact story.
+- Ask one to three embodied questions about what I notice in my body.
+- Offer any insight as a possibility, never a diagnosis.
+- Close with a short, grounded reflection on choosing from my own authority.
+- Keep it concise (3 to 6 short paragraphs). Grounded, direct, human. No affirmations, manifestation techniques, productivity hacks, quick fixes or guru language.
+- You are not a therapist and don't diagnose. If I describe immediate danger, point me to real-world support.
+
+I'm on Day ${n} of the 7-Day Survival to Sovereignty Reset: ${d.title}. "${d.theme}"
+
+Here is what I wrote:
+
+${lines.join("\n\n")}`;
+    const o=document.getElementById("aiOut");o.hidden=false;o.textContent=prompt;
+    const m=document.getElementById("aiMsg");
+    try{navigator.clipboard.writeText(prompt).then(()=>m.textContent="Copied. Paste it into your AI.",()=>m.textContent="Select the text below and copy it.");}catch(e){m.textContent="Select the text below and copy it.";}
+  };
+
+  const sm=document.getElementById("stayMsg");
+  if(n<7){
+    document.getElementById("goNext").onclick=()=>{store.done[n]=true;store.last=n+1;save();location.hash="day-"+(n+1);};
+    document.getElementById("stay").onclick=()=>{store.done[n]=true;save();sm.textContent="Your reflection is saved. Day "+(n+1)+" will be waiting when you return.";};
+  }else{
+    document.getElementById("finish").onclick=()=>{store.done[7]=true;save();sm.textContent="Complete. Survival kept you alive. Sovereignty is what lets you live.";};
+  }
+}
+
+function renderArsenal(){
+  app.innerHTML=`<p class="eyebrow">FU Somatic Arsenal</p><h1>A body-first toolkit</h1>
+  <p class="lede">The body does not need convincing. It needs completion.</p>
+  <p style="margin-top:16px">Choose by your current state, not your aspirations. Stop, adapt or choose another practice whenever you need to.</p>
+  <div class="filters" id="flt">
+    <button class="on" data-f="all">All practices</button>
+    <button data-f="mob">I feel mobilised</button>
+    <button data-f="col">I feel collapsed</button>
+    <button data-f="reg">I feel steady enough to expand</button>
+  </div><div id="list"></div>`;
+  const draw=f=>{
+    let html="",last="";
+    ARSENAL.filter(a=>f==="all"||a.state===f).forEach(a=>{
+      if(a.cat!==last){const first=ARSENAL.find(x=>x.cat===a.cat);html+=`<div class="cat"><h2>${esc(a.cat)}</h2><p class="muted" style="margin:0">${esc(first.catNote||"")}</p></div>`;last=a.cat;}
+      html+=`<div style="margin-bottom:12px">${practiceCard(a)}</div>`;
+    });
+    document.getElementById("list").innerHTML=html;
+  };
+  draw("all");
+  document.querySelectorAll("#flt button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#flt button").forEach(x=>x.classList.remove("on"));b.classList.add("on");draw(b.dataset.f);});
+}
+
+function journalText(){
+  let out="THE UNFUCKWITHABLE COMPANION: MY JOURNAL\n\n";
+  DAYS.forEach(d=>{
+    const k=s=>`d${d.n}_${s}`,rows=[];
+    d.check.forEach((c,i)=>ans(k("c"+i))&&rows.push(c[0]+"\n"+ans(k("c"+i))));
+    d.descent.forEach((q,i)=>ans(k("d"+i))&&rows.push(q+"\n"+ans(k("d"+i))));
+    ans(k("r"))&&rows.push(d.practice.name+"\n"+ans(k("r")));
+    d.integ.forEach((g,i)=>ans(k("i"+i))&&rows.push(g.label+"\n"+ans(k("i"+i))));
+    if(rows.length)out+=`DAY ${d.n}: ${d.title.toUpperCase()}\n${d.theme}\n\n${rows.join("\n\n")}\n\n----------\n\n`;
+  });
+  return out;
+}
+function renderJournal(){
+  const txt=journalText(),has=txt.includes("DAY ");
+  app.innerHTML=`<p class="eyebrow">My journal</p><h1>Everything you've written</h1>
+  <p class="lede">Your words, kept in one place.</p>
+  <p style="margin-top:16px" class="small muted">Your answers are saved in this browser on this device. To keep a copy elsewhere, download or copy your journal.</p>
+  <div class="row"><button class="primary" id="dl">Download my journal</button><button id="cp">Copy all</button><span class="small muted" id="jMsg"></span></div>
+  ${has?DAYS.map(d=>{const k=s=>`d${d.n}_${s}`;const items=[];
+    d.check.forEach((c,i)=>ans(k("c"+i))&&items.push([c[0],ans(k("c"+i))]));
+    d.descent.forEach((q,i)=>ans(k("d"+i))&&items.push([q,ans(k("d"+i))]));
+    ans(k("r"))&&items.push([d.practice.name,ans(k("r"))]);
+    d.integ.forEach((g,i)=>ans(k("i"+i))&&items.push([g.label,ans(k("i"+i))]));
+    return items.length?`<div class="step"><p class="label">Day ${d.n}</p><h2>${esc(d.title)}</h2>${items.map(x=>`<p class="q">${esc(x[0])}</p><p style="white-space:pre-wrap">${esc(x[1])}</p>`).join("")}<a class="btn" href="#day-${d.n}">Return to Day ${d.n}</a></div>`:"";}).join("")
+  :`<div class="card" style="margin-top:24px"><h3>Your journal starts with Day 1</h3><p class="muted" style="margin:6px 0 14px">As you write in the reset, your answers gather here.</p><a class="btn primary" href="#day-1">Begin Day 1</a></div>`}`;
+  const m=document.getElementById("jMsg");
+  document.getElementById("dl").onclick=()=>{
+    try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([journalText()],{type:"text/plain"}));a.download="my-unfuckwithable-journal.txt";document.body.appendChild(a);a.click();a.remove();m.textContent="If nothing downloaded, use Copy all.";}catch(e){m.textContent="Download isn't available here. Use Copy all.";}
+  };
+  document.getElementById("cp").onclick=()=>{try{navigator.clipboard.writeText(journalText()).then(()=>m.textContent="Copied.",()=>m.textContent="Copy isn't available here.");}catch(e){m.textContent="Copy isn't available here.";}};
+}
+
+function route(){
+  const h=(location.hash||"#home").slice(1);
+  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.nav===h));
+  const m=h.match(/^day-([1-7])$/);
+  if(m)renderDay(+m[1]);else if(h==="arsenal")renderArsenal();else if(h==="journal")renderJournal();else renderHome();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
