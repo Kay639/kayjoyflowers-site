@@ -124,3 +124,34 @@ footer.site a{color:var(--muted)}
 .band .pb-save{background:var(--on-deep);color:var(--deep)}
 .band .btn.onband{background:var(--on-deep);color:var(--deep);border-color:var(--on-deep)}
 .band .btn.onband:hover{opacity:.9;background:var(--on-deep)}
+
+/* book-first landing page */
+.bookhero{display:grid;gap:20px 56px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"top img" "buy img";align-items:start}
+.bh-top{grid-area:top;align-self:end}
+.bh-img{grid-area:img;align-self:center}
+.bh-buy{grid-area:buy}
+.bh-sub{font-family:var(--display);font-style:italic;font-size:clamp(18px,2vw,22px);color:var(--muted);margin:14px 0 0;line-height:1.4}
+.bh-buy .lede{margin:0 0 18px;color:var(--ink)}
+.bookprice{display:flex;align-items:baseline;gap:6px;margin:0 0 18px;color:var(--accent)}
+.bp-cur{font-weight:600;font-size:22px}
+.bp-num{font-weight:600;font-size:64px;line-height:1;font-variant-numeric:tabular-nums}
+.btn-big{font-size:18px;padding:16px 32px}
+.bh-note{text-align:left;margin-top:12px}
+@media (max-width:760px){
+  .hero:has(.bookhero){padding:36px 0 48px}
+  .bookhero{grid-template-columns:1fr;grid-template-areas:"top" "img" "buy";gap:18px}
+  .bh-img{max-width:190px}
+  .bh-buy{text-align:center}
+  .bookprice{justify-content:center}
+  .btn-big{display:block;width:100%}
+  .bh-note{text-align:center}
+}
+.buystrip{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--accent-soft);border-radius:14px;padding:18px 22px;margin-top:28px}
+.bs-title{display:block;font-family:var(--display);font-size:21px}
+.bs-price{display:block;font-size:15px;color:var(--muted)}
+.offer.upgrade{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:28px;align-items:start;margin-top:28px}
+.offer.upgrade .offerimg{aspect-ratio:4/5;margin:0}
+@media (max-width:760px){.offer.upgrade{grid-template-columns:1fr;padding:22px}.offer.upgrade .offerimg{aspect-ratio:16/10}}
+.up-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:4px 0 8px}
+.up-price strong{font-family:var(--display);font-size:40px;font-weight:600;color:var(--accent)}
+.up-price s{color:var(--muted);font-family:var(--display);font-size:20px}
