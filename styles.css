@@ -153,5 +153,5 @@ footer.site a{color:var(--muted)}
 .offer.upgrade .offerimg{aspect-ratio:4/5;margin:0}
 @media (max-width:760px){.offer.upgrade{grid-template-columns:1fr;padding:22px}.offer.upgrade .offerimg{aspect-ratio:16/10}}
 .up-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:4px 0 8px}
-.up-price strong{font-family:var(--display);font-size:40px;font-weight:600;color:var(--accent)}
+.up-price strong{font-family:var(--body);font-size:40px;font-weight:600;color:var(--accent);line-height:1}
 .up-price s{color:var(--muted);font-family:var(--display);font-size:20px}
