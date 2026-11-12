@@ -158,7 +158,9 @@ footer a{color:var(--muted)}
   async function fetchCompanion(){
     // Access is enforced by the storage policy: only a signed-in email with an
     // active, un-refunded Companion purchase can read this file.
-    var res = await sb.storage.from(BUCKET).download(FILE);
+    // A unique query string on every request bypasses Supabase's per-user CDN copy,
+    // so a refund or revocation takes effect immediately rather than after the cache expires.
+    var res = await sb.storage.from(BUCKET).download(FILE + "?v=" + Date.now() + Math.random().toString(36).slice(2));
     if (res.error || !res.data) return null;
     return await res.data.text();
   }
