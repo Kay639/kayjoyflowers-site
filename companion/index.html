@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Unfuckwithable Companion · Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F2F4; --paper:#FFFFFF; --ink:#1F1A22; --muted:#5F5866; --line:#DCD6DE;
+  --accent:#7A1F3D; --accent-soft:#F3E3E9; --sage:#4E6656; --sage-soft:#E3ECE5;
+  --display:"Bodoni Moda", Georgia, "Times New Roman", serif;
+  --body:"Karla", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#17141A; --paper:#211D25; --ink:#EEEAF0; --muted:#ABA3B1; --line:#3A3440;
+    --accent:#E58AA8; --accent-soft:#3B2230; --sage:#9EC2A9; --sage-soft:#22302A; color-scheme:dark}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+.wrap{max-width:560px;margin:0 auto;padding:28px 20px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.brand{font-family:var(--display);font-size:20px;font-weight:600;color:var(--ink);text-decoration:none}
+h1{font-family:var(--display);font-weight:500;line-height:1.15;font-size:36px;margin:0;text-wrap:balance}
+.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 8px}
+.lede{font-family:var(--display);font-style:italic;font-size:20px;color:var(--muted);margin:10px 0 24px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.small{font-size:15px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+label{display:block;font-weight:600;margin:0 0 6px}
+input[type=email]{width:100%;font:inherit;font-size:17px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+input[type=email]:focus{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:1px}
+.btn{display:block;width:100%;text-align:center;font-family:var(--body);font-size:17px;font-weight:600;border-radius:999px;padding:13px 22px;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;text-decoration:none;margin-top:14px;line-height:1.3}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.btn:hover{opacity:.92}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--accent);text-decoration:underline;cursor:pointer}
+.panel{background:var(--sage-soft);border-radius:14px;padding:16px 18px;margin-top:16px}
+.panel.warn{background:var(--accent-soft)}
+.status{min-height:1.5em;margin-top:12px;font-size:15px}
+.hidden{display:none}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:480px){h1{font-size:30px}.lede{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="brand" href="https://kayjoyflowers.online/">Kay Joy Flowers</a></header>
+
+  <main id="main" tabindex="-1">
+    <p class="eyebrow">Fearlessly Unfuckwithable</p>
+    <h1>The Unfuckwithable Companion</h1>
+    <p class="lede">Your space for the 7-Day Reset, the Somatic Arsenal and your journal.</p>
+
+    <!-- Checking an existing sign-in -->
+    <section id="v-loading" class="card" aria-live="polite"><p class="muted" style="margin:0">One moment…</p></section>
+
+    <!-- Signed out -->
+    <section id="v-signin" class="card hidden">
+      <form id="f-signin" novalidate>
+        <label for="email">Your email</label>
+        <p class="small muted">Use the email address you bought with. We'll send you a sign-in link. No password needed.</p>
+        <input id="email" type="email" autocomplete="email" inputmode="email" required>
+        <button class="btn primary" id="b-send" type="submit">Email me a sign-in link</button>
+      </form>
+      <p class="status" id="s-signin" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Link sent -->
+    <section id="v-sent" class="card hidden">
+      <h2 style="font-family:var(--display);font-weight:500;margin:0 0 8px;font-size:24px">Check your email</h2>
+      <p>We've sent a sign-in link to <strong id="sent-to"></strong>. It comes from Kay Joy Flowers and is called "Your sign-in link".</p>
+      <p class="small muted">Open the link on the device you want to use the Companion on. It expires shortly and works once. If it hasn't arrived in a few minutes, check your spam or promotions folder.</p>
+      <button class="linkish small" id="b-again" type="button">Use a different email, or send it again</button>
+    </section>
+
+    <!-- Signed in, access confirmed -->
+    <section id="v-ready" class="card hidden">
+      <p class="small muted" style="margin:0 0 4px">Signed in as <strong id="who-ready"></strong></p>
+      <button class="btn primary" id="b-open" type="button">Open the Companion</button>
+      <a class="btn hidden" id="b-download" href="#" download="the-unfuckwithable-companion.html">Download a copy</a>
+      <div class="panel small"><p style="margin:0">Your writing is saved in this browser on this device, never on our servers. To keep a copy, use "Download my journal" inside the Companion.</p></div>
+      <p class="small" style="margin:14px 0 0"><button class="linkish" id="b-out1" type="button">Sign out</button></p>
+    </section>
+
+    <!-- Signed in, no purchase found -->
+    <section id="v-none" class="card hidden">
+      <h2 style="font-family:var(--display);font-weight:500;margin:0 0 8px;font-size:24px">We couldn't find a purchase for this email</h2>
+      <p>You're signed in as <strong id="who-none"></strong>, but there's no Companion purchase linked to it.</p>
+      <ul class="small" style="padding-left:20px;margin:0 0 12px">
+        <li>If you bought with a different email address, sign out and sign in with that one.</li>
+        <li>If you've only just bought, wait a minute and try again.</li>
+        <li>Still stuck? Email <a href="mailto:kay@kayjoyflowers.online">kay@kayjoyflowers.online</a> with the email you bought with.</li>
+      </ul>
+      <button class="btn" id="b-retry" type="button">Try again</button>
+      <button class="btn primary" id="b-out2" type="button">Sign out and use another email</button>
+    </section>
+
+    <!-- Something went wrong -->
+    <section id="v-error" class="card hidden">
+      <div class="panel warn" style="margin-top:0"><p style="margin:0" id="err-msg">Something went wrong.</p></div>
+      <button class="btn" id="b-reload" type="button">Try again</button>
+    </section>
+  </main>
+
+  <footer>
+    This Companion is for recognition and embodied awareness. It is not therapy, does not diagnose, and is not emergency support.<br>
+    Help with access: <a href="mailto:kay@kayjoyflowers.online">kay@kayjoyflowers.online</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js" integrity="sha384-2zrRDgDHSYB/GN3nFW3fsZXoxEhKIr3N2h63Tc6DEOB9JJdFIu8xMJT2Cph/gBil" crossorigin="anonymous"></script>
+<script>
+(function(){
+  // ---- configuration --------------------------------------------------------
+  var SUPABASE_URL = "https://zsdcuoxdlbbytuoiwbsn.supabase.co";
+  var PUBLISHABLE_KEY = "sb_publishable_OtEJXNPJxQM3WFN2AcB2jw_F-ZaqEgS"; // safe in a browser: access is enforced by storage policies
+  var BUCKET = "product-content";          // live, private bucket (never the -test bucket)
+  var FILE = "fu-companion/Unfuckwithable_Companion_BACKUP_2026-11-11.html"; // approved 11 Nov 2026 version (verified identical to the live Companion)
+  var REDIRECT = "https://kayjoyflowers.online/companion/";
+  var ALLOW_DOWNLOAD = false;              // offline copy button: off until Kay decides
+  // -----------------------------------------------------------------------------
+
+  var $ = function(id){ return document.getElementById(id); };
+  var views = ["v-loading","v-signin","v-sent","v-ready","v-none","v-error"];
+  function show(id){ views.forEach(function(v){ $(v).classList.toggle("hidden", v!==id); }); }
+  function fail(msg){ $("err-msg").textContent = msg; show("v-error"); }
+
+  if (!window.supabase || !window.supabase.createClient){
+    fail("The sign-in service didn't load. Check your connection and refresh the page.");
+    return;
+  }
+  var sb = window.supabase.createClient(SUPABASE_URL, PUBLISHABLE_KEY, {
+    auth: { flowType: "implicit", persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+  });
+
+  var companionHtml = null, objectUrl = null;
+
+  function linkError(){
+    // Errors from an expired or already-used sign-in link arrive in the URL.
+    var p = new URLSearchParams((location.hash||"").replace(/^#/,"") + "&" + (location.search||"").replace(/^\?/,""));
+    var code = p.get("error_code") || p.get("error");
+    if (!code) return null;
+    history.replaceState(null, "", location.pathname);
+    return code === "otp_expired"
+      ? "That sign-in link has expired or was already used. Send yourself a new one below."
+      : "That sign-in link didn't work. Send yourself a new one below.";
+  }
+
+  async function fetchCompanion(){
+    // Access is enforced by the storage policy: only a signed-in email with an
+    // active, un-refunded Companion purchase can read this file.
+    var res = await sb.storage.from(BUCKET).download(FILE);
+    if (res.error || !res.data) return null;
+    return await res.data.text();
+  }
+
+  function openCompanion(){
+    if (!companionHtml) return;
+    try { sessionStorage.setItem("fu-open", "1"); } catch(e){}
+    var route = /^#(home|arsenal|journal|day-[1-7])$/.test(location.hash) ? location.hash : "#home";
+    history.replaceState(null, "", location.pathname + route);
+    document.open();
+    document.write(companionHtml);
+    document.close();
+    // Small sign-out link beneath the Companion (the Companion file itself is unchanged).
+    window.addEventListener("load", function(){
+      var bar = document.createElement("p");
+      bar.style.cssText = "max-width:720px;margin:0 auto;padding:0 20px 32px;font:14px Karla,Arial,sans-serif";
+      var a = document.createElement("a"); a.href = "#"; a.textContent = "Sign out of the Companion";
+      a.style.color = "inherit";
+      a.onclick = async function(e){ e.preventDefault(); try{ sessionStorage.removeItem("fu-open"); }catch(_){} await sb.auth.signOut(); location.replace(location.pathname); };
+      bar.appendChild(a); document.body.appendChild(bar);
+    });
+  }
+
+  async function render(){
+    var bad = linkError();
+    var s = (await sb.auth.getSession()).data.session;
+    if (!s){
+      show("v-signin");
+      if (bad) $("s-signin").textContent = bad;
+      return;
+    }
+    var email = (s.user && s.user.email) || "";
+    $("who-ready").textContent = email; $("who-none").textContent = email;
+    try { companionHtml = await fetchCompanion(); }
+    catch(e){ fail("We couldn't reach the Companion just now. Check your connection and try again."); return; }
+    if (!companionHtml){ show("v-none"); return; }
+
+    if (ALLOW_DOWNLOAD){
+      objectUrl = URL.createObjectURL(new Blob([companionHtml], {type:"text/html"}));
+      $("b-download").href = objectUrl; $("b-download").classList.remove("hidden");
+    }
+    // Returning visitors (or a refresh inside the Companion) go straight back in.
+    var reopen = false; try { reopen = sessionStorage.getItem("fu-open")==="1"; } catch(e){}
+    if (reopen || /^#(home|arsenal|journal|day-[1-7])$/.test(location.hash)) { openCompanion(); return; }
+    show("v-ready");
+    $("b-open").focus();
+  }
+
+  $("f-signin").addEventListener("submit", async function(e){
+    e.preventDefault();
+    var email = $("email").value.trim().toLowerCase();
+    var st = $("s-signin");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ st.textContent = "Please enter a valid email address."; $("email").focus(); return; }
+    $("b-send").disabled = true; st.textContent = "Sending…";
+    var r = await sb.auth.signInWithOtp({ email: email, options: { emailRedirectTo: REDIRECT, shouldCreateUser: true } });
+    $("b-send").disabled = false;
+    if (r.error){
+      st.textContent = /rate|seconds|too many/i.test(r.error.message)
+        ? "A link was sent very recently. Please wait a minute, then try again."
+        : "We couldn't send the link just now. Please try again in a moment.";
+      return;
+    }
+    st.textContent = "";
+    $("sent-to").textContent = email;
+    show("v-sent");
+  });
+  $("b-again").onclick = function(){ show("v-signin"); $("email").focus(); };
+  $("b-open").onclick = openCompanion;
+  $("b-retry").onclick = function(){ show("v-loading"); render(); };
+  $("b-reload").onclick = function(){ location.replace(location.pathname); };
+  async function signOut(){ try{ sessionStorage.removeItem("fu-open"); }catch(e){} await sb.auth.signOut(); companionHtml = null; show("v-signin"); $("email").value=""; $("email").focus(); }
+  $("b-out1").onclick = signOut; $("b-out2").onclick = signOut;
+
+  sb.auth.onAuthStateChange(function(evt){ if (evt === "SIGNED_IN" && !companionHtml && !$("v-sent").classList.contains("hidden")) render(); });
+  render();
+})();
+</script>
+</body>
+</html>
