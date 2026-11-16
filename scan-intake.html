@@ -180,11 +180,13 @@
       box.appendChild(row("First month of membership", "US$120"));
       box.appendChild(row("Paid today", "US$185", "total"));
       box.appendChild(el("p", "after", "Next payment: US$120 on " + longDate(p.next_payment_date) + ", then US$120 every month until you cancel. The Capsule is never charged again."));
+      if (p.charged_note) box.appendChild(el("p", "after", "You paid in your own currency: " + p.charged_note + " today. Monthly payments are US$120, charged as the equivalent in your currency."));
     } else {
       box.appendChild(el("p", "pb-label", "One-off scan · paid today"));
       box.appendChild(row("One-off Genius Insight scan", "US$100"));
       if (p.capsule) box.appendChild(row("Genius Insight Capsule (one-time, yours to keep)", "US$65"));
       box.appendChild(row("Paid today", p.capsule ? "US$165" : "US$100", "total"));
+      if (p.charged_note) box.appendChild(el("p", "after", "You paid in your own currency: " + p.charged_note + "."));
       box.appendChild(el("p", "after", "A one-time payment. Nothing recurs."));
     }
   }
