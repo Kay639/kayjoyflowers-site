@@ -183,6 +183,12 @@
       if (p.charged_note) box.appendChild(el("p", "after", "You paid in your own currency: " + p.charged_note + " today. Monthly payments are US$120, charged as the equivalent in your currency."));
     } else {
       box.appendChild(el("p", "pb-label", "One-off scan · paid today"));
+      if (p.nzd) {
+        box.appendChild(row("One-off Genius Insight scan", "NZ$169"));
+        box.appendChild(row("Paid today", "NZ$169", "total"));
+        box.appendChild(el("p", "after", "A one-time payment. Nothing recurs."));
+        return;
+      }
       box.appendChild(row("One-off Genius Insight scan", "US$100"));
       if (p.capsule) box.appendChild(row("Genius Insight Capsule (one-time, yours to keep)", "US$65"));
       box.appendChild(row("Paid today", p.capsule ? "US$165" : "US$100", "total"));
