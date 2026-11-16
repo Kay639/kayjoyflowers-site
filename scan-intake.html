@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Send your scan details · Kay Joy Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=6">
+<style>
+  .intake{padding:48px 0 72px}
+  .intake h1{font-size:clamp(34px,6vw,52px)}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:24px}
+  .bill{background:var(--accent-soft);border-radius:14px;padding:18px 20px;margin-top:20px}
+  .bill p{margin:0 0 6px}
+  .bill .row{display:flex;justify-content:space-between;gap:12px;font-size:16px}
+  .bill .row.total{font-weight:600;border-top:1px solid var(--line);padding-top:8px;margin-top:6px}
+  .bill .after{font-size:15px;color:var(--muted);margin-top:10px}
+  label.f{display:block;font-weight:600;margin:0 0 6px}
+  .hint{font-size:15px;color:var(--muted);margin:-2px 0 10px}
+  input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:17px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+  textarea{min-height:130px;resize:vertical}
+  .field{margin-bottom:22px}
+  .rec{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .recbtn{width:72px;height:72px;border-radius:50%;border:none;background:var(--accent);color:var(--paper);font:600 15px var(--body);cursor:pointer;flex:none}
+  .recbtn.on{animation:pulse 1.2s infinite}
+  @keyframes pulse{50%{opacity:.6}}
+  .timer{font-family:var(--display);font-size:32px;font-variant-numeric:tabular-nums;min-width:70px}
+  .meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden;flex:1 1 140px}
+  .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s linear}
+  audio{width:100%;margin-top:12px}
+  .photo-prev{display:none;max-width:180px;border-radius:10px;margin-top:12px}
+  .or{font-size:15px;color:var(--muted);margin:14px 0 8px}
+  .filebtn{position:relative;overflow:hidden}
+  .filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+  .check{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:16px}
+  .check input{width:22px;height:22px;flex:none;margin-top:3px;accent-color:var(--accent)}
+  .ok{color:var(--sage);font-weight:600;font-size:15px;margin-top:8px}
+  .err{color:#B3261E;font-weight:600;font-size:15px;margin-top:8px}
+  .alert{background:#FBEBEB;color:#7A1F1F;border-radius:12px;padding:14px 16px;margin-top:16px;display:none}
+  .hide{display:none!important}
+  .progress{font-size:15px;color:var(--muted);margin-top:12px;text-align:center}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="logo" href="index.html">Kay Joy Flowers</a>
+</div></header>
+
+<main class="intake"><div class="wrap narrow">
+
+  <div id="loading"><p class="eyebrow">One moment</p><h1>Checking your payment…</h1></div>
+
+  <div id="problem" class="hide">
+    <p class="eyebrow">Send your scan details</p>
+    <h1 id="problem-title">This page opens after payment.</h1>
+    <p class="lede" id="problem-text" style="margin-top:16px">To book a scan, choose an option on the scans page. If you've already paid, open the link from the end of checkout, or email me and I'll sort it out.</p>
+    <div class="actions"><a class="btn primary" href="genius-insight.html">Go to Energetic Scans</a><a class="btn" href="mailto:kay@kayjoyflowers.online">Email Kay</a></div>
+  </div>
+
+  <div id="done-before" class="hide">
+    <p class="eyebrow">All received</p>
+    <h1>I already have your details.</h1>
+    <p class="lede" style="margin-top:16px">Your photo, voice and form came through for this payment. If you need to change anything, just email me.</p>
+    <div class="actions"><a class="btn" href="mailto:kay@kayjoyflowers.online">Email Kay</a></div>
+  </div>
+
+  <form id="form" class="hide" novalidate>
+    <p class="eyebrow">Payment received · thank you</p>
+    <h1>Now, send me your photo and voice.</h1>
+    <div class="bill" id="bill"></div>
+
+    <div class="panel">
+      <div class="field">
+        <label class="f" for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label class="f" for="email">Email for your feedback</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="field">
+        <label class="f">A recent photo of you</label>
+        <p class="hint">Face and shoulders, in natural light if you can. A selfie is perfect.</p>
+        <span class="btn filebtn">Choose or take a photo<input type="file" id="photo" accept="image/*"></span>
+        <img class="photo-prev" id="photo-prev" alt="Your photo">
+        <p class="ok hide" id="photo-ok">Photo ready.</p>
+        <p class="err hide" id="photo-err"></p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:0">
+        <label class="f">About 15 seconds of your voice</label>
+        <p class="hint">Somewhere quiet. Just talk naturally: your name, how your week has been, anything at all. It stops by itself at 20 seconds.</p>
+        <div class="rec" id="rec-wrap">
+          <button type="button" class="recbtn" id="recbtn" aria-label="Start recording">Record</button>
+          <span class="timer" id="timer">0:00</span>
+          <span class="meter" aria-hidden="true"><i id="meter"></i></span>
+        </div>
+        <audio id="playback" controls class="hide"></audio>
+        <p class="ok hide" id="voice-ok"></p>
+        <p class="err hide" id="voice-err"></p>
+        <p class="or">Or upload a recording you've made:</p>
+        <span class="btn filebtn">Upload a voice file<input type="file" id="voicefile" accept="audio/*,.m4a,.mp3,.wav,.aac,.ogg,.webm"></span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="field" style="margin-bottom:0">
+        <label class="f" for="concerns">What's on your mind at the moment?</label>
+        <p class="hint">Anything you're experiencing or would like me to keep in mind. Share only what you're comfortable with.</p>
+        <textarea id="concerns" name="concerns" maxlength="5000"></textarea>
+      </div>
+    </div>
+
+    <div class="panel">
+      <label class="check"><input type="checkbox" id="has_capsule"> <span>I already have a Quanta Capsule from another practitioner. <span class="muted">(I'll add you to mine and refund the US$65.)</span></span></label>
+      <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+      <p class="f">Before I scan</p>
+      <label class="check"><input type="checkbox" id="c1" required> <span>I'm 18 or over.</span></label>
+      <label class="check"><input type="checkbox" id="c2" required> <span>I understand Genius Insight scans are complementary wellness and energetic balancing. They are not medical diagnosis or treatment, and I'll keep seeing my own health professionals.</span></label>
+      <label class="check"><input type="checkbox" id="c3" required> <span>I agree to Kay storing and using my photo, voice recording and the wellness information I've shared to carry out my scans, as set out in the <a href="privacy.html#scans" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+    </div>
+
+    <div class="alert" id="alert" role="alert"></div>
+    <div class="actions"><button type="submit" class="btn primary btn-block btn-big" id="submit">Send to Kay</button></div>
+    <p class="progress hide" id="progress">Sending securely… please keep this page open.</p>
+  </form>
+
+  <div id="success" class="hide">
+    <p class="eyebrow">All received</p>
+    <h1>Thank you. I have everything I need.</h1>
+    <p class="lede" style="margin-top:16px" id="success-lede">I'll carry out your scan and email your personal feedback and aura image.</p>
+    <div class="bill" id="bill2"></div>
+    <p style="margin-top:20px" id="success-capsule"></p>
+    <p class="muted">A confirmation is on its way to your inbox. Questions? <a href="mailto:kay@kayjoyflowers.online">kay@kayjoyflowers.online</a></p>
+  </div>
+
+</div></main>
+
+<footer class="site"><div class="wrap">
+  <div>&copy; Kay Joy Flowers. A Living Cosmology of Remembrance.<br><a href="mailto:kay@kayjoyflowers.online">kay@kayjoyflowers.online</a></div>
+  <div><a href="genius-insight.html">Energetic Scans</a> &middot; <a href="privacy.html">Privacy</a></div>
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var ENDPOINT = "https://zsdcuoxdlbbytuoiwbsn.supabase.co/functions/v1/scan-intake";
+  var MAX_SECONDS = 20, MIN_SECONDS = 8;
+  var $ = function(id){ return document.getElementById(id); };
+  var show = function(id){ $(id).classList.remove("hide"); };
+  var hide = function(id){ $(id).classList.add("hide"); };
+  var api = window.SCAN_INTAKE_MOCK || {
+    get: function(sid){ return fetch(ENDPOINT + "?session_id=" + encodeURIComponent(sid)).then(function(r){ return r.json(); }); },
+    post: function(fd){ return fetch(ENDPOINT, { method: "POST", body: fd }).then(function(r){ return r.json(); }); }
+  };
+
+  var sid = new URLSearchParams(location.search).get("session_id") || "";
+  var purchase = null, photoBlob = null, voiceBlob = null;
+
+  function longDate(iso){
+    if (!iso) return "one month from today";
+    return new Date(iso + "T12:00:00Z").toLocaleDateString("en-NZ", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  }
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function row(label, amount, cls){ var r = el("div", "row" + (cls ? " " + cls : "")); r.appendChild(el("span", null, label)); r.appendChild(el("span", null, amount)); return r; }
+  function renderBill(box, p){
+    box.textContent = "";
+    if (p.offer === "membership") {
+      box.appendChild(el("p", "pb-label", "Weekly Scan Membership · paid today"));
+      box.appendChild(row("Genius Insight Capsule (one-time, yours to keep)", "US$65"));
+      box.appendChild(row("First month of membership", "US$120"));
+      box.appendChild(row("Paid today", "US$185", "total"));
+      box.appendChild(el("p", "after", "Next payment: US$120 on " + longDate(p.next_payment_date) + ", then US$120 every month until you cancel. The Capsule is never charged again."));
+    } else {
+      box.appendChild(el("p", "pb-label", "One-off scan · paid today"));
+      box.appendChild(row("One-off Genius Insight scan", "US$100"));
+      if (p.capsule) box.appendChild(row("Genius Insight Capsule (one-time, yours to keep)", "US$65"));
+      box.appendChild(row("Paid today", p.capsule ? "US$165" : "US$100", "total"));
+      box.appendChild(el("p", "after", "A one-time payment. Nothing recurs."));
+    }
+  }
+  function problem(title, text){
+    hide("loading"); hide("form");
+    $("problem-title").textContent = title;
+    if (text) $("problem-text").textContent = text;
+    show("problem");
+  }
+
+  // ---- 1. payment check -------------------------------------------------
+  if (!sid) { problem("This page opens after payment."); return; }
+  api.get(sid).then(function(p){
+    hide("loading");
+    if (!p || !p.ok) {
+      if (p && p.error === "not_paid") return problem("Your payment hasn't completed yet.", "If you've just paid, wait a minute and refresh this page. If it still shows this, email me and I'll check.");
+      return problem("I couldn't find that payment.", "Please open the link from the end of checkout, or email me and I'll sort it out.");
+    }
+    if (p.submitted) { show("done-before"); return; }
+    purchase = p;
+    renderBill($("bill"), p);
+    if (p.name) $("name").value = p.name;
+    if (p.email) $("email").value = p.email;
+    if (!p.capsule) $("has_capsule").closest("label").classList.add("hide");
+    show("form");
+  }).catch(function(){ problem("Something went wrong checking your payment.", "Please refresh this page. If it keeps happening, email me and I'll sort it out."); });
+
+  // ---- 2. photo (resized in the browser to keep uploads fast on mobile) ---
+  $("photo").addEventListener("change", function(){
+    var f = this.files && this.files[0];
+    hide("photo-ok"); hide("photo-err"); photoBlob = null;
+    if (!f) return;
+    if (!/^image\//.test(f.type) && !/\.(heic|heif)$/i.test(f.name)) { $("photo-err").textContent = "That doesn't look like a photo. Please choose an image."; show("photo-err"); return; }
+    var url = URL.createObjectURL(f), img = new Image();
+    img.onload = function(){
+      var max = 1600, s = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+      var c = document.createElement("canvas"); c.width = Math.round(img.naturalWidth * s); c.height = Math.round(img.naturalHeight * s);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob(function(b){
+        photoBlob = b; URL.revokeObjectURL(url);
+        $("photo-prev").src = URL.createObjectURL(b); $("photo-prev").style.display = "block"; show("photo-ok");
+      }, "image/jpeg", 0.86);
+    };
+    img.onerror = function(){
+      // Browser can't preview it (e.g. HEIC on some Android phones): send the original.
+      URL.revokeObjectURL(url);
+      if (f.size > 12 * 1024 * 1024) { $("photo-err").textContent = "That photo is too large. Please choose a smaller one."; show("photo-err"); return; }
+      photoBlob = f.type ? f : new Blob([f], { type: /\.heif$/i.test(f.name) ? "image/heif" : "image/heic" }); $("photo-ok").textContent = "Photo ready (" + f.name + ")."; show("photo-ok");
+    };
+    img.src = url;
+  });
+
+  // ---- 3. voice: record in the browser, or upload ------------------------
+  var rec = null, chunks = [], stream = null, t0 = 0, tick = null, auto = null;
+  function pickType(){
+    if (!window.MediaRecorder || !MediaRecorder.isTypeSupported) return "";
+    var opts = ["audio/webm;codecs=opus", "audio/mp4", "audio/webm", "audio/ogg;codecs=opus", "audio/aac"];
+    for (var i = 0; i < opts.length; i++) if (MediaRecorder.isTypeSupported(opts[i])) return opts[i];
+    return "";
+  }
+  function setVoice(blob, label){
+    voiceBlob = blob; hide("voice-err");
+    $("playback").src = URL.createObjectURL(blob); show("playback");
+    $("voice-ok").textContent = label; show("voice-ok");
+  }
+  function voiceErr(msg){ $("voice-err").textContent = msg; show("voice-err"); }
+  function stopRec(){
+    if (rec && rec.state !== "inactive") rec.stop();
+    clearInterval(tick); clearTimeout(auto);
+  }
+  $("recbtn").addEventListener("click", function(){
+    if (rec && rec.state === "recording") { stopRec(); return; }
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder) {
+      voiceErr("Recording isn't available in this browser. Please record a voice memo on your phone and upload it below."); return;
+    }
+    hide("voice-err"); hide("voice-ok");
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(s){
+      stream = s; chunks = [];
+      var type = pickType();
+      rec = type ? new MediaRecorder(s, { mimeType: type }) : new MediaRecorder(s);
+      rec.ondataavailable = function(e){ if (e.data && e.data.size) chunks.push(e.data); };
+      rec.onstop = function(){
+        var secs = (Date.now() - t0) / 1000;
+        stream.getTracks().forEach(function(t){ t.stop(); });
+        $("recbtn").classList.remove("on"); $("recbtn").textContent = "Again"; $("recbtn").setAttribute("aria-label", "Record again");
+        var mime = (rec.mimeType || type || "audio/webm").split(";")[0];
+        var blob = new Blob(chunks, { type: mime });
+        if (secs < MIN_SECONDS) { voiceBlob = null; hide("playback"); voiceErr("That was a little short. Please record about 15 seconds."); return; }
+        setVoice(blob, "Recording ready (" + Math.round(secs) + " seconds). Play it back to check, or record again.");
+      };
+      rec.start(250); t0 = Date.now();
+      $("recbtn").classList.add("on"); $("recbtn").textContent = "Stop"; $("recbtn").setAttribute("aria-label", "Stop recording");
+      tick = setInterval(function(){
+        var s = (Date.now() - t0) / 1000;
+        $("timer").textContent = "0:" + String(Math.floor(s)).padStart(2, "0");
+        $("meter").style.width = Math.min(100, s / 15 * 100) + "%";
+      }, 200);
+      auto = setTimeout(stopRec, MAX_SECONDS * 1000);
+    }).catch(function(){
+      voiceErr("I couldn't reach your microphone. Allow microphone access for this page and try again, or upload a voice memo below.");
+    });
+  });
+  $("voicefile").addEventListener("change", function(){
+    var f = this.files && this.files[0];
+    hide("voice-ok"); hide("voice-err");
+    if (!f) return;
+    var type = f.type || ({ m4a: "audio/mp4", mp3: "audio/mpeg", wav: "audio/wav", aac: "audio/aac", ogg: "audio/ogg", webm: "audio/webm" })[(f.name.split(".").pop() || "").toLowerCase()] || "";
+    if (!/^audio\//.test(type)) { voiceErr("That doesn't look like an audio file. Please choose a voice recording."); return; }
+    if (f.size > 12 * 1024 * 1024) { voiceErr("That file is too large. Please keep it to about 15 seconds."); return; }
+    setVoice(new Blob([f], { type: type === "audio/x-m4a" || type === "audio/m4a" ? "audio/mp4" : type }), "Voice file ready (" + f.name + ").");
+  });
+
+  // ---- 4. submit -----------------------------------------------------------
+  function alertMsg(m){ $("alert").textContent = m; $("alert").style.display = "block"; $("alert").scrollIntoView({ behavior: "smooth", block: "center" }); }
+  $("form").addEventListener("submit", function(ev){
+    ev.preventDefault(); $("alert").style.display = "none";
+    var name = $("name").value.trim(), email = $("email").value.trim();
+    if (!name) return alertMsg("Please add your name.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return alertMsg("Please check your email address.");
+    if (!photoBlob) return alertMsg("Please add a photo of you.");
+    if (!voiceBlob) return alertMsg("Please record or upload about 15 seconds of your voice.");
+    if (!$("c1").checked || !$("c2").checked || !$("c3").checked) return alertMsg("Please tick the three boxes under “Before I scan”.");
+    var ext = { "audio/webm": "webm", "audio/mp4": "m4a", "audio/ogg": "ogg", "audio/aac": "aac", "audio/mpeg": "mp3", "audio/wav": "wav" }[voiceBlob.type] || "webm";
+    var fd = new FormData();
+    fd.append("session_id", sid); fd.append("name", name); fd.append("email", email);
+    fd.append("concerns", $("concerns").value.trim());
+    fd.append("has_existing_capsule", $("has_capsule").checked ? "yes" : "no");
+    fd.append("consent_adult", "yes"); fd.append("consent_wellness", "yes"); fd.append("consent_data", "yes");
+    fd.append("photo", photoBlob, "photo." + ({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/heic": "heic", "image/heif": "heif" }[photoBlob.type] || "jpg"));
+    fd.append("voice", voiceBlob, "voice." + ext);
+    $("submit").disabled = true; $("submit").textContent = "Sending…"; show("progress");
+    api.post(fd).then(function(r){
+      if (r && r.ok) {
+        hide("form"); renderBill($("bill2"), Object.assign({}, purchase, r));
+        $("success-capsule").textContent = purchase.capsule
+          ? "Watch for an email from Insight Quanta with your Capsule download code and login. Install the app and sign in, and your frequencies will arrive there."
+            + (purchase.offer === "membership" ? " From then on you'll get a fresh scan, new frequencies and feedback every week." : "")
+          : "";
+        show("success"); window.scrollTo(0, 0); return;
+      }
+      var msgs = { already_submitted: "I already have your details for this payment. Email me if you need to change anything.",
+        bad_photo: "Your photo didn't come through. Please choose it again.", bad_voice: "Your voice recording didn't come through. Please record or upload it again.",
+        consent_required: "Please tick the three boxes under “Before I scan”.", missing_details: "Please check your name and email." };
+      throw { userMsg: msgs[r && r.error] };
+    }).catch(function(e){
+      $("submit").disabled = false; $("submit").textContent = "Send to Kay"; hide("progress");
+      alertMsg((e && e.userMsg) || "Something went wrong sending your details. Please check your connection and try again, or email me.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
