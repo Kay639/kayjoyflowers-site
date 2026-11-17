@@ -41,8 +41,10 @@ PRIVATE_PATHS = ["/scan-intake.html", "/companion/", "/companion-sovereign/"]
 # Folders the Jekyll build excludes (see _config.yml); never published.
 UNPUBLISHED_DIRS = ("reports", "docs", "tools", ".github", "node_modules")
 
-AI_CRAWLERS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot",
-               "ClaudeBot", "Claude-SearchBot", "Google-Extended", "Bingbot"]
+# AI search/answer crawlers that must stay allowed (they power citations).
+# Training crawlers (GPTBot, ClaudeBot, Google-Extended) are blocked by choice and not checked here.
+AI_CRAWLERS = ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Claude-SearchBot", "Bingbot"]
+TRAINING_CRAWLERS = ["GPTBot", "ClaudeBot", "Google-Extended"]
 CHECKOUT_HOSTS = ("shop.beacons.ai", "buy.stripe.com", "billing.stripe.com")
 
 SEVERITY_WEIGHT = {"critical": 5, "high": 3, "medium": 2, "low": 1}
@@ -171,8 +173,8 @@ CHECKS = {
         "llms.txt is a proposed convention, not a ranking factor. It is a cheap, plain-language map for AI tools.",
         "Publish /llms.txt with a short summary and key links."),
     "ai_crawlers_allowed": ("AEO & Content", "medium", "AI search crawlers are not blocked",
-        "ChatGPT, Perplexity, Claude and Gemini can only cite pages their crawlers may read.",
-        "Do not disallow the AI search user-agents in robots.txt."),
+        "ChatGPT Search, Perplexity and Claude can only cite pages their search crawlers may read. Blocking training crawlers does not affect this.",
+        "Keep OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot and Bingbot allowed in robots.txt."),
     # ---- Accessibility
     "lang": ("Accessibility", "medium", "<html lang> set",
         "Screen readers and translators need the page language.",
