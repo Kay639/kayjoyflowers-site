@@ -1,0 +1,2178 @@
+{
+ "base": "https://kayjoyflowers.online",
+ "offline": false,
+ "overall": 68,
+ "categories": {
+  "Technical SEO": {
+   "earned": 98,
+   "possible": 154,
+   "passed": 34,
+   "failed": 21,
+   "score": 64
+  },
+  "Metadata & Social": {
+   "earned": 87,
+   "possible": 108,
+   "passed": 33,
+   "failed": 15,
+   "score": 81
+  },
+  "Structured Data": {
+   "earned": 0,
+   "possible": 20,
+   "passed": 0,
+   "failed": 12,
+   "score": 0
+  },
+  "AEO & Content": {
+   "earned": 33,
+   "possible": 49,
+   "passed": 16,
+   "failed": 9,
+   "score": 67
+  },
+  "Accessibility": {
+   "earned": 39,
+   "possible": 48,
+   "passed": 17,
+   "failed": 7,
+   "score": 81
+  },
+  "Performance": {
+   "earned": 13,
+   "possible": 20,
+   "passed": 9,
+   "failed": 3,
+   "score": 65
+  },
+  "Conversion": {
+   "earned": 15,
+   "possible": 19,
+   "passed": 8,
+   "failed": 3,
+   "unverified": 2,
+   "score": 79
+  }
+ },
+ "checks": {
+  "robots_present": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "robots.txt is published",
+   "principle": "Crawlers request /robots.txt first. Without it they assume everything is allowed but find no sitemap pointer.",
+   "fix": "Publish robots.txt at the site root with a Sitemap: line."
+  },
+  "robots_allows_site": {
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "robots.txt does not block the site",
+   "principle": "A stray 'Disallow: /' removes the whole site from search.",
+   "fix": "Keep 'Allow: /' for User-agent: *."
+  },
+  "robots_sitemap": {
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "robots.txt points to the sitemap",
+   "principle": "The Sitemap line is how crawlers without Search Console access find every page.",
+   "fix": "Add 'Sitemap: https://kayjoyflowers.online/sitemap.xml'."
+  },
+  "sitemap_present": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "sitemap.xml is published and valid",
+   "principle": "A sitemap lists the canonical URLs you want indexed and when they last changed.",
+   "fix": "Publish sitemap.xml listing every indexable page by its canonical URL."
+  },
+  "sitemap_complete": {
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap",
+   "principle": "Pages missing from the sitemap are discovered later, or not at all if they are weakly linked.",
+   "fix": "Add the page's canonical URL to sitemap.xml."
+  },
+  "sitemap_clean": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Sitemap URL is live, indexable and canonical",
+   "principle": "Listing redirects, 404s or noindex pages sends search engines mixed signals and wastes crawl budget.",
+   "fix": "Only list 200-status, indexable, self-canonical URLs."
+  },
+  "status_ok": {
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200",
+   "principle": "Only pages that load can be indexed or cited.",
+   "fix": "Restore the page or remove links to it."
+  },
+  "not_found_status": {
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Missing URLs return a real 404",
+   "principle": "Soft 404s (200 status for missing pages) get indexed as thin duplicates.",
+   "fix": "Let GitHub Pages return 404; provide a branded 404.html."
+  },
+  "canonical_present": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared",
+   "principle": "GitHub Pages serves the same page at /about, /about.html and with query strings. The canonical tag says which one counts.",
+   "fix": "Add <link rel=\"canonical\" href=\"https://kayjoyflowers.online/...\">."
+  },
+  "canonical_self": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL",
+   "principle": "A canonical pointing elsewhere tells Google to drop this page in favour of another.",
+   "fix": "Make the canonical the page's own absolute https URL."
+  },
+  "viewport": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared",
+   "principle": "Google indexes the mobile version first.",
+   "fix": "Add <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">."
+  },
+  "internal_links_ok": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve",
+   "principle": "Broken internal links waste crawl paths and lose visitors.",
+   "fix": "Fix or remove the broken link."
+  },
+  "anchors_ok": {
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist",
+   "principle": "A link to #section that doesn't exist silently fails.",
+   "fix": "Give the target element the matching id."
+  },
+  "not_orphan": {
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page",
+   "principle": "Pages no other page links to are hard for crawlers and people to find.",
+   "fix": "Link to the page from the navigation, footer or a related page."
+  },
+  "private_noindex": {
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Private page is kept out of search",
+   "principle": "Payment-gated forms and sign-in screens should never appear in search results.",
+   "fix": "Add <meta name=\"robots\" content=\"noindex, nofollow\"> and keep it out of the sitemap."
+  },
+  "title_present": {
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title",
+   "principle": "The title is the blue link in search results and the default share text.",
+   "fix": "Write a unique <title>."
+  },
+  "title_length": {
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters",
+   "principle": "Longer titles are cut off in results; very short ones waste the most important text on the page.",
+   "fix": "Lead with the page's subject, end with the brand."
+  },
+  "title_unique": {
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site",
+   "principle": "Duplicate titles make pages compete with each other.",
+   "fix": "Give each page its own title."
+  },
+  "desc_present": {
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present",
+   "principle": "Search engines and AI answers often quote it as the summary.",
+   "fix": "Write a 70-160 character description of what the visitor gets."
+  },
+  "desc_length": {
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters",
+   "principle": "Too short wastes the snippet; too long is truncated.",
+   "fix": "Edit to 70-160 characters."
+  },
+  "desc_unique": {
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique",
+   "principle": "Duplicate descriptions are often ignored and rewritten by Google.",
+   "fix": "Write one description per page."
+  },
+  "og_complete": {
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete",
+   "principle": "og:title, og:description, og:image, og:url and og:type control the preview in Facebook, Instagram DMs, iMessage, Slack and LinkedIn.",
+   "fix": "Add the five og: tags."
+  },
+  "og_url_canonical": {
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "og:url matches the canonical",
+   "principle": "Shares and search should consolidate on the same URL.",
+   "fix": "Use the canonical URL for og:url."
+  },
+  "og_image_ok": {
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "og:image loads",
+   "principle": "A broken share image produces a blank preview.",
+   "fix": "Use an absolute, publicly reachable image URL."
+  },
+  "twitter_card": {
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared",
+   "principle": "Without it X shows a small text-only preview.",
+   "fix": "Add <meta name=\"twitter:card\" content=\"summary_large_image\">."
+  },
+  "jsonld_present": {
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present",
+   "principle": "Structured data states facts (who wrote this, what it costs) in a form machines don't have to guess at.",
+   "fix": "Add a JSON-LD block describing the page's main entity."
+  },
+  "jsonld_valid": {
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "JSON-LD parses",
+   "principle": "One syntax error makes the whole block invisible.",
+   "fix": "Fix the JSON syntax."
+  },
+  "jsonld_required": {
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "Schema types have their required properties",
+   "principle": "Incomplete types (an Offer without a price, a Book without an author) are ignored for rich results.",
+   "fix": "Add the missing properties."
+  },
+  "jsonld_prices_visible": {
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "Structured-data prices match visible prices",
+   "principle": "Google penalises markup that disagrees with what visitors see. Prices must match exactly.",
+   "fix": "Use the exact price shown on the page."
+  },
+  "faq_visible": {
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "FAQ markup matches visible questions",
+   "principle": "FAQPage markup must mirror questions and answers that are visible on the page.",
+   "fix": "Only mark up questions that appear on the page, word for word."
+  },
+  "breadcrumbs": {
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages",
+   "principle": "Breadcrumbs show the page's place in the site in search results.",
+   "fix": "Add a BreadcrumbList node."
+  },
+  "entity_home": {
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "Home page defines the WebSite and the author (Person)",
+   "principle": "Answer engines resolve 'who is Kay Joy Flowers' from a single, consistent Person entity with sameAs links.",
+   "fix": "Add WebSite and Person nodes with a stable @id."
+  },
+  "entity_consistent": {
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "Person entity is consistent across pages",
+   "principle": "Conflicting names or IDs split the entity in knowledge graphs.",
+   "fix": "Reuse the same @id and name everywhere."
+  },
+  "h1_single": {
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1",
+   "principle": "The H1 is the page's headline for machines. Zero or several blurs the topic.",
+   "fix": "Use one H1 that states the page's subject."
+  },
+  "heading_order": {
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels",
+   "principle": "Answer engines use the heading outline to split a page into quotable sections.",
+   "fix": "Go H1 > H2 > H3 without skipping."
+  },
+  "word_count": {
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text",
+   "principle": "Thin pages give search and answer engines little to understand or quote.",
+   "fix": "Add genuinely useful text (descriptions, answers), never filler."
+  },
+  "author_attribution": {
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed",
+   "principle": "Clear authorship is a core credibility signal for search and AI answers.",
+   "fix": "Add <meta name=\"author\"> and author/Person in JSON-LD."
+  },
+  "llms_txt": {
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "llms.txt published (optional discovery aid)",
+   "principle": "llms.txt is a proposed convention, not a ranking factor. It is a cheap, plain-language map for AI tools.",
+   "fix": "Publish /llms.txt with a short summary and key links."
+  },
+  "ai_crawlers_allowed": {
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "AI search crawlers are not blocked",
+   "principle": "ChatGPT, Perplexity, Claude and Gemini can only cite pages their crawlers may read.",
+   "fix": "Do not disallow the AI search user-agents in robots.txt."
+  },
+  "lang": {
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set",
+   "principle": "Screen readers and translators need the page language.",
+   "fix": "Use <html lang=\"en\">."
+  },
+  "img_alt": {
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text",
+   "principle": "Alt text is read aloud to blind visitors and used by search engines to understand images.",
+   "fix": "Describe the image (e.g. 'Fearlessly Unfuckwithable by Kay Joy Flowers, book cover')."
+  },
+  "link_text": {
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text",
+   "principle": "Screen-reader users navigate by link text.",
+   "fix": "Give every link visible text or an aria-label."
+  },
+  "skip_link": {
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link",
+   "principle": "Keyboard users shouldn't have to tab through the menu on every page.",
+   "fix": "Add a visually hidden 'Skip to content' link targeting <main id=\"main\">."
+  },
+  "img_dimensions": {
+   "category": "Performance",
+   "severity": "medium",
+   "title": "Images declare width and height",
+   "principle": "Without dimensions the layout jumps as images load (Cumulative Layout Shift).",
+   "fix": "Add width and height attributes matching the aspect ratio."
+  },
+  "lcp_not_lazy": {
+   "category": "Performance",
+   "severity": "high",
+   "title": "Hero image is not lazy-loaded",
+   "principle": "The largest above-the-fold image is usually the Largest Contentful Paint. Lazy-loading it delays LCP.",
+   "fix": "Remove loading=\"lazy\" from the first image and add fetchpriority=\"high\"."
+  },
+  "html_weight": {
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB",
+   "principle": "Small HTML parses fast on mobile networks.",
+   "fix": "Move repeated inline code into shared files."
+  },
+  "checkout_links_ok": {
+   "category": "Conversion",
+   "severity": "critical",
+   "title": "Checkout links resolve",
+   "principle": "A broken checkout link is a lost sale.",
+   "fix": "Replace with the current Beacons or Stripe link."
+  },
+  "hero_cta": {
+   "category": "Conversion",
+   "severity": "medium",
+   "title": "Clear call to action in the first screen",
+   "principle": "Visitors decide in seconds. The first section should offer the next step.",
+   "fix": "Add a primary button in the hero."
+  },
+  "nav_complete": {
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section",
+   "principle": "Consistent footers give a second path to offers and to the privacy policy.",
+   "fix": "Use the same footer links on every public page."
+  }
+ },
+ "results": [
+  {
+   "check": "robots_present",
+   "url": "/robots.txt",
+   "passed": false,
+   "detail": "HTTP 404",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "robots.txt is published"
+  },
+  {
+   "check": "robots_allows_site",
+   "url": "/robots.txt",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "robots.txt does not block the site"
+  },
+  {
+   "check": "robots_sitemap",
+   "url": "/robots.txt",
+   "passed": false,
+   "detail": "no Sitemap line",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "robots.txt points to the sitemap"
+  },
+  {
+   "check": "ai_crawlers_allowed",
+   "url": "/robots.txt",
+   "passed": true,
+   "detail": "no robots.txt: allowed by default",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "AI search crawlers are not blocked"
+  },
+  {
+   "check": "sitemap_present",
+   "url": "/sitemap.xml",
+   "passed": false,
+   "detail": "HTTP 404, 0 URLs",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "sitemap.xml is published and valid"
+  },
+  {
+   "check": "llms_txt",
+   "url": "/llms.txt",
+   "passed": false,
+   "detail": "HTTP 404",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "llms.txt published (optional discovery aid)"
+  },
+  {
+   "check": "not_found_status",
+   "url": "/this-page-does-not-exist-kjf-audit",
+   "passed": true,
+   "detail": "HTTP 404",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Missing URLs return a real 404"
+  },
+  {
+   "check": "private_noindex",
+   "url": "/scan-intake.html",
+   "passed": true,
+   "detail": "noindex",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Private page is kept out of search"
+  },
+  {
+   "check": "private_noindex",
+   "url": "/companion/",
+   "passed": true,
+   "detail": "noindex",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Private page is kept out of search"
+  },
+  {
+   "check": "private_noindex",
+   "url": "/companion-sovereign/",
+   "passed": true,
+   "detail": "noindex",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Private page is kept out of search"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "sitemap_complete",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "missing from sitemap",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Indexable page is listed in the sitemap"
+  },
+  {
+   "check": "status_ok",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/",
+   "passed": true,
+   "detail": "Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/",
+   "passed": true,
+   "detail": "15 chars: Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/",
+   "passed": true,
+   "detail": "123 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/",
+   "passed": true,
+   "detail": "1 H1: For the woman who knows there's more to her.",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "word_count",
+   "url": "/",
+   "passed": true,
+   "detail": "284 words",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "img_alt",
+   "url": "/",
+   "passed": true,
+   "detail": "1 images",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "img_dimensions",
+   "url": "/",
+   "passed": true,
+   "detail": "0 of 1 images without width/height",
+   "category": "Performance",
+   "severity": "medium",
+   "title": "Images declare width and height"
+  },
+  {
+   "check": "html_weight",
+   "url": "/",
+   "passed": true,
+   "detail": "4.9 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "hero_cta",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "medium",
+   "title": "Clear call to action in the first screen"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "status_ok",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/about.html)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "About Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "21 chars: About Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "154 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "1 H1: About Kay Joy Flowers",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "word_count",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "632 words",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "breadcrumbs",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "",
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "not_orphan",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "linked from 5 page(s)",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page"
+  },
+  {
+   "check": "img_alt",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "1 images",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/about.html",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "img_dimensions",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "0 of 1 images without width/height",
+   "category": "Performance",
+   "severity": "medium",
+   "title": "Images declare width and height"
+  },
+  {
+   "check": "lcp_not_lazy",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Performance",
+   "severity": "high",
+   "title": "Hero image is not lazy-loaded"
+  },
+  {
+   "check": "html_weight",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "7.1 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "status_ok",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/fearlessly-unfuckwithable.html)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "Fearlessly Unfuckwithable",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "25 chars: Fearlessly Unfuckwithable",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "182 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "1 H1: Fearlessly Unfuckwithable",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "word_count",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "636 words",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "breadcrumbs",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "",
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "not_orphan",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "linked from 5 page(s)",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page"
+  },
+  {
+   "check": "img_alt",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "3 images",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "img_dimensions",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "2 of 3 images without width/height",
+   "category": "Performance",
+   "severity": "medium",
+   "title": "Images declare width and height"
+  },
+  {
+   "check": "lcp_not_lazy",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "hero image has loading=lazy",
+   "category": "Performance",
+   "severity": "high",
+   "title": "Hero image is not lazy-loaded"
+  },
+  {
+   "check": "html_weight",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "9.3 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "hero_cta",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "medium",
+   "title": "Clear call to action in the first screen"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": false,
+   "detail": "footer missing: genius-insight.html",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "checkout_links_ok",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": null,
+   "detail": "https://shop.beacons.ai/kayjoyflowers/43241ff0-d9d8-465f-9119-5a3c33e27111 \u2192 bot protection (HTTP 403); verify in a browser",
+   "category": "Conversion",
+   "severity": "critical",
+   "title": "Checkout links resolve"
+  },
+  {
+   "check": "checkout_links_ok",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": null,
+   "detail": "https://shop.beacons.ai/kayjoyflowers/eaf21d86-edda-4b07-9b43-69ce1de6476a \u2192 bot protection (HTTP 403); verify in a browser",
+   "category": "Conversion",
+   "severity": "critical",
+   "title": "Checkout links resolve"
+  },
+  {
+   "check": "status_ok",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/genius-insight.html)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "Remote Energetic Harmonizing with Kay Joy Flowers | Genius Insight Scan",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "71 chars: Remote Energetic Harmonizing with Kay Joy Flowers | Genius Insight Scan",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "203 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "1 H1: A personal energy scan, done for you by distance.",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "word_count",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "1429 words",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "breadcrumbs",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "",
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "not_orphan",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "linked from 5 page(s)",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page"
+  },
+  {
+   "check": "img_alt",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "0 images",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/genius-insight.html",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "html_weight",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "16.3 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "hero_cta",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "medium",
+   "title": "Clear call to action in the first screen"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "checkout_links_ok",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "4 unique checkout link(s) OK",
+   "category": "Conversion",
+   "severity": "critical",
+   "title": "Checkout links resolve"
+  },
+  {
+   "check": "status_ok",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/library.html)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "The Library | Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "29 chars: The Library | Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "133 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "1 H1: Every path back to yourself.",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "H1\u2192H3 ('Fearlessly Unfuckwithable')",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "word_count",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "123 words",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "At least 250 words of visible text"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "breadcrumbs",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "not_orphan",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "linked from 5 page(s)",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page"
+  },
+  {
+   "check": "img_alt",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "2 image(s) without alt text",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "img_dimensions",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "2 of 2 images without width/height",
+   "category": "Performance",
+   "severity": "medium",
+   "title": "Images declare width and height"
+  },
+  {
+   "check": "html_weight",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "3.7 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "hero_cta",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "medium",
+   "title": "Clear call to action in the first screen"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/library.html",
+   "passed": false,
+   "detail": "footer missing: genius-insight.html",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "status_ok",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "critical",
+   "title": "Page returns HTTP 200"
+  },
+  {
+   "check": "canonical_present",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical URL declared"
+  },
+  {
+   "check": "canonical_self",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "None (expected https://kayjoyflowers.online/privacy.html)",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Canonical points to this page's own URL"
+  },
+  {
+   "check": "viewport",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Mobile viewport declared"
+  },
+  {
+   "check": "lang",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "en",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "<html lang> set"
+  },
+  {
+   "check": "title_present",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "Privacy Policy \u00b7 Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "critical",
+   "title": "Page has a title"
+  },
+  {
+   "check": "title_length",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "32 chars: Privacy Policy \u00b7 Kay Joy Flowers",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Title is 15-65 characters"
+  },
+  {
+   "check": "desc_present",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Meta description present"
+  },
+  {
+   "check": "desc_length",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "105 chars",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Description is 70-160 characters"
+  },
+  {
+   "check": "og_complete",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "missing og:title, og:description, og:image, og:url, og:type",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Open Graph tags complete"
+  },
+  {
+   "check": "twitter_card",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "low",
+   "title": "Twitter/X card declared"
+  },
+  {
+   "check": "h1_single",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "1 H1: Privacy Policy",
+   "category": "AEO & Content",
+   "severity": "high",
+   "title": "Exactly one H1"
+  },
+  {
+   "check": "heading_order",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "low",
+   "title": "Headings don't skip levels"
+  },
+  {
+   "check": "jsonld_present",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "0 block(s)",
+   "category": "Structured Data",
+   "severity": "medium",
+   "title": "JSON-LD structured data present"
+  },
+  {
+   "check": "breadcrumbs",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "",
+   "category": "Structured Data",
+   "severity": "low",
+   "title": "BreadcrumbList on inner pages"
+  },
+  {
+   "check": "author_attribution",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "",
+   "category": "AEO & Content",
+   "severity": "medium",
+   "title": "Author is attributed"
+  },
+  {
+   "check": "internal_links_ok",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "high",
+   "title": "Internal links resolve"
+  },
+  {
+   "check": "anchors_ok",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Technical SEO",
+   "severity": "low",
+   "title": "In-page anchors exist"
+  },
+  {
+   "check": "not_orphan",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "linked from 5 page(s)",
+   "category": "Technical SEO",
+   "severity": "medium",
+   "title": "Page is linked from another public page"
+  },
+  {
+   "check": "img_alt",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "0 images",
+   "category": "Accessibility",
+   "severity": "high",
+   "title": "Images have descriptive alt text"
+  },
+  {
+   "check": "link_text",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "medium",
+   "title": "Links have discernible text"
+  },
+  {
+   "check": "skip_link",
+   "url": "/privacy.html",
+   "passed": false,
+   "detail": "",
+   "category": "Accessibility",
+   "severity": "low",
+   "title": "Skip-to-content link"
+  },
+  {
+   "check": "html_weight",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "9.6 KB",
+   "category": "Performance",
+   "severity": "low",
+   "title": "HTML under 100 KB"
+  },
+  {
+   "check": "nav_complete",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Conversion",
+   "severity": "low",
+   "title": "Footer links to every main section"
+  },
+  {
+   "check": "title_unique",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "title_unique",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "title_unique",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "title_unique",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "title_unique",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "title_unique",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "high",
+   "title": "Title is unique across the site"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/about.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/fearlessly-unfuckwithable.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/genius-insight.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/library.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "desc_unique",
+   "url": "/privacy.html",
+   "passed": true,
+   "detail": "",
+   "category": "Metadata & Social",
+   "severity": "medium",
+   "title": "Description is unique"
+  },
+  {
+   "check": "entity_home",
+   "url": "/",
+   "passed": false,
+   "detail": "no JSON-LD",
+   "category": "Structured Data",
+   "severity": "high",
+   "title": "Home page defines the WebSite and the author (Person)"
+  }
+ ],
+ "pages": {
+  "/": {
+   "status": 200,
+   "indexable": true,
+   "title": "Kay Joy Flowers",
+   "words": 284,
+   "bytes": 5010
+  },
+  "/about.html": {
+   "status": 200,
+   "indexable": true,
+   "title": "About Kay Joy Flowers",
+   "words": 632,
+   "bytes": 7300
+  },
+  "/companion-sovereign/": {
+   "status": 200,
+   "indexable": false,
+   "title": "The Unfuckwithable Companion has moved",
+   "words": 34,
+   "bytes": 753
+  },
+  "/companion/": {
+   "status": 200,
+   "indexable": false,
+   "title": "The Unfuckwithable Companion \u00b7 Sign in",
+   "words": 246,
+   "bytes": 13930
+  },
+  "/fearlessly-unfuckwithable.html": {
+   "status": 200,
+   "indexable": true,
+   "title": "Fearlessly Unfuckwithable",
+   "words": 636,
+   "bytes": 9494
+  },
+  "/genius-insight.html": {
+   "status": 200,
+   "indexable": true,
+   "title": "Remote Energetic Harmonizing with Kay Joy Flowers | Genius Insight Scan",
+   "words": 1429,
+   "bytes": 16677
+  },
+  "/index.html": {
+   "status": 200,
+   "indexable": false,
+   "title": "Kay Joy Flowers",
+   "words": 284,
+   "bytes": 5010
+  },
+  "/library.html": {
+   "status": 200,
+   "indexable": true,
+   "title": "The Library | Kay Joy Flowers",
+   "words": 123,
+   "bytes": 3795
+  },
+  "/privacy.html": {
+   "status": 200,
+   "indexable": true,
+   "title": "Privacy Policy \u00b7 Kay Joy Flowers",
+   "words": 1220,
+   "bytes": 9877
+  },
+  "/scan-intake.html": {
+   "status": 200,
+   "indexable": false,
+   "title": "Send your scan details \u00b7 Kay Joy Flowers",
+   "words": 336,
+   "bytes": 21324
+  }
+ },
+ "sitemap": []
+}

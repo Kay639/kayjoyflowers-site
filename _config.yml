@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) build settings.
+# The audit tooling, reports and documentation live in the repository but are
+# not published to kayjoyflowers.online. Pages themselves are plain HTML and are
+# copied unchanged.
+exclude:
+  - reports
+  - docs
+  - tools
+  - README.md

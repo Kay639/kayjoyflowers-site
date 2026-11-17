@@ -1,0 +1,76 @@
+{
+ "mobile /": {
+  "overflowX": 0,
+  "height": 4226,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "mobile /fearlessly-unfuckwithable.html": {
+  "overflowX": 0,
+  "height": 7896,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "mobile /genius-insight.html": {
+  "overflowX": 0,
+  "height": 11635,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "mobile /library.html": {
+  "overflowX": 0,
+  "height": 3395,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "mobile /about.html": {
+  "overflowX": 0,
+  "height": 6616,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "mobile /privacy.html": {
+  "overflowX": 0,
+  "height": 7659,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "desktop /": {
+  "overflowX": 0,
+  "height": 3068,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "desktop /fearlessly-unfuckwithable.html": {
+  "overflowX": 0,
+  "height": 5512,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "desktop /genius-insight.html": {
+  "overflowX": 0,
+  "height": 7600,
+  "smallTargets": [
+   "Manage my membership"
+  ],
+  "httpErrors": []
+ },
+ "desktop /library.html": {
+  "overflowX": 0,
+  "height": 1572,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "desktop /about.html": {
+  "overflowX": 0,
+  "height": 5312,
+  "smallTargets": [],
+  "httpErrors": []
+ },
+ "desktop /privacy.html": {
+  "overflowX": 0,
+  "height": 5052,
+  "smallTargets": [],
+  "httpErrors": []
+ }
+}
