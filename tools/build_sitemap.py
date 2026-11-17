@@ -25,7 +25,8 @@ def pages():
     for dirpath, dirs, files in os.walk(ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith((".", "_"))]
         for f in files:
-            if not f.endswith(".html") or f == "404.html":
+            # 404 page and search-engine verification files (e.g. google1234abcd.html) are never listed
+            if not f.endswith(".html") or f == "404.html" or re.fullmatch(r"google[0-9a-f]+\.html", f):
                 continue
             full = os.path.join(dirpath, f)
             html = open(full, encoding="utf-8").read()

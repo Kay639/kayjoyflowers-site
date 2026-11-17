@@ -94,6 +94,7 @@ Copy from [templates/structured-data.md](templates/structured-data.md). Rules:
 
 - After committing a new or changed public page, run `python3 tools/build_sitemap.py` and commit `sitemap.xml`. It lists every indexable page with its last-changed date from git. CI fails if the sitemap's list of URLs is out of date.
 - `robots.txt` doesn't need changes for new pages.
+- Search-engine verification files (such as `googlee5c623ca84b4b310.html` for Google Search Console) live at the site root, exactly as the search engine supplied them. Never edit, rename or delete them, and never add them to the sitemap (`tools/build_sitemap.py` skips them).
 - `llms.txt` is an optional plain-language map for AI tools, not a ranking factor. Add a line when you add a major page (product, service or cornerstone article), and update it when a price changes.
 
 ## 10. Articles and guides (when the blog starts)
