@@ -1,229 +1,225 @@
 {
- "base": "http://127.0.0.1:8765",
+ "base": "https://kayjoyflowers.online",
  "runs": 3,
- "date": "2026-11-17T22:03:50.964Z",
+ "date": "2026-11-17T22:22:55.806Z",
  "lighthouse": "12.8.2",
  "pages": {
   "/": {
-   "performance": 100,
+   "performance": 98,
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1460.53285,
-   "fcp": 1460.53285,
-   "cls": 0.0002895349776743708,
+   "lcp": 1834.7823999999998,
+   "fcp": 1834.7823999999998,
+   "cls": 0,
    "tbt": 0,
-   "bytes": 197151,
+   "bytes": 183660,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "image-delivery-insight",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
-     "performance": 100,
+     "performance": 97,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1460.53285,
-     "fcp": 1460.53285,
+     "lcp": 2033.2456000000002,
+     "fcp": 2033.2456000000002,
      "cls": 0,
      "tbt": 0,
-     "bytes": 197151
+     "bytes": 183660
     },
     {
-     "performance": 100,
+     "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1524.77415,
-     "fcp": 1524.77415,
-     "cls": 0.0002895349776743708,
+     "lcp": 1793.0852,
+     "fcp": 1793.0852,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 197149
+     "bytes": 183641
     },
     {
-     "performance": 100,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1448.3425750000001,
-     "fcp": 1448.3425750000001,
-     "cls": 0.005000700827122388,
+     "lcp": 1834.7823999999998,
+     "fcp": 1834.7823999999998,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 197156
+     "bytes": 183791
     }
    ]
   },
   "/fearlessly-unfuckwithable.html": {
-   "performance": 99,
+   "performance": 98,
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1651.5881,
-   "fcp": 1466.8859000000002,
+   "lcp": 1887.0104,
+   "fcp": 1887.0104,
    "cls": 0,
    "tbt": 0,
-   "bytes": 203007,
+   "bytes": 185452,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "image-delivery-insight",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1652.7730000000001,
-     "fcp": 1513.9442,
-     "cls": 0.01035558770775333,
+     "lcp": 1887.0104,
+     "fcp": 1887.0104,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 198858
+     "bytes": 185527
     },
     {
      "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1651.5881,
-     "fcp": 1466.8859000000002,
+     "lcp": 1749.7052000000003,
+     "fcp": 1749.7052,
      "cls": 0,
      "tbt": 0,
-     "bytes": 203007
+     "bytes": 185438
     },
     {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1650.66515,
-     "fcp": 1446.8658500000001,
+     "lcp": 1953.6326000000001,
+     "fcp": 1953.6326000000001,
      "cls": 0,
      "tbt": 0,
-     "bytes": 203007
+     "bytes": 185452
     }
    ]
   },
   "/genius-insight.html": {
-   "performance": 99,
+   "performance": 98,
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1595.3442,
-   "fcp": 1595.3442,
-   "cls": 0.015007171515951854,
+   "lcp": 1825.7758000000001,
+   "fcp": 1825.7758000000001,
+   "cls": 0,
    "tbt": 0,
-   "bytes": 141889,
+   "bytes": 117479,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1592.5090000000002,
-     "fcp": 1592.509,
-     "cls": 0.02002299344367891,
-     "tbt": 0,
-     "bytes": 141889
-    },
-    {
-     "performance": 99,
-     "accessibility": 100,
-     "bestPractices": 100,
-     "seo": 100,
-     "lcp": 1683.019,
-     "fcp": 1683.019,
+     "lcp": 1834.4409999999998,
+     "fcp": 1834.4409999999998,
      "cls": 0,
      "tbt": 0,
-     "bytes": 141889
+     "bytes": 117484
     },
     {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1595.3442,
-     "fcp": 1595.3442,
-     "cls": 0.015007171515951854,
+     "lcp": 1825.7758000000001,
+     "fcp": 1825.7758000000001,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 141889
+     "bytes": 117479
+    },
+    {
+     "performance": 98,
+     "accessibility": 100,
+     "bestPractices": 100,
+     "seo": 100,
+     "lcp": 1822.1704,
+     "fcp": 1822.1704,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 117459
     }
    ]
   },
   "/about.html": {
-   "performance": 100,
+   "performance": 98,
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1445.1069000000002,
-   "fcp": 1445.1069000000002,
-   "cls": 0.002711673029729124,
+   "lcp": 1811.7647,
+   "fcp": 1811.7647,
+   "cls": 0,
    "tbt": 0,
-   "bytes": 141007,
+   "bytes": 126138,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "image-delivery-insight",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
-     "performance": 100,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1443.9932,
-     "fcp": 1443.9932,
-     "cls": 0.002711673029729124,
+     "lcp": 1811.7647,
+     "fcp": 1811.7647,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 141012
+     "bytes": 126118
     },
     {
-     "performance": 100,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1445.1069000000002,
-     "fcp": 1445.1069000000002,
-     "cls": 0.002391709958621448,
+     "lcp": 1843.723,
+     "fcp": 1843.723,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 141005
+     "bytes": 126138
     },
     {
-     "performance": 100,
+     "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1470.40005,
-     "fcp": 1470.40005,
-     "cls": 0.002711673029729124,
+     "lcp": 1761.9476,
+     "fcp": 1761.9476,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 141007
+     "bytes": 126177
     }
    ]
   },
@@ -232,20 +228,19 @@
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1653.7481,
-   "fcp": 1512.0806000000002,
+   "lcp": 1759.8465999999999,
+   "fcp": 1759.8465999999999,
    "cls": 0,
    "tbt": 0,
-   "bytes": 251562,
+   "bytes": 239367,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "image-delivery-insight",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
@@ -253,88 +248,87 @@
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1651.4493,
-     "fcp": 1523.0529999999999,
+     "lcp": 1759.8465999999999,
+     "fcp": 1759.8465999999999,
      "cls": 0,
      "tbt": 0,
-     "bytes": 251567
+     "bytes": 239473
     },
     {
      "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1653.7481,
-     "fcp": 1512.0806000000002,
+     "lcp": 1757.9907999999996,
+     "fcp": 1757.9907999999996,
      "cls": 0,
      "tbt": 0,
-     "bytes": 251560
+     "bytes": 239367
     },
     {
-     "performance": 99,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1655.2071,
-     "fcp": 1445.841925,
-     "cls": 0.02042215197739803,
+     "lcp": 1951.5974,
+     "fcp": 1951.5974,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 251562
+     "bytes": 239367
     }
    ]
   },
   "/privacy.html": {
-   "performance": 100,
+   "performance": 99,
    "accessibility": 100,
    "bestPractices": 100,
    "seo": 100,
-   "lcp": 1452.5629,
-   "fcp": 1452.5629,
-   "cls": 0.015658688374282033,
+   "lcp": 1780.3186,
+   "fcp": 1780.3186,
+   "cls": 0,
    "tbt": 0,
-   "bytes": 99977,
+   "bytes": 84163,
    "failedAudits": [
     "cache-insight",
-    "document-latency-insight",
+    "first-contentful-paint",
     "network-dependency-tree-insight",
     "render-blocking-insight",
     "render-blocking-resources",
-    "uses-long-cache-ttl",
-    "uses-text-compression"
+    "uses-long-cache-ttl"
    ],
    "samples": [
     {
-     "performance": 100,
+     "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1452.5629,
-     "fcp": 1452.5629,
-     "cls": 0.02218001133399671,
+     "lcp": 1780.3186,
+     "fcp": 1780.3186,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 99981
+     "bytes": 84180
     },
     {
-     "performance": 100,
+     "performance": 99,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1468.6863,
-     "fcp": 1468.6863,
-     "cls": 0.01426965150821501,
+     "lcp": 1767.7558,
+     "fcp": 1767.7558,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 99973
+     "bytes": 84163
     },
     {
-     "performance": 100,
+     "performance": 98,
      "accessibility": 100,
      "bestPractices": 100,
      "seo": 100,
-     "lcp": 1440.235,
-     "fcp": 1440.235,
-     "cls": 0.015658688374282033,
+     "lcp": 1839.3808000000001,
+     "fcp": 1839.3808000000001,
+     "cls": 0,
      "tbt": 0,
-     "bytes": 99977
+     "bytes": 84163
     }
    ]
   }

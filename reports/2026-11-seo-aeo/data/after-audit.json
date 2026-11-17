@@ -1,5 +1,5 @@
 {
- "base": "http://127.0.0.1:8767",
+ "base": "https://kayjoyflowers.online",
  "offline": false,
  "overall": 99,
  "categories": {
@@ -325,8 +325,8 @@
    "category": "AEO & Content",
    "severity": "medium",
    "title": "AI search crawlers are not blocked",
-   "principle": "ChatGPT, Perplexity, Claude and Gemini can only cite pages their crawlers may read.",
-   "fix": "Do not disallow the AI search user-agents in robots.txt."
+   "principle": "ChatGPT Search, Perplexity and Claude can only cite pages their search crawlers may read. Blocking training crawlers does not affect this.",
+   "fix": "Keep OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot and Bingbot allowed in robots.txt."
   },
   "lang": {
    "category": "Accessibility",

@@ -284,8 +284,7 @@ def after(args):
     a0 = load(d, "baseline-audit.json")
     ap = load(d, "patch-verification-audit.json")
     a1 = load(d, "after-audit.json")
-    # compare like with like: both measured on the same local server when available
-    lh0 = load(d, "baseline-lighthouse-local.json") or load(d, "baseline-lighthouse.json")
+    lh0 = load(d, "baseline-lighthouse.json")   # live site before; after-lighthouse.json is the live site after
     lh1 = load(d, "after-lighthouse.json")
     manual = load(d, "manual-findings.json", [])
     st = load(d, "after-status.json", {})
@@ -298,15 +297,15 @@ def after(args):
     new = [g for k, g in f1.items() if k not in f0]
 
     body = ['<div class="wrap">',
-            '<p class="eyebrow">Phases 4 & 6 · Independent re-audit and before/after · ' + E(st.get("date", "")) + '</p>',
+            '<p class="eyebrow">Phases 4–6 · Re-audit, deployment and before/after · ' + E(st.get("date", "")) + '</p>',
             '<h1>kayjoyflowers.online, after the SEO and AEO work</h1>',
-            '<p class="lede">Same audit, same rules, run again on the finished branch. This page covers what improved, what is still open, and what can\'t be measured yet.</p>',
+            '<p class="lede">Same audit, same rules, run again on the deployed site. This page covers what improved, what is still open, and what can\'t be measured yet.</p>',
             f'<div class="meta"><span><b>Branch:</b> <code>{E(st.get("branch", ""))}</code></span><span><b>Commit:</b> <code>{E(st.get("commit", "see git log"))}</code></span>'
             f'<span><b>Deployment:</b> {E(st.get("deployment", ""))}</span></div>',
             '<div class="panel overall"><div><div class="big">' + str(a1["overall"]) + '<small>/100</small></div>'
             f'<div class="muted small">was {a0["overall"]} <span class="gradechip">{grade(a0["overall"])} → {grade(a1["overall"])}</span></div></div>'
             + score_bars(a1["categories"], a0["categories"]) + '</div>',
-            '<h2>Scores at each stage</h2><div class="tablewrap"><table><tr><th>Category</th><th>Live site (baseline)</th><th>After supplied patch</th><th>Finished branch</th></tr>']
+            '<h2>Scores at each stage</h2><div class="tablewrap"><table><tr><th>Category</th><th>Live site before</th><th>After supplied patch</th><th>Live site after</th></tr>']
     for c in CATEGORIES:
         s0, sp, s1 = (x["categories"][c]["score"] for x in (a0, ap, a1))
         body.append(f"<tr><td>{E(c)}</td><td class='n'>{s0} {grade(s0)}</td><td class='n'>{sp} {grade(sp)}</td><td class='n'><b>{s1} {grade(s1)}</b></td></tr>")
