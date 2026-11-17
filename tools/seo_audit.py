@@ -647,8 +647,11 @@ def audit(base, offline=False):
         rec("og_complete", p, not missing, "missing og:" + ", og:".join(missing) if missing else "")
         if og["url"]:
             rec("og_url_canonical", p, og["url"] == can, og["url"])
-        if og["image"] and not offline:
-            st, *_ = f.get(og["image"], "HEAD")
+        img_url = og["image"] or ""
+        if img_url.startswith(SITE + "/") and base != SITE:
+            img_url = base + img_url[len(SITE):]   # local run: check the local copy
+        if img_url and (not offline or img_url.startswith(base)):
+            st, *_ = f.get(img_url, "HEAD")
             rec("og_image_ok", p, st == 200, f"HTTP {st}")
         rec("twitter_card", p, bool(pr.meta("twitter:card")))
         # headings / content
