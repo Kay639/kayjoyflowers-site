@@ -1,0 +1,56 @@
+# SEO/AEO checks for kayjoyflowers.online. See docs/seo-aeo/README.md.
+# This workflow only checks; it never deploys. GitHub Pages keeps deploying from main as before.
+name: SEO and AEO checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 19 * * 0"   # weekly live-site audit, Monday ~08:17 New Zealand time
+
+permissions:
+  contents: read
+
+jobs:
+  repository:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: SEO/AEO audit (fails on critical or high)
+        run: python3 tools/seo_audit.py --root . --offline --fail-on high --json audit.json
+      - name: Sitemap lists every indexable page
+        run: python3 tools/build_sitemap.py --check
+      - name: JSON-LD matches schema.org
+        working-directory: tools/jsonld-check
+        run: npm ci --no-audit --no-fund && node check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seo-audit
+          path: audit.json
+
+  live-site:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit the live site (fails on critical)
+        run: python3 tools/seo_audit.py --base https://kayjoyflowers.online --fail-on critical --json live-audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-seo-audit
+          path: live-audit.json
