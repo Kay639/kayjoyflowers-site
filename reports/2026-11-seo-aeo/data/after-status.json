@@ -94,8 +94,8 @@
    "Click through the book and bundle buttons once after deploy (checklist below)."
   ],
   "M15": [
-   "needs-kay",
-   "Decide whether to keep allowing AI training crawlers. Search crawlers stay allowed either way."
+   "resolved",
+   "Kay's decision: GPTBot, ClaudeBot and Google-Extended (training) are now blocked. Googlebot, Bingbot, OAI-SearchBot, ChatGPT-User, PerplexityBot and Claude-SearchBot stay allowed (checked with Python's robots.txt parser)."
   ]
  },
  "open_checks": {
@@ -122,7 +122,8 @@
    "Favicon set: <code>favicon.ico</code>, 32/48/192 px PNGs, <code>apple-touch-icon.png</code>",
    "Branded <code>404.html</code> (noindex, root-relative links)",
    "<code>_config.yml</code> keeps reports, docs and tools off the public site (Jekyll build verified byte-identical)",
-   "Sitemap rebuilt with real last-changed dates from git"
+   "Sitemap rebuilt with real last-changed dates from git",
+   "robots.txt: AI training crawlers (GPTBot, ClaudeBot, Google-Extended) blocked at Kay's request; search and AI search crawlers allowed"
   ],
   "Structured data and AEO": [
    "Sovereignty Bundle modelled as its own Product, so the Book's offer is the US$33 book alone",
@@ -203,8 +204,8 @@
   "<b>Approve and deploy</b> (Phase 5): merge <code>seo-aeo-fixes</code> into <code>main</code>. GitHub Pages then rebuilds automatically.",
   "<b>Check the Beacons buttons after deploy</b>: on the Fearlessly Unfuckwithable page, 'Get the Bundle — US$77' should open the bundle at US$77 and 'Buy the book — US$33' the book at US$33. Check the same on book.html.",
   "<b>Google Search Console</b> (free): verify kayjoyflowers.online and submit https://kayjoyflowers.online/sitemap.xml. This is the only way to measure real search impressions and clicks. Bing Webmaster Tools can import from Search Console.",
+  "<b>Decisions for Kay</b>: the Fearlessly Unfuckwithable FAQ draft and Library collection descriptions. (AI training crawlers: decided and now blocked.)",
   "<b>GitHub → Settings → Pages</b>: confirm 'Enforce HTTPS' is ticked.",
-  "<b>Decisions for Kay</b>: the Fearlessly Unfuckwithable FAQ draft; Library collection descriptions; whether to keep allowing AI training crawlers (GPTBot, Google-Extended, ClaudeBot).",
   "<b>Optional</b>: any other public profiles (podcast, YouTube, bookshop author page) to add to the Person sameAs list.",
   "The audit environment couldn't read the Stripe account that holds the scan payment links. Prices on the page were kept exactly as they were."
  ],
