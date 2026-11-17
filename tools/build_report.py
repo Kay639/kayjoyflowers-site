@@ -284,7 +284,8 @@ def after(args):
     a0 = load(d, "baseline-audit.json")
     ap = load(d, "patch-verification-audit.json")
     a1 = load(d, "after-audit.json")
-    lh0 = load(d, "baseline-lighthouse.json")
+    # compare like with like: both measured on the same local server when available
+    lh0 = load(d, "baseline-lighthouse-local.json") or load(d, "baseline-lighthouse.json")
     lh1 = load(d, "after-lighthouse.json")
     manual = load(d, "manual-findings.json", [])
     st = load(d, "after-status.json", {})

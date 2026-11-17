@@ -1,0 +1,360 @@
+{
+ "base": "http://127.0.0.1:8766",
+ "runs": 3,
+ "date": "2026-11-17T21:57:50.793Z",
+ "lighthouse": "12.8.2",
+ "pages": {
+  "/": {
+   "performance": 100,
+   "accessibility": 94,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 1473.7087999999999,
+   "fcp": 1473.7087999999999,
+   "cls": 0.0002895349776743708,
+   "tbt": 0,
+   "bytes": 230717,
+   "failedAudits": [
+    "cache-insight",
+    "color-contrast",
+    "document-latency-insight",
+    "errors-in-console",
+    "image-delivery-insight",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 100,
+     "accessibility": 94,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1510.1136000000001,
+     "fcp": 1510.1136000000001,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 230717
+    },
+    {
+     "performance": 100,
+     "accessibility": 94,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1473.7087999999999,
+     "fcp": 1473.7087999999999,
+     "cls": 0.0002895349776743708,
+     "tbt": 0,
+     "bytes": 230717
+    },
+    {
+     "performance": 100,
+     "accessibility": 94,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1442.9979999999998,
+     "fcp": 1442.9979999999998,
+     "cls": 0.0037508555790393525,
+     "tbt": 0,
+     "bytes": 230723
+    }
+   ]
+  },
+  "/fearlessly-unfuckwithable.html": {
+   "performance": 100,
+   "accessibility": 95,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 1447.9104,
+   "fcp": 1447.9104,
+   "cls": 0.012846324917719712,
+   "tbt": 0,
+   "bytes": 235196,
+   "failedAudits": [
+    "cache-insight",
+    "color-contrast",
+    "document-latency-insight",
+    "errors-in-console",
+    "image-delivery-insight",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 100,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1441.2927000000004,
+     "fcp": 1441.2927000000004,
+     "cls": 0.012846324917719712,
+     "tbt": 0,
+     "bytes": 235196
+    },
+    {
+     "performance": 100,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1450.01395,
+     "fcp": 1450.01395,
+     "cls": 0.012359762099951514,
+     "tbt": 0,
+     "bytes": 235199
+    },
+    {
+     "performance": 99,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1447.9104,
+     "fcp": 1447.9104,
+     "cls": 0.04486049974269292,
+     "tbt": 0,
+     "bytes": 235196
+    }
+   ]
+  },
+  "/genius-insight.html": {
+   "performance": 99,
+   "accessibility": 95,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 1650.6166000000003,
+   "fcp": 1650.6166000000003,
+   "cls": 0,
+   "tbt": 0,
+   "bytes": 132666,
+   "failedAudits": [
+    "cache-insight",
+    "color-contrast",
+    "document-latency-insight",
+    "errors-in-console",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 99,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1664.4258,
+     "fcp": 1664.4258,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 132666
+    },
+    {
+     "performance": 99,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1606.8071,
+     "fcp": 1606.8071,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 132663
+    },
+    {
+     "performance": 99,
+     "accessibility": 95,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1650.6166000000003,
+     "fcp": 1650.6166000000003,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 132671
+    }
+   ]
+  },
+  "/about.html": {
+   "performance": 100,
+   "accessibility": 100,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 1452.2292499999999,
+   "fcp": 1452.2292499999999,
+   "cls": 0.0027378656920206863,
+   "tbt": 0,
+   "bytes": 560491,
+   "failedAudits": [
+    "cache-insight",
+    "document-latency-insight",
+    "errors-in-console",
+    "image-delivery-insight",
+    "interactive",
+    "largest-contentful-paint",
+    "largest-contentful-paint-element",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-responsive-images",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 88,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 3839.28225,
+     "fcp": 1547.309,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 560503
+    },
+    {
+     "performance": 100,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1452.2292499999999,
+     "fcp": 1452.2292499999999,
+     "cls": 0.0027378656920206863,
+     "tbt": 0,
+     "bytes": 560491
+    },
+    {
+     "performance": 100,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1434.56745,
+     "fcp": 1434.56745,
+     "cls": 0.0027378656920206863,
+     "tbt": 0,
+     "bytes": 560474
+    }
+   ]
+  },
+  "/library.html": {
+   "performance": 93,
+   "accessibility": 98,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 3127.3972000000003,
+   "fcp": 1444.6179000000002,
+   "cls": 0.016376827213953633,
+   "tbt": 0,
+   "bytes": 285343,
+   "failedAudits": [
+    "cache-insight",
+    "document-latency-insight",
+    "errors-in-console",
+    "heading-order",
+    "image-delivery-insight",
+    "largest-contentful-paint",
+    "largest-contentful-paint-element",
+    "lcp-discovery-insight",
+    "lcp-lazy-loaded",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 92,
+     "accessibility": 98,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 3252.6701999999996,
+     "fcp": 1444.6179000000002,
+     "cls": 0.01734821688487792,
+     "tbt": 0,
+     "bytes": 285345
+    },
+    {
+     "performance": 93,
+     "accessibility": 98,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 3127.3972000000003,
+     "fcp": 1501.8229000000001,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 285343
+    },
+    {
+     "performance": 94,
+     "accessibility": 98,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 3081.22985,
+     "fcp": 1443.8643500000003,
+     "cls": 0.016376827213953633,
+     "tbt": 0,
+     "bytes": 281163
+    }
+   ]
+  },
+  "/privacy.html": {
+   "performance": 100,
+   "accessibility": 100,
+   "bestPractices": 96,
+   "seo": 100,
+   "lcp": 1501.18305,
+   "fcp": 1501.18305,
+   "cls": 0.015658688374282033,
+   "tbt": 0,
+   "bytes": 94805,
+   "failedAudits": [
+    "cache-insight",
+    "document-latency-insight",
+    "errors-in-console",
+    "network-dependency-tree-insight",
+    "render-blocking-insight",
+    "render-blocking-resources",
+    "uses-long-cache-ttl",
+    "uses-text-compression"
+   ],
+   "samples": [
+    {
+     "performance": 100,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1501.18305,
+     "fcp": 1501.18305,
+     "cls": 0.015658688374282033,
+     "tbt": 0,
+     "bytes": 94805
+    },
+    {
+     "performance": 100,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1512.9466000000002,
+     "fcp": 1512.9466000000002,
+     "cls": 0,
+     "tbt": 0,
+     "bytes": 94805
+    },
+    {
+     "performance": 100,
+     "accessibility": 100,
+     "bestPractices": 96,
+     "seo": 100,
+     "lcp": 1438.1131999999998,
+     "fcp": 1438.1131999999998,
+     "cls": 0.015658688374282033,
+     "tbt": 0,
+     "bytes": 94805
+    }
+   ]
+  }
+ }
+}
