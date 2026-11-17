@@ -14,7 +14,7 @@ const out = path.join(here, 'generated');
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out);
 
-const skip = new Set(['reports', 'docs', 'tools', 'node_modules']);
+const skip = new Set(['reports', 'docs', 'tools', 'content', 'node_modules']);
 function* htmlFiles(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     if (e.name.startsWith('.') || e.name.startsWith('_') || skip.has(e.name)) continue;

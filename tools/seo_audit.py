@@ -211,7 +211,7 @@ CHECKS = {
 }
 
 FOOTER_REQUIRED = ["fearlessly-unfuckwithable.html", "genius-insight.html",
-                   "library.html", "about.html", "privacy.html"]
+                   "library.html", "blog/", "about.html", "privacy.html"]
 
 
 # --------------------------------------------------------------------------- parsing
@@ -750,9 +750,10 @@ def audit(base, offline=False):
         rec("html_weight", p, len(pg["html"]) < 100_000, f"{len(pg['html'])/1024:.1f} KB")
         # conversion
         hero_cta = any(first and "btn" in a.get("class", "") for a, txt, foot, first, nav in pr.anchors)
-        if canonical_path(p) not in ("/privacy.html", "/about.html"):
+        # product and landing pages only: Journal articles end with their one call to action (publishing standard §10)
+        if canonical_path(p) not in ("/privacy.html", "/about.html") and not p.startswith("/blog/"):
             rec("hero_cta", p, hero_cta)
-        foot = {urllib.parse.urlsplit(a.get("href", "")).path for a, txt, infoot, *_ in pr.anchors if infoot}
+        foot = {urllib.parse.urlsplit(a.get("href", "")).path.lstrip("/") for a, txt, infoot, *_ in pr.anchors if infoot}
         own = p.lstrip("/")
         missing_f = [r for r in FOOTER_REQUIRED if r not in foot and r != own]
         rec("nav_complete", p, not missing_f, "footer missing: " + ", ".join(missing_f) if missing_f else "")

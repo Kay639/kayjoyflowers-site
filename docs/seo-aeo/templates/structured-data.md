@@ -9,6 +9,8 @@ Put one block per page in the `<head>`, inside a `@graph`. Replace CAPITALS. The
 | `fearlessly-unfuckwithable.html` | Book (+ Offer), Product (bundle + Offer), BreadcrumbList |
 | `genius-insight.html` | Service (+ Offers), FAQPage, BreadcrumbList |
 | `library.html`, `privacy.html` | BreadcrumbList |
+| `blog/index.html` | Blog, BreadcrumbList |
+| `blog/<slug>/index.html` | BlogPosting (author = Kay), BreadcrumbList |
 
 After editing, run `cd tools/jsonld-check && npm ci && node check.mjs` (schema.org type check) and `python3 tools/seo_audit.py --root .` (required properties, prices match the page, FAQ matches the page).
 
@@ -100,16 +102,18 @@ Add one Offer per price option the page shows (other currencies included).
 ```json
 {
  "@type": "BlogPosting",
- "@id": "https://kayjoyflowers.online/articles/SLUG.html#article",
+ "@id": "https://kayjoyflowers.online/blog/SLUG/#article",
  "headline": "THE H1",
  "description": "THE META DESCRIPTION",
- "author": {"@id": "https://kayjoyflowers.online/#kay"},
+ "author": {"@type": "Person", "@id": "https://kayjoyflowers.online/#kay", "name": "Kay Joy Flowers", "url": "https://kayjoyflowers.online/about.html"},
  "publisher": {"@id": "https://kayjoyflowers.online/#kay"},
  "datePublished": "2026-01-31",
  "dateModified": "2026-01-31",
- "image": "https://kayjoyflowers.online/images/og/SLUG.jpg",
- "mainEntityOfPage": "https://kayjoyflowers.online/articles/SLUG.html",
- "inLanguage": "en"
+ "image": "https://kayjoyflowers.online/images/og/blog-SLUG.jpg",
+ "url": "https://kayjoyflowers.online/blog/SLUG/",
+ "mainEntityOfPage": "https://kayjoyflowers.online/blog/SLUG/",
+ "isPartOf": {"@id": "https://kayjoyflowers.online/blog/#journal"},
+ "inLanguage": "en-NZ"
 }
 ```
-For a full article page, also add the BreadcrumbList (Home → Articles → title) and the reference to Kay.
+`tools/build_blog.py` generates this for every article, plus a BreadcrumbList (Home → Journal → title). The Journal index carries a `Blog` node (`#journal`) that lists every post.

@@ -1,0 +1,110 @@
+{
+  "title": "Why Does Your Body Still Brace When Life Is Getting Better?",
+  "seo_title": "Why Your Body Still Braces When Life Gets Better",
+  "description": "Life is improving, but your body still feels tense? Explore bracing, self-trust and small ways to meet the present without forcing yourself to relax.",
+  "slug": "why-body-still-braces",
+  "proposed_url": "https://kayjoyflowers.online/blog/why-body-still-braces/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "why do I feel anxious when things are going well",
+  "secondary_search_terms": [
+    "body still bracing",
+    "cannot relax when life is good",
+    "feeling tense after stress"
+  ],
+  "primary_cta_text": "Explore Fearlessly Unfuckwithable",
+  "primary_cta_url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+  "schema_type": "BlogPosting",
+  "subject": "Survival and the body",
+  "search_intent": "Understand persistent tension despite positive change; find a manageable first response.",
+  "related_product": "Fearlessly Unfuckwithable",
+  "distinctive_angle": "Separate present demands from anticipated danger; recognise rather than shame the response.",
+  "body_word_count_including_byline_and_links": 1085,
+  "answer_opportunities": [
+    "Why do I feel anxious when things are going well?",
+    "Does feeling tense mean I have trauma?",
+    "Do I have to feel safe before making any changes?"
+  ],
+  "heading_hierarchy": [
+    "# Why Does Your Body Still Brace When Life Is Getting Better?",
+    "## What does “bracing” actually mean?",
+    "## Why can improvement feel unfamiliar?",
+    "## First, distinguish an old expectation from a present demand",
+    "## Try a smaller experiment than “just relax”",
+    "### Notice one point of support",
+    "### Name what is happening without a character judgement",
+    "### Choose one response that includes you",
+    "## Let ease be ordinary",
+    "## Questions you may be asking",
+    "### Why do I feel anxious when things are going well?",
+    "### Does feeling tense mean I have trauma?",
+    "### Do I have to feel safe before making any changes?",
+    "## Continue with the book"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "Pause Library practices for overwhelm",
+      "url": "https://kayjoyflowers.online/blog/overwhelmed-cant-think-clearly/",
+      "status": "proposed sibling article; publish together or omit link until live"
+    },
+    {
+      "anchor": "Explore Fearlessly Unfuckwithable",
+      "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore Fearlessly Unfuckwithable",
+    "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K01",
+    "K04",
+    "W01"
+  ],
+  "seo_title_characters": 48,
+  "meta_description_characters": 149,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Why Does Your Body Still Brace When Life Is Getting Better?",
+      "description": "Life is improving, but your body still feels tense? Explore bracing, self-trust and small ways to meet the present without forcing yourself to relax.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Survival and the body",
+      "keywords": [
+        "why do I feel anxious when things are going well",
+        "body still bracing",
+        "cannot relax when life is good",
+        "feeling tense after stress"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

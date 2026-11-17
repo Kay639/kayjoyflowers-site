@@ -1,0 +1,117 @@
+{
+  "title": "What Does Frequency Have to Do With Healing?",
+  "seo_title": "Frequency and Healing: Science, Sound and Meaning",
+  "description": "What does frequency mean in healing? Explore medical uses, music research, 432 and 528 Hz, spiritual practice and Kay Joy Flowers' perspective.",
+  "slug": "frequency-and-healing",
+  "proposed_url": "https://kayjoyflowers.online/blog/frequency-and-healing/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "frequency healing evidence",
+  "secondary_search_terms": [
+    "what is frequency healing",
+    "528 Hz DNA repair evidence",
+    "432 Hz healing music",
+    "sound and wellbeing"
+  ],
+  "primary_cta_text": "Explore the books and collections",
+  "primary_cta_url": "https://kayjoyflowers.online/library.html",
+  "schema_type": "BlogPosting",
+  "subject": "Frequency and healing",
+  "search_intent": "Understand terminology and distinguish evidence, preliminary findings and personal meaning.",
+  "related_product": "Frequency — The Future of Medicine; wider book collection",
+  "distinctive_angle": "Explain what the number measures before evaluating a claim; include commercial-interest disclosure and precise study limits.",
+  "body_word_count_including_byline_and_links": 1399,
+  "answer_opportunities": [
+    "Is there one best healing frequency?",
+    "Does 528 Hz music repair DNA?",
+    "Can a spiritual experience still matter without a medical claim?"
+  ],
+  "heading_hierarchy": [
+    "# What Does Frequency Have to Do With Healing?",
+    "## What is frequency?",
+    "## Where frequency has an established role in medicine",
+    "## What does research say about music and wellbeing?",
+    "## What about 432 Hz and 528 Hz?",
+    "### 432 Hz: usually a tuning reference",
+    "### 528 Hz: what a small study measured",
+    "## What is still being investigated?",
+    "## Where do traditional and spiritual practices belong?",
+    "## My perspective: attention remains yours",
+    "## How to explore sound in an ordinary way",
+    "## Questions about frequency and healing",
+    "### Is there one best healing frequency?",
+    "### Does 528 Hz music repair DNA?",
+    "### Can a spiritual experience still matter without a medical claim?",
+    "## Continue the exploration"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "Genius Insight energetic scans",
+      "url": "https://kayjoyflowers.online/genius-insight.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "Explore the books and collections",
+      "url": "https://kayjoyflowers.online/library.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore the books and collections",
+    "url": "https://kayjoyflowers.online/library.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K07",
+    "K04",
+    "W05",
+    "W06",
+    "W07",
+    "W08"
+  ],
+  "seo_title_characters": 49,
+  "meta_description_characters": 143,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "What Does Frequency Have to Do With Healing?",
+      "description": "What does frequency mean in healing? Explore medical uses, music research, 432 and 528 Hz, spiritual practice and Kay Joy Flowers' perspective.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Frequency and healing",
+      "keywords": [
+        "frequency healing evidence",
+        "what is frequency healing",
+        "528 Hz DNA repair evidence",
+        "432 Hz healing music",
+        "sound and wellbeing"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

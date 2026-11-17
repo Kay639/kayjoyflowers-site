@@ -4,6 +4,7 @@
 # copied unchanged.
 exclude:
   - reports
+  - content
   - docs
   - tools
   - README.md

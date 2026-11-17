@@ -20,6 +20,9 @@ There are 49 checks, defined in the `CHECKS` table at the top of the script. Eac
 
 Categories: Technical SEO, Metadata & Social, Structured Data, AEO & Content, Accessibility, Performance, Conversion.
 
+## Scope notes
+- "Clear call to action in the first screen" applies to product, service and landing pages. Privacy, About and Journal pages (`/blog/`) are excluded: articles carry one call to action at the end, by design.
+
 ## Scoring
 - A check runs once per page it applies to (site-wide checks run once).
 - **Category score** = weight of passed runs ÷ weight of all runs × 100, rounded.

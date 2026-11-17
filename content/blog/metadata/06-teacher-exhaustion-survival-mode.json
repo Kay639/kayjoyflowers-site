@@ -1,0 +1,123 @@
+{
+  "title": "Why Teachers Are Exhausted Beyond Burnout",
+  "seo_title": "Why Teachers Are Exhausted: Burnout and Survival Mode",
+  "description": "Why are teachers so exhausted? Kay Joy Flowers draws on 35+ years in education to explore NZ workload research, boundaries and sovereignty.",
+  "slug": "teacher-exhaustion-survival-mode",
+  "proposed_url": "https://kayjoyflowers.online/blog/teacher-exhaustion-survival-mode/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "why are teachers so exhausted",
+  "secondary_search_terms": [
+    "teacher burnout New Zealand",
+    "teacher workload stress",
+    "teacher survival mode",
+    "teacher wellbeing boundaries"
+  ],
+  "primary_cta_text": "Explore Fearlessly Unfuckwithable",
+  "primary_cta_url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+  "schema_type": "BlogPosting",
+  "subject": "Educator burnout",
+  "search_intent": "Recognition of teacher exhaustion, explanation of workload context, and usable next steps.",
+  "related_product": "Fearlessly Unfuckwithable; sovereignty work",
+  "distinctive_angle": "35+ years in education, local research with denominators and worksite survey context, and structural as well as personal responses.",
+  "body_word_count_including_byline_and_links": 1252,
+  "answer_opportunities": [
+    "Can I be burned out if I still love teaching?",
+    "Will breathing exercises fix teacher burnout?",
+    "What if rest is not helping?"
+  ],
+  "heading_hierarchy": [
+    "# Why Teachers Are Exhausted Beyond Burnout",
+    "## Burnout describes more than being tired",
+    "## What New Zealand research tells us about the load",
+    "## Why “be more resilient” can miss the point",
+    "## Look at the demand before judging your response",
+    "## What can help during the day?",
+    "### Make one transition less crowded",
+    "### Ask for prioritisation in concrete terms",
+    "### Put recurring pressure somewhere it can be addressed",
+    "## Your identity deserves room beyond teaching",
+    "## Questions about teacher exhaustion",
+    "### Can I be burned out if I still love teaching?",
+    "### Will breathing exercises fix teacher burnout?",
+    "### What if rest is not helping?",
+    "## Explore sovereignty without another performance target"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "the practical guide to overwhelm",
+      "url": "https://kayjoyflowers.online/blog/overwhelmed-cant-think-clearly/",
+      "status": "proposed sibling article; publish together or omit link until live"
+    },
+    {
+      "anchor": "“Who are you beneath your roles?”",
+      "url": "https://kayjoyflowers.online/blog/who-are-you-beyond-your-roles/",
+      "status": "proposed sibling article; publish together or omit link until live"
+    },
+    {
+      "anchor": "Explore Fearlessly Unfuckwithable",
+      "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore Fearlessly Unfuckwithable",
+    "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K01",
+    "K04",
+    "K05",
+    "K08",
+    "W09",
+    "W10",
+    "W11",
+    "W12"
+  ],
+  "seo_title_characters": 53,
+  "meta_description_characters": 139,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Why Teachers Are Exhausted Beyond Burnout",
+      "description": "Why are teachers so exhausted? Kay Joy Flowers draws on 35+ years in education to explore NZ workload research, boundaries and sovereignty.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Educator burnout",
+      "keywords": [
+        "why are teachers so exhausted",
+        "teacher burnout New Zealand",
+        "teacher workload stress",
+        "teacher survival mode",
+        "teacher wellbeing boundaries"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

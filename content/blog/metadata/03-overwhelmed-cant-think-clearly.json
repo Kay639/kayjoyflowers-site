@@ -1,0 +1,115 @@
+{
+  "title": "What to Do When You're Overwhelmed and Can't Think Clearly",
+  "seo_title": "Overwhelmed and Can't Think Clearly? Start Here",
+  "description": "Try three grounded Pause Library practices for overwhelm: Feet on the Floor, The Long Exhale and One Next Thing. Choose the pause that fits your moment.",
+  "slug": "overwhelmed-cant-think-clearly",
+  "proposed_url": "https://kayjoyflowers.online/blog/overwhelmed-cant-think-clearly/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "overwhelmed can't think clearly",
+  "secondary_search_terms": [
+    "what to do when overwhelmed",
+    "grounding exercise for overwhelm",
+    "how to choose one next step"
+  ],
+  "primary_cta_text": "Explore the book and embodied practices",
+  "primary_cta_url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+  "schema_type": "BlogPosting",
+  "subject": "Overwhelm and regulation",
+  "search_intent": "Immediate, low-effort practical help with overload and deciding where to start.",
+  "related_product": "Pause Library editorial connection; FU book/bundle as available next step",
+  "distinctive_angle": "Three attributed adaptations from approved scripts, with choice and an accessible non-breath option.",
+  "body_word_count_including_byline_and_links": 1212,
+  "answer_opportunities": [
+    "What if I still cannot think clearly after a pause?",
+    "Do I have to do all three practices?",
+    "Is sudden confusion the same as overwhelm?"
+  ],
+  "heading_hierarchy": [
+    "# What to Do When You're Overwhelmed and Can't Think Clearly",
+    "## Why does everything feel urgent?",
+    "## 1. Feet on the Floor: when you need somewhere to begin",
+    "## 2. The Long Exhale: when a gentle rhythm would help",
+    "## 3. One Next Thing: when the whole day is in your head",
+    "### Put the circling thoughts on the page",
+    "### Identify what actually belongs to today",
+    "### Choose the first physical action",
+    "### Check whose task it is",
+    "### Make the step easier",
+    "## Choose the practice that fits",
+    "## A pause can reveal what needs to change",
+    "## Questions about overwhelm",
+    "### What if I still cannot think clearly after a pause?",
+    "### Do I have to do all three practices?",
+    "### Is sudden confusion the same as overwhelm?",
+    "## Continue with embodied practice"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "the article on teacher exhaustion",
+      "url": "https://kayjoyflowers.online/blog/teacher-exhaustion-survival-mode/",
+      "status": "proposed sibling article; publish together or omit link until live"
+    },
+    {
+      "anchor": "Explore the book and embodied practices",
+      "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore the book and embodied practices",
+    "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K05",
+    "K06",
+    "K04",
+    "W03",
+    "W04"
+  ],
+  "seo_title_characters": 47,
+  "meta_description_characters": 152,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "What to Do When You're Overwhelmed and Can't Think Clearly",
+      "description": "Try three grounded Pause Library practices for overwhelm: Feet on the Floor, The Long Exhale and One Next Thing. Choose the pause that fits your moment.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Overwhelm and regulation",
+      "keywords": [
+        "overwhelmed can't think clearly",
+        "what to do when overwhelmed",
+        "grounding exercise for overwhelm",
+        "how to choose one next step"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

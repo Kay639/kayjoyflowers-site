@@ -1,20 +1,101 @@
 {
  "_note": "Share images (1200x630) for tools/make_images.mjs. Use only words that already appear on the page. 'image' is a URL or a repo path; 'shape' is cover or circle.",
  "images": [
-  {"out": "images/og/home.jpg", "eyebrow": "A Living Cosmology of Remembrance",
-   "headline": "For the woman who knows there's more to her.", "sub": "Books and embodied practices by Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/generated-images__store__product-image__43241ff0-d9d8-465f-9119-5a3c33e27111__bc9871c5-6d18-470c-a0ad-5971f0a239cc.webp", "shape": "cover"},
-  {"out": "images/og/fearlessly-unfuckwithable.jpg", "eyebrow": "From survival to sovereignty",
-   "headline": "Fearlessly Unfuckwithable", "sub": "The book and the Sovereignty Bundle by Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/generated-images__store__product-image__43241ff0-d9d8-465f-9119-5a3c33e27111__bc9871c5-6d18-470c-a0ad-5971f0a239cc.webp", "shape": "cover"},
-  {"out": "images/og/genius-insight.jpg", "eyebrow": "Remote Energetic Harmonizing · worldwide, by distance",
-   "headline": "A personal energy scan, done for you by distance.", "sub": "Genius Insight scans with Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png", "shape": "circle"},
-  {"out": "images/og/library.jpg", "eyebrow": "The Library",
-   "headline": "Every path back to yourself.", "sub": "Books, courses and companions by Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/ba9d38bb-05dc-429c-9a80-1ce34a4303ec__store__product-image__3ed878dc-d248-48cd-9779-30ac516ec888__05de5a51-4f37-4881-a244-17fea4de6b18.webp", "shape": "cover"},
-  {"out": "images/og/about.jpg", "eyebrow": "About",
-   "headline": "Kay Joy Flowers", "sub": "Author. Creator. Educator. Architect of Possibility.",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png", "shape": "circle"}
+  {
+   "out": "images/og/home.jpg",
+   "eyebrow": "A Living Cosmology of Remembrance",
+   "headline": "For the woman who knows there's more to her.",
+   "sub": "Books and embodied practices by Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/generated-images__store__product-image__43241ff0-d9d8-465f-9119-5a3c33e27111__bc9871c5-6d18-470c-a0ad-5971f0a239cc.webp",
+   "shape": "cover"
+  },
+  {
+   "out": "images/og/fearlessly-unfuckwithable.jpg",
+   "eyebrow": "From survival to sovereignty",
+   "headline": "Fearlessly Unfuckwithable",
+   "sub": "The book and the Sovereignty Bundle by Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/generated-images__store__product-image__43241ff0-d9d8-465f-9119-5a3c33e27111__bc9871c5-6d18-470c-a0ad-5971f0a239cc.webp",
+   "shape": "cover"
+  },
+  {
+   "out": "images/og/genius-insight.jpg",
+   "eyebrow": "Remote Energetic Harmonizing · worldwide, by distance",
+   "headline": "A personal energy scan, done for you by distance.",
+   "sub": "Genius Insight scans with Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/library.jpg",
+   "eyebrow": "The Library",
+   "headline": "Every path back to yourself.",
+   "sub": "Books, courses and companions by Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/referenced_images/ba9d38bb-05dc-429c-9a80-1ce34a4303ec__store__product-image__3ed878dc-d248-48cd-9779-30ac516ec888__05de5a51-4f37-4881-a244-17fea4de6b18.webp",
+   "shape": "cover"
+  },
+  {
+   "out": "images/og/about.jpg",
+   "eyebrow": "About",
+   "headline": "Kay Joy Flowers",
+   "sub": "Author. Creator. Educator. Architect of Possibility.",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog.jpg",
+   "eyebrow": "Journal",
+   "headline": "Journal",
+   "sub": "Articles by Kay Joy Flowers on sovereignty, the body and remembering who you are.",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-why-body-still-braces.jpg",
+   "eyebrow": "Journal",
+   "headline": "Why Does Your Body Still Brace When Life Is Getting Better?",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-why-receiving-feels-dangerous.jpg",
+   "eyebrow": "Journal",
+   "headline": "Why Receiving Can Feel More Dangerous Than Losing",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-overwhelmed-cant-think-clearly.jpg",
+   "eyebrow": "Journal",
+   "headline": "What to Do When You're Overwhelmed and Can't Think Clearly",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-who-are-you-beyond-your-roles.jpg",
+   "eyebrow": "Journal",
+   "headline": "Who Are You Beneath the Roles You've Been Playing?",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-frequency-and-healing.jpg",
+   "eyebrow": "Journal",
+   "headline": "What Does Frequency Have to Do With Healing?",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  },
+  {
+   "out": "images/og/blog-teacher-exhaustion-survival-mode.jpg",
+   "eyebrow": "Journal",
+   "headline": "Why Teachers Are Exhausted Beyond Burnout",
+   "sub": "By Kay Joy Flowers",
+   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
+   "shape": "circle"
+  }
  ]
 }

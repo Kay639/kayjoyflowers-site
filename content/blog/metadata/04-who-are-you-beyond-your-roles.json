@@ -1,0 +1,111 @@
+{
+  "title": "Who Are You Beneath the Roles You've Been Playing?",
+  "seo_title": "Who Are You Beyond Your Roles? | Kay Joy Flowers",
+  "description": "Who are you beyond being the teacher, mother or reliable one? Explore identity, remembrance and small choices that make room for your own voice.",
+  "slug": "who-are-you-beyond-your-roles",
+  "proposed_url": "https://kayjoyflowers.online/blog/who-are-you-beyond-your-roles/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "who am I beyond my roles",
+  "secondary_search_terms": [
+    "identity outside work and motherhood",
+    "how to reconnect with yourself",
+    "who am I without my job"
+  ],
+  "primary_cta_text": "Explore A Living Cosmology of Remembrance",
+  "primary_cta_url": "https://kayjoyflowers.online/library.html",
+  "schema_type": "BlogPosting",
+  "subject": "Identity and remembrance",
+  "search_intent": "Reflect on identity during role changes or over-identification with responsibility.",
+  "related_product": "Who Are You?; A Living Cosmology of Remembrance",
+  "distinctive_angle": "Separate meaningful roles from compulsory rules; adapt the manuscript’s I am inquiry without inventing memoir.",
+  "body_word_count_including_byline_and_links": 1165,
+  "answer_opportunities": [
+    "How do I find myself when I do not know what I want?",
+    "Can I change without abandoning my responsibilities?",
+    "What if a role I loved has ended?"
+  ],
+  "heading_hierarchy": [
+    "# Who Are You Beneath the Roles You've Been Playing?",
+    "## A role can be meaningful and still become too small",
+    "## Remembrance begins with your own attention",
+    "## Separate the role from the rule",
+    "## An exercise: let “I am” become larger",
+    "### Begin with the familiar answers",
+    "### Add what you value",
+    "### Add what attracts your attention",
+    "### Give one answer a place in the day",
+    "## You do not need a replacement performance",
+    "## Questions about identity and roles",
+    "### How do I find myself when I do not know what I want?",
+    "### Can I change without abandoning my responsibilities?",
+    "### What if a role I loved has ended?",
+    "## Explore A Living Cosmology of Remembrance"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "work on sovereignty",
+      "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "Explore A Living Cosmology of Remembrance",
+      "url": "https://kayjoyflowers.online/library.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore A Living Cosmology of Remembrance",
+    "url": "https://kayjoyflowers.online/library.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K02",
+    "K03",
+    "K04"
+  ],
+  "seo_title_characters": 48,
+  "meta_description_characters": 144,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Who Are You Beneath the Roles You've Been Playing?",
+      "description": "Who are you beyond being the teacher, mother or reliable one? Explore identity, remembrance and small choices that make room for your own voice.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Identity and remembrance",
+      "keywords": [
+        "who am I beyond my roles",
+        "identity outside work and motherhood",
+        "how to reconnect with yourself",
+        "who am I without my job"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

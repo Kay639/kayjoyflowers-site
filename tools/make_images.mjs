@@ -1,7 +1,7 @@
 // Generate the site's share images (1200x630) and favicons in the site's own colours and fonts.
 //
 // Needs Playwright with Chromium (npm i playwright && npx playwright install chromium).
-// Run from the repository root:  node tools/make_images.mjs
+// Run from the repository root:  node tools/make_images.mjs   (or name outputs: node tools/make_images.mjs images/og/blog.jpg)
 // Edit tools/og-images.json to add a page; use only words that already appear on that page.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,8 +46,9 @@ async function render(html, w, h, out, type) {
   await p.close();
   console.log('wrote', out);
 }
-for (const c of cfg.images) await render(og(c), 1200, 630, path.join(root, c.out), 'jpeg');
-for (const [size, out] of [[32, 'images/favicon-32.png'], [48, 'images/favicon-48.png'], [192, 'images/icon-192.png'], [180, 'apple-touch-icon.png']]) {
+const only = process.argv.slice(2);   // optional: render just these outputs, e.g. images/og/blog.jpg
+for (const c of cfg.images) if (!only.length || only.includes(c.out)) await render(og(c), 1200, 630, path.join(root, c.out), 'jpeg');
+if (!only.length) for (const [size, out] of [[32, 'images/favicon-32.png'], [48, 'images/favicon-48.png'], [192, 'images/icon-192.png'], [180, 'apple-touch-icon.png']]) {
   await render(icon(size), size, size, path.join(root, out), 'png');
 }
 await browser.close();

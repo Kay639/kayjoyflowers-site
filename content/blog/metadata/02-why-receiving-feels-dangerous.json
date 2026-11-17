@@ -1,0 +1,111 @@
+{
+  "title": "Why Receiving Can Feel More Dangerous Than Losing",
+  "seo_title": "Why Receiving Money or Help Can Feel Dangerous",
+  "description": "Why can accepting money, help or support feel uncomfortable? Explore obligation, inherited money stories and receiving without giving up your authority.",
+  "slug": "why-receiving-feels-dangerous",
+  "proposed_url": "https://kayjoyflowers.online/blog/why-receiving-feels-dangerous/",
+  "author": "Kay Joy Flowers",
+  "author_url": "https://kayjoyflowers.online/about.html",
+  "language": "en-NZ",
+  "editorial_status": "publication-ready",
+  "prepared_on": "2026-11-18",
+  "primary_search_term": "why is it hard to accept help",
+  "secondary_search_terms": [
+    "guilt receiving money",
+    "feeling indebted when receiving gifts",
+    "why receiving feels unsafe"
+  ],
+  "primary_cta_text": "Explore the Sovereignty Bundle",
+  "primary_cta_url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+  "schema_type": "BlogPosting",
+  "subject": "Receiving and money",
+  "search_intent": "Understand discomfort around accepting support, gifts or payment; clarify boundaries.",
+  "related_product": "Sovereignty Bundle",
+  "distinctive_angle": "Distinguish gratitude, consent, agreed payment and imagined debt; no abundance-as-income promise.",
+  "body_word_count_including_byline_and_links": 1124,
+  "answer_opportunities": [
+    "Why do I feel guilty accepting money or help?",
+    "Does learning to receive mean saying yes to everything?",
+    "Can I be grateful and still say no?"
+  ],
+  "heading_hierarchy": [
+    "# Why Receiving Can Feel More Dangerous Than Losing",
+    "## What happens between the offer and the yes?",
+    "## Gratitude and obligation are different experiences",
+    "## Money can arrive carrying an old moral story",
+    "## A practice for receiving without disappearing",
+    "### 1. Name what is actually being offered",
+    "### 2. Notice your first impulse",
+    "### 3. Clarify the terms",
+    "### 4. Allow a complete response",
+    "## Receiving belongs alongside practical reality",
+    "## Questions about receiving",
+    "### Why do I feel guilty accepting money or help?",
+    "### Does learning to receive mean saying yes to everything?",
+    "### Can I be grateful and still say no?",
+    "## Explore receiving and sovereignty more deeply"
+  ],
+  "internal_links": [
+    {
+      "anchor": "Kay Joy Flowers",
+      "url": "https://kayjoyflowers.online/about.html",
+      "status": "existing page verified 2026-11-18"
+    },
+    {
+      "anchor": "why your body may still be bracing",
+      "url": "https://kayjoyflowers.online/blog/why-body-still-braces/",
+      "status": "proposed sibling article; publish together or omit link until live"
+    },
+    {
+      "anchor": "Explore the Sovereignty Bundle",
+      "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+      "status": "existing page verified 2026-11-18"
+    }
+  ],
+  "primary_cta": {
+    "text": "Explore the Sovereignty Bundle",
+    "url": "https://kayjoyflowers.online/fearlessly-unfuckwithable.html",
+    "placement": "closing section before author bio"
+  },
+  "source_register_ids": [
+    "K01",
+    "K04",
+    "W02"
+  ],
+  "seo_title_characters": 46,
+  "meta_description_characters": 152,
+  "structured_data_recommendation": {
+    "type": "BlogPosting",
+    "base_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Why Receiving Can Feel More Dangerous Than Losing",
+      "description": "Why can accepting money, help or support feel uncomfortable? Explore obligation, inherited money stories and receiving without giving up your authority.",
+      "author": {
+        "@type": "Person",
+        "name": "Kay Joy Flowers",
+        "url": "https://kayjoyflowers.online/about.html"
+      },
+      "inLanguage": "en-NZ",
+      "isAccessibleForFree": true,
+      "articleSection": "Receiving and money",
+      "keywords": [
+        "why is it hard to accept help",
+        "guilt receiving money",
+        "feeling indebted when receiving gifts",
+        "why receiving feels unsafe"
+      ]
+    },
+    "integration_fields": [
+      "Add final canonical URL to url and mainEntityOfPage after audit route selection.",
+      "Add actual datePublished at first publication and actual dateModified when materially edited; use timezone offset.",
+      "Add a representative image URL only if an image is actually supplied and rendered.",
+      "Reuse existing author/publisher entity identifiers if Claude’s final architecture supplies them."
+    ],
+    "exclusions": [
+      "No fabricated medical reviewer, credentials, ratings or testimonials.",
+      "No Product or Offer markup on an informational article.",
+      "Q&A remains readable page content; no FAQ rich-result promise or additional FAQ schema required."
+    ]
+  }
+}

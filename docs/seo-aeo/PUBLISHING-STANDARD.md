@@ -97,9 +97,18 @@ Copy from [templates/structured-data.md](templates/structured-data.md). Rules:
 - Search-engine verification files (such as `googlee5c623ca84b4b310.html` for Google Search Console) live at the site root, exactly as the search engine supplied them. Never edit, rename or delete them, and never add them to the sitemap (`tools/build_sitemap.py` skips them).
 - `llms.txt` is an optional plain-language map for AI tools, not a ranking factor. Add a line when you add a major page (product, service or cornerstone article), and update it when a price changes.
 
-## 10. Articles and guides (when the blog starts)
+## 10. Journal articles
 
-- URL: `/articles/short-descriptive-slug.html`. Lowercase with hyphens, no dates in the URL.
+Articles live in the Journal at `/blog/<slug>/` and are built from Markdown, not written as HTML by hand:
+1. Add the approved article to `content/blog/articles/` (YAML front matter: `title`, `seo_title`, `description`, `slug`, `primary_cta_text`, `primary_cta_url`) and its metadata JSON to `content/blog/metadata/`.
+2. Add `"<slug>": "YYYY-MM-DD"` (New Zealand date) to `content/blog/published.json`. For a material edit later, use `{"published": "...", "updated": "..."}`.
+3. Add a share image entry to `tools/og-images.json` (`images/og/blog-<slug>.jpg`) and run `node tools/make_images.mjs images/og/blog-<slug>.jpg`.
+4. `pip install markdown==3.7` (once), then `python3 tools/build_blog.py`. It writes the article page and rebuilds the Journal index, with BlogPosting and breadcrumb markup, the visible date and the "More from the Journal" list.
+5. Run the checks, commit, then `python3 tools/build_sitemap.py` and commit `sitemap.xml`. Add the article to `llms.txt`.
+
+`content/` is kept off the public site by `_config.yml`. Don't commit private source registers or manuscript links: the repository may be public.
+
+- URL: `/blog/short-descriptive-slug/`. Lowercase with hyphens, no dates in the URL.
 - Byline: "By Kay Joy Flowers" with a visible published date and, if updated, an updated date.
 - Structured data: `BlogPosting` with `author` → `#kay`, `datePublished`, `dateModified`, `image`, `headline` (see templates).
 - Open with a 2–3 sentence direct answer, then the depth. Finish with a natural link to the related book or practice.
