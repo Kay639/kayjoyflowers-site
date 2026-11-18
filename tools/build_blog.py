@@ -30,7 +30,7 @@ import markdown
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "content", "blog")
 SITE = "https://kayjoyflowers.online"
-CSS_VERSION = "8"
+CSS_VERSION = "10"
 KAY = "https://kayjoyflowers.online/#kay"
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
@@ -139,8 +139,22 @@ def first_answer(md):
     return paras[i + 1]
 
 
+def hero_img(slug, heroes, sizes, cls, eager):
+    """<img> for an article's hero image (content/blog/heroes.json), or "" if it has none."""
+    h = heroes.get(slug)
+    if not h:
+        return ""
+    srcset = ", ".join(f'/images/blog/{h["name"]}-{w}.webp {w}w' for w in h["widths"])
+    w, ht = h["full"]
+    load = 'fetchpriority="high" decoding="async"' if eager else 'loading="lazy" decoding="async"'
+    return (f'<img class="{cls}" src="/images/blog/{h["name"]}-{h["widths"][0]}.webp" srcset="{srcset}" sizes="{sizes}" '
+            f'width="{w}" height="{ht}" alt="{E(h["alt"])}" {load}>')
+
+
 def main():
     dates = json.load(open(os.path.join(SRC, "published.json")))
+    hp = os.path.join(SRC, "heroes.json")
+    heroes = json.load(open(hp, encoding="utf-8")) if os.path.exists(hp) else {}
     meta = {}
     for f in glob.glob(os.path.join(SRC, "metadata", "*.json")):
         m = json.load(open(f, encoding="utf-8"))
@@ -183,11 +197,16 @@ def main():
                  f'<meta property="article:author" content="{SITE}/about.html">\n')
         others = "\n".join(f'    <li><a href="/blog/{o["slug"]}/">{E(o["title"], quote=False)}</a></li>'
                            for o, _, _ in posts if o["slug"] != slug)
-        page = (head(fm["seo_title"], fm["description"], url, "article", og,
-                     f'{fm["title"]} By Kay Joy Flowers.', ld, extra)
+        og_alt = heroes[slug]["alt"] if slug in heroes else f'{fm["title"]} By Kay Joy Flowers.'
+        body = render_body(md, fm, published)
+        hero = hero_img(slug, heroes, "(min-width: 760px) 712px, calc(100vw - 48px)", "heroimg", True)
+        if hero:
+            # hero image right after the byline and date, before the opening answer
+            body = body.replace('</time></p>', '</time></p>\n<figure class="posthero">' + hero + '</figure>', 1)
+        page = (head(fm["seo_title"], fm["description"], url, "article", og, og_alt, ld, extra)
                 + header("/blog/") + '\n\n<main id="main">\n<article class="post"><div class="wrap narrow prose">\n'
                 + '<p class="eyebrow"><a href="/blog/">Journal</a></p>\n'
-                + render_body(md, fm, published)
+                + body
                 + '\n</div></article>\n\n<section class="related"><div class="wrap narrow">\n'
                 + '  <p class="eyebrow">More from the Journal</p>\n  <ul class="postlinks">\n' + others + '\n  </ul>\n</div></section>\n</main>\n\n'
                 + FOOTER + "\n</body>\n</html>\n")
@@ -213,8 +232,10 @@ def main():
         d = dates[fm["slug"]]
         published = d if isinstance(d, str) else d["published"]
         excerpt = markdown.markdown(first_answer(md), output_format="html").replace(f'href="{SITE}/', 'href="/')
+        img = hero_img(fm["slug"], heroes, "(min-width: 760px) 712px, calc(100vw - 48px)", "postcardimg", False)
+        img = f'<a class="cardlink" href="/blog/{fm["slug"]}/" tabindex="-1" aria-hidden="true">{img}</a>\n    ' if img else ""
         cards.append(f'''  <article class="postcard">
-    <p class="postmeta"><time datetime="{published}">{nice_date(published)}</time></p>
+    {img}<p class="postmeta"><time datetime="{published}">{nice_date(published)}</time></p>
     <h2><a href="/blog/{fm["slug"]}/">{E(fm["title"], quote=False)}</a></h2>
     {excerpt}
     <p class="more"><a href="/blog/{fm["slug"]}/" aria-label="Read the article: {E(fm["title"])}">Read the article</a></p>

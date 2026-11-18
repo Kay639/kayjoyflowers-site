@@ -1,5 +1,5 @@
 {
- "_note": "Share images (1200x630) for tools/make_images.mjs. Use only words that already appear on the page. 'image' is a URL or a repo path; 'shape' is cover or circle.",
+ "_note": "Share images (1200x630) for tools/make_images.mjs. Use only words that already appear on the page. 'image' is a URL or a repo path; 'shape' is cover or circle. Journal article share images are cropped from each article's hero photo by the hero image step (content/blog/heroes.json), not generated here.",
  "images": [
   {
    "out": "images/og/home.jpg",
@@ -46,54 +46,6 @@
    "eyebrow": "Journal",
    "headline": "Journal",
    "sub": "Articles by Kay Joy Flowers on sovereignty, the body and remembering who you are.",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-why-body-still-braces.jpg",
-   "eyebrow": "Journal",
-   "headline": "Why Does Your Body Still Brace When Life Is Getting Better?",
-   "sub": "By Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-why-receiving-feels-dangerous.jpg",
-   "eyebrow": "Journal",
-   "headline": "Why Receiving Can Feel More Dangerous Than Losing",
-   "sub": "By Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-overwhelmed-cant-think-clearly.jpg",
-   "eyebrow": "Journal",
-   "headline": "What to Do When You're Overwhelmed and Can't Think Clearly",
-   "sub": "By Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-who-are-you-beyond-your-roles.jpg",
-   "eyebrow": "Journal",
-   "headline": "Who Are You Beneath the Roles You've Been Playing?",
-   "sub": "By Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-frequency-and-healing.jpg",
-   "eyebrow": "Journal",
-   "headline": "What Does Frequency Have to Do With Healing?",
-   "sub": "By Kay Joy Flowers",
-   "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
-   "shape": "circle"
-  },
-  {
-   "out": "images/og/blog-teacher-exhaustion-survival-mode.jpg",
-   "eyebrow": "Journal",
-   "headline": "Why Teachers Are Exhausted Beyond Burnout",
-   "sub": "By Kay Joy Flowers",
    "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
    "shape": "circle"
   }

@@ -199,3 +199,10 @@ footer.site a{color:var(--muted)}
 .faq details{border-bottom:1px solid var(--line);padding:16px 0}
 .faq summary{cursor:pointer;font-family:var(--display);font-size:21px;list-style-position:outside}
 .faq details p{margin:12px 0 0;color:var(--muted)}
+
+/* Journal hero images */
+.posthero{margin:26px 0 30px}
+.posthero img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--line)}
+.postcard{overflow:hidden}
+.postcard .cardlink{display:block;margin:-24px -24px 20px}
+.postcard .postcardimg{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
