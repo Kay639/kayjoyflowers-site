@@ -48,6 +48,14 @@
    "sub": "Articles by Kay Joy Flowers on sovereignty, the body and remembering who you are.",
    "image": "https://cdn.beacons.ai/user_content/hbKSnti6M9OCJTumY5lXvDdsrwd2/profile_kayjoyflowers.png",
    "shape": "circle"
+  },
+  {
+   "out": "images/og/white-paper.jpg",
+   "eyebrow": "A Foundational White Paper",
+   "headline": "A Living Cosmology of Remembrance",
+   "sub": "By Kay Joy Flowers",
+   "image": "images/white-paper-cover.webp",
+   "shape": "cover"
   }
  ]
 }
