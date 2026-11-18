@@ -11,8 +11,8 @@ editorial_status: "publication-ready"
 prepared_on: "2026-11-18"
 primary_search_term: "frequency healing evidence"
 secondary_search_terms: ["what is frequency healing", "528 Hz DNA repair evidence", "432 Hz healing music", "sound and wellbeing"]
-primary_cta_text: "Explore the books and collections"
-primary_cta_url: "https://kayjoyflowers.online/library.html"
+primary_cta_text: "Read Frequency — The Future of Medicine"
+primary_cta_url: "https://kayjoyflowers.online/frequency.html"
 schema_type: "BlogPosting"
 ---
 
@@ -26,7 +26,7 @@ A piece of music changes the atmosphere of a room. A familiar voice gives you sp
 
 All three may appear in a conversation about frequency. They ask different questions and offer different kinds of evidence.
 
-In *Frequency — The Future of Medicine*, I explore how to keep curiosity and discernment in the same conversation. There is room for the person who wants to understand a medical instrument and the person who wants to describe what singing means in her life.
+In [*Frequency — The Future of Medicine*](https://kayjoyflowers.online/frequency.html), I explore how to keep curiosity and discernment in the same conversation. There is room for the person who wants to understand a medical instrument and the person who wants to describe what singing means in her life.
 
 Clarity lets each experience keep its own significance.
 
@@ -128,6 +128,6 @@ Yes. Meaning, connection and personal reflection can matter on their own terms. 
 
 *Frequency — The Future of Medicine* is part of A Living Cosmology of Remembrance: my wider body of work on consciousness, identity, creativity and sovereignty.
 
-[Explore the books and collections](https://kayjoyflowers.online/library.html).
+[Read Frequency — The Future of Medicine](https://kayjoyflowers.online/frequency.html).
 
 *Kay Joy Flowers is an author, creator and educator. Her writing on frequency brings together personal exploration, philosophical inquiry and discussion of evidence; she writes here as an author, not a medical practitioner.*
