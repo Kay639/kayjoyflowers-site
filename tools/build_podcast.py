@@ -88,8 +88,25 @@ def head(title, desc, canonical, og_image, og_alt, jsonld, og_type="website"):
 <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
-.podart{{width:100%;max-width:420px;border-radius:14px;display:block;margin:8px 0 22px}}
 .player{{width:100%;margin:10px 0 6px}}
+main section.listen{{border-top:0;padding:56px 0;background:radial-gradient(circle at 18% 25%,#6b3249 0%,#3a1a31 45%,#1f1020 100%);color:#fbefe0}}
+.listen .lgrid{{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:44px;align-items:center}}
+.listen .art{{width:100%;height:auto;aspect-ratio:1;object-fit:cover;align-self:center;border-radius:18px;display:block;box-shadow:0 22px 55px #0009,0 0 0 1px #e0b26a66}}
+.listen .eyebrow{{color:#e6b56f;letter-spacing:.16em}}
+.listen .eyebrow a{{color:#e6b56f;text-decoration:none}}
+.listen h1{{color:#fff6ea;margin:0 0 10px;font-size:clamp(32px,4.2vw,50px);line-height:1.12}}
+.listen .lede{{color:#ecd9c6;margin:0 0 20px;font-size:clamp(18px,2vw,22px)}}
+.listen .byline{{color:#d9c3b4}}
+.listen .byline a,.listen .elinks a{{color:#f0c27e}}
+.epcard{{background:#ffffff0f;border:1px solid #e0b26a55;border-radius:16px;padding:18px 20px 12px;margin-top:6px}}
+.epcard .k{{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e6b56f;margin:0 0 4px;font-weight:600}}
+.epcard h2{{font-size:clamp(20px,2.2vw,25px);color:#fff6ea;margin:0 0 4px;line-height:1.25}}
+.epcard h2 a{{color:#fff6ea;text-decoration:none}}
+.epcard p{{margin:0}}
+.elinks{{font-size:15px;color:#d9c3b4;margin:4px 0 0}}
+.listen .player{{color-scheme:dark;margin:14px 0 8px}}
+main section.after{{border-top:0;padding:44px 0 64px}}
+@media (max-width:760px){{main section.listen{{padding:32px 0 36px}}.listen .lgrid{{grid-template-columns:1fr;gap:24px}}.listen .art{{max-width:240px;margin:0 auto}}}}
 .aidisc{{font-size:15px;color:var(--muted);border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:18px 0}}
 .chapters{{list-style:none;padding:0;margin:8px 0 20px}}
 .chapters li{{display:flex;gap:14px;padding:4px 0;border-bottom:1px solid var(--line)}}
@@ -164,13 +181,17 @@ def episode_page(ep):
     intro = "\n".join(f"<p>{esc(p)}</p>" for p in ep["notes_intro"])
     out += f"""
 <main id="main">
-<article class="post"><div class="wrap narrow prose">
-<p class="eyebrow"><a href="/podcast/">Podcast</a> &middot; Series {ep['season']}: {esc(SERIES[ep['season']])} &middot; Episode {ep['episode']:03d}</p>
+<section class="listen"><div class="wrap lgrid">
+<img class="art" src="/podcast/{slug}/cover-720.webp" width="720" height="720" alt="Episode artwork: the seven gateways of A Living Cosmology of Remembrance around the podcast title, with Series One and Episode 001.">
+<div>
+<p class="eyebrow"><a href="/podcast/">{esc(TITLE)}</a> &middot; Series {ep['season']} &middot; Episode {ep['episode']:03d}</p>
 <h1>{esc(ep['title'])}</h1>
-<p class="byline">Created by <a href="/about.html">Kay Joy Flowers</a> &middot; {hms(ep['duration'])} minutes</p>
-<img class="podart" src="/podcast/{slug}/cover-720.webp" width="720" height="720" alt="Episode artwork: the seven gateways of A Living Cosmology of Remembrance around the podcast title, with Series One and Episode 001.">
+<p class="byline">Created by <a href="/about.html">Kay Joy Flowers</a> &middot; Series {ep['season']}: {esc(SERIES[ep['season']])} &middot; {hms(ep['duration'])} minutes</p>
 <audio class="player" controls preload="none" src="{audio}"></audio>
-<p class="muted"><a href="{audio}" download>Download the episode (MP3)</a> &middot; <a href="/podcast/feed.xml">Podcast feed (RSS)</a></p>
+<p class="elinks"><a href="{audio}" download>Download (MP3)</a> &middot; <a href="#transcript">Transcript</a> &middot; <a href="/podcast/feed.xml">Podcast feed (RSS)</a></p>
+</div>
+</div></section>
+<article class="post"><div class="wrap narrow prose">
 <p class="aidisc">{esc(AI_NOTE)}</p>
 {intro}
 <p><strong>Try this week:</strong> {esc(ep['try_this'])}</p>
@@ -212,17 +233,29 @@ def index_page():
 <p>{esc(ep['summary'])}</p>
 <audio class="player" controls preload="none" src="/podcast/audio/{ep['slug']}.mp3"></audio>
 <p class="muted"><a href="/podcast/{ep['slug']}/">Show notes and transcript</a></p></li>""")
+    latest = sorted(EPISODES, key=lambda e: e["published"], reverse=True)[0]
+    latest_card = f"""<div class="epcard">
+<p class="k">Latest &middot; Series {latest['season']}: {esc(SERIES[latest['season']])} &middot; Episode {latest['episode']:03d} &middot; {hms(latest['duration'])} min</p>
+<h2><a href="/podcast/{latest['slug']}/">{esc(latest['title'])}</a></h2>
+<audio class="player" controls preload="none" src="/podcast/audio/{latest['slug']}.mp3"></audio>
+<p class="elinks"><a href="/podcast/{latest['slug']}/">Show notes, chapters and transcript</a></p>
+</div>"""
     out += f"""
 <main id="main">
-<section><div class="wrap narrow prose">
+<section class="listen"><div class="wrap lgrid">
+<img class="art" src="/podcast/podcast-cover-720.webp" width="720" height="720" alt="Podcast artwork: the seven gateways of A Living Cosmology of Remembrance, Remembrance, Frequency, Wholeness, Creation, Sovereignty, Expression and Legacy, around the title.">
+<div>
 <p class="eyebrow">The podcast</p>
 <h1>{esc(TITLE)}</h1>
-<img class="podart" src="/podcast/podcast-cover-720.webp" width="720" height="720" alt="Podcast artwork: the seven gateways of A Living Cosmology of Remembrance, Remembrance, Frequency, Wholeness, Creation, Sovereignty, Expression and Legacy, around the title.">
 <p class="lede">Conversations that open a doorway into the work of Kay Joy Flowers, one series at a time.</p>
+{latest_card}
+</div>
+</div></section>
+<section class="after"><div class="wrap narrow prose">
 <p>{esc(SHOW_DESC)}</p>
 <p class="aidisc">{esc(AI_NOTE)}</p>
 <p class="muted">Follow in any podcast app with the <a href="/podcast/feed.xml">podcast feed (RSS)</a>. Apple Podcasts and Spotify links will appear here once the show is listed.</p>
-<h2>Episodes</h2>
+<h2>All episodes</h2>
 <ul class="eplist">
 {chr(10).join(items)}
 </ul>
