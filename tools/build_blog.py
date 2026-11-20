@@ -30,12 +30,12 @@ import markdown
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "content", "blog")
 SITE = "https://kayjoyflowers.online"
-CSS_VERSION = "11"
+CSS_VERSION = "12"
 KAY = "https://kayjoyflowers.online/#kay"
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">\n'
+FONTS = ('\n'
+         '\n'
+         '<link rel="stylesheet" href="/fonts/fonts.css?v=1">\n'
          f'<link rel="stylesheet" href="/styles.css?v={CSS_VERSION}">\n'
          '<link rel="icon" href="/favicon.ico" sizes="48x48">\n'
          '<link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">\n'

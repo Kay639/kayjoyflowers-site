@@ -80,10 +80,8 @@ def head(title, desc, canonical, og_image, og_alt, jsonld, og_type="website"):
 <script type="application/ld+json">
 {json.dumps(jsonld, indent=1, ensure_ascii=False)}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=11">
+<link rel="stylesheet" href="/fonts/fonts.css?v=1">
+<link rel="stylesheet" href="/styles.css?v=12">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -95,15 +93,15 @@ main section.listen{{border-top:0;padding:56px 0;background:radial-gradient(circ
 .listen .eyebrow{{color:#e6b56f;letter-spacing:.16em}}
 .listen .eyebrow a{{color:#e6b56f;text-decoration:none}}
 .listen h1{{color:#fff6ea;margin:0 0 10px;font-size:clamp(32px,4.2vw,50px);line-height:1.12}}
-.listen .lede{{color:#ecd9c6;margin:0 0 20px;font-size:clamp(18px,2vw,22px)}}
-.listen .byline{{color:#d9c3b4}}
+.listen .lede{{color:#f6e6d4;margin:0 0 20px;font-size:clamp(18px,2vw,22px)}}
+.listen .byline{{color:#efdccd;font-size:16px}}
 .listen .byline a,.listen .elinks a{{color:#f0c27e}}
 .epcard{{background:#ffffff0f;border:1px solid #e0b26a55;border-radius:16px;padding:18px 20px 12px;margin-top:6px}}
-.epcard .k{{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e6b56f;margin:0 0 4px;font-weight:600}}
-.epcard h2{{font-size:clamp(20px,2.2vw,25px);color:#fff6ea;margin:0 0 4px;line-height:1.25}}
+.epcard .k{{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#f0c27e;margin:0 0 4px;font-weight:600}}
+.epcard h2{{font-size:clamp(24px,2.6vw,30px);font-weight:600;color:#fff8ee;margin:2px 0 4px;line-height:1.2}}
 .epcard h2 a{{color:#fff6ea;text-decoration:none}}
 .epcard p{{margin:0}}
-.elinks{{font-size:15px;color:#d9c3b4;margin:4px 0 0}}
+.elinks{{font-size:15px;color:#efdccd;margin:4px 0 0}}
 .listen .player{{color-scheme:dark;margin:14px 0 8px}}
 main section.after{{border-top:0;padding:44px 0 64px}}
 @media (max-width:760px){{main section.listen{{padding:32px 0 36px}}.listen .lgrid{{grid-template-columns:1fr;gap:24px}}.listen .art{{max-width:240px;margin:0 auto}}}}
@@ -115,6 +113,9 @@ main section.after{{border-top:0;padding:44px 0 64px}}
 .transcript .who{{font-weight:600;color:var(--accent)}}
 .eplist{{list-style:none;padding:0}}
 .eplist li{{border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 16px;background:var(--paper)}}
+.eplist h3{{font-size:27px;line-height:1.2;margin:4px 0 8px}}
+.eplist h3 a{{color:#3a1530;text-decoration:none}}
+.listen h1{{font-weight:600}}
 </style>
 </head>
 <body>
