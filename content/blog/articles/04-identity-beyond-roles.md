@@ -13,6 +13,7 @@ primary_search_term: "who am I beyond my roles"
 secondary_search_terms: ["identity outside work and motherhood", "how to reconnect with yourself", "who am I without my job"]
 primary_cta_text: "Explore A Living Cosmology of Remembrance"
 primary_cta_url: "https://kayjoyflowers.online/library.html"
+book_page: "/fearlessly-unfuckwithable.html"
 schema_type: "BlogPosting"
 ---
 

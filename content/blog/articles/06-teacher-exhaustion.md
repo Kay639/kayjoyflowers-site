@@ -13,6 +13,7 @@ primary_search_term: "why are teachers so exhausted"
 secondary_search_terms: ["teacher burnout New Zealand", "teacher workload stress", "teacher survival mode", "teacher wellbeing boundaries"]
 primary_cta_text: "Explore Fearlessly Unfuckwithable"
 primary_cta_url: "https://kayjoyflowers.online/fearlessly-unfuckwithable.html"
+book_page: "/fearlessly-unfuckwithable.html"
 schema_type: "BlogPosting"
 ---
 

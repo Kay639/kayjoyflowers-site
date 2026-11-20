@@ -27,6 +27,8 @@ import re
 
 import markdown
 
+from book_links import book_link
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "content", "blog")
 SITE = "https://kayjoyflowers.online"
@@ -215,6 +217,7 @@ def main():
                 + header("/blog/") + '\n\n<main id="main">\n<article class="post"><div class="wrap narrow prose">\n'
                 + '<p class="eyebrow"><a href="/blog/">Journal</a></p>\n'
                 + body
+                + "\n" + book_link(fm["book_page"], "journal", slug)
                 + '\n</div></article>\n\n<section class="related"><div class="wrap narrow">\n'
                 + '  <p class="eyebrow">More from the Journal</p>\n  <ul class="postlinks">\n' + others + '\n  </ul>\n</div></section>\n</main>\n\n'
                 + FOOTER + "\n</body>\n</html>\n")

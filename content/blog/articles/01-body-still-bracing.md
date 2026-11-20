@@ -13,6 +13,7 @@ primary_search_term: "why do I feel anxious when things are going well"
 secondary_search_terms: ["body still bracing", "cannot relax when life is good", "feeling tense after stress"]
 primary_cta_text: "Explore Fearlessly Unfuckwithable"
 primary_cta_url: "https://kayjoyflowers.online/fearlessly-unfuckwithable.html"
+book_page: "/fearlessly-unfuckwithable.html"
 schema_type: "BlogPosting"
 ---
 
