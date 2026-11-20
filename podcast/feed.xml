@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Living Cosmology of Remembrance</title>
+    <link>https://kayjoyflowers.online/podcast/</link>
+    <atom:link href="https://kayjoyflowers.online/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-nz</language>
+    <copyright>© 2026 Kay Joy Flowers</copyright>
+    <description>The podcast of A Living Cosmology of Remembrance, created by author Kay Joy Flowers. Each series explores one of her books or bodies of work through a conversation between two AI hosts, Iris and Jonah. The ideas and every quotation are Kay&#x27;s; the hosts are AI voices and never speak as her. Series One: Who ARE You?</description>
+    <itunes:summary>The podcast of A Living Cosmology of Remembrance, created by author Kay Joy Flowers. Each series explores one of her books or bodies of work through a conversation between two AI hosts, Iris and Jonah. The ideas and every quotation are Kay&#x27;s; the hosts are AI voices and never speak as her. Series One: Who ARE You?</itunes:summary>
+    <itunes:author>Kay Joy Flowers</itunes:author>
+    <podcast:person group="writing" role="author" href="https://kayjoyflowers.online/about.html">Kay Joy Flowers</podcast:person>
+    <itunes:owner><itunes:name>Kay Joy Flowers</itunes:name><itunes:email>kay@kayjoyflowers.online</itunes:email></itunes:owner>
+    <itunes:image href="https://kayjoyflowers.online/podcast/podcast-cover.jpg"/>
+    <image><url>https://kayjoyflowers.online/podcast/podcast-cover.jpg</url><title>Living Cosmology of Remembrance</title><link>https://kayjoyflowers.online/podcast/</link></image>
+    <itunes:category text="Religion &amp; Spirituality"><itunes:category text="Spirituality"/></itunes:category>
+    <itunes:category text="Education"><itunes:category text="Self-Improvement"/></itunes:category>
+    <itunes:explicit>true</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <podcast:locked owner="kay@kayjoyflowers.online">yes</podcast:locked>
+    <podcast:guid>9f115d7d-c7b9-5717-9ed2-5ea3d891186e</podcast:guid>
+    <podcast:medium>podcast</podcast:medium>
+    <item>
+      <title>Who Are You Beneath the Roles You&#x27;ve Been Playing?</title>
+      <itunes:title>Who Are You Beneath the Roles You&#x27;ve Been Playing?</itunes:title>
+      <guid isPermaLink="false">kjf-lcr-s01e001</guid>
+      <link>https://kayjoyflowers.online/podcast/s01e001/</link>
+      <pubDate>Fri, 20 Nov 2026 14:30:00 +1300</pubDate>
+      <itunes:season>1</itunes:season>
+      <podcast:season name="Who ARE You?">1</podcast:season>
+      <itunes:episode>1</itunes:episode>
+      <podcast:episode>1</podcast:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>true</itunes:explicit>
+      <itunes:duration>642</itunes:duration>
+      <itunes:image href="https://kayjoyflowers.online/podcast/s01e001/cover.jpg"/>
+      <description>Two AI hosts explore Kay Joy Flowers&#x27; essay on the roles we play, the rules that attach themselves to them, and a simple “I am” exercise for making room for your own voice. Living Cosmology of Remembrance is created by Kay Joy Flowers and hosted by AI voices, Iris and Jonah. The ideas and every quotation come from Kay&#x27;s published writing; the hosts never speak as her.</description>
+      <content:encoded><![CDATA[<p>Who are you when you are not explaining your usefulness?</p><p>In the first episode of Series One, Who ARE You?, AI hosts Iris and Jonah talk through Kay Joy Flowers&#x27; Journal essay. They look at why a meaningful role can still become too small, what Kay means by remembrance, where this question sits among the seven gateways of A Living Cosmology of Remembrance, and the difference between a role and the rule that attaches itself to it.</p><p><strong>Try this week:</strong> Finish the sentence “To be allowed to remain this person, I believe I have to…”, then ask whether you chose that condition.</p><p>Read the full essay: <a href="https://kayjoyflowers.online/blog/who-are-you-beyond-your-roles/?utm_source=podcast&utm_medium=audio&utm_campaign=lcr_s01e001&utm_content=shownotes_essay">Who Are You Beneath the Roles You&#x27;ve Been Playing?</a></p><p>Go deeper: <a href="https://kayjoyflowers.online/fearlessly-unfuckwithable.html?utm_source=podcast&utm_medium=audio&utm_campaign=lcr_s01e001&utm_content=shownotes_book">Fearlessly Unfuckwithable</a> by Kay Joy Flowers</p><p>Show notes, chapters and transcript: <a href="https://kayjoyflowers.online/podcast/s01e001/">https://kayjoyflowers.online/podcast/s01e001/</a></p><p><em>Living Cosmology of Remembrance is created by Kay Joy Flowers and hosted by AI voices, Iris and Jonah. The ideas and every quotation come from Kay&#x27;s published writing; the hosts never speak as her.</em></p>]]></content:encoded>
+      <enclosure url="https://op3.dev/e/kayjoyflowers.online/podcast/audio/s01e001.mp3" length="10277543" type="audio/mpeg"/>
+      <podcast:transcript url="https://kayjoyflowers.online/podcast/s01e001/#transcript" type="text/html"/>
+      <podcast:chapters url="https://kayjoyflowers.online/podcast/s01e001/chapters.json" type="application/json+chapters"/>
+    </item>
+  </channel>
+</rss>
