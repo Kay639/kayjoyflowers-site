@@ -57,7 +57,7 @@ LISTEN = {
 def header(current):
     links = "\n".join(f'    <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in NAV)
     return ('<a class="skip" href="#main">Skip to content</a>\n<header class="site"><div class="wrap">\n'
-            '  <a class="logo" href="/"><img src="/images/kjf-logo-96.png" width="44" height="44" alt="">Kay Joy Flowers</a>\n  <nav class="main">\n' + links + '\n  </nav>\n</div></header>')
+            '  <a class="logo" href="/"><img src="/images/kjf-logo-96.png" width="44" height="44" alt="KJF monogram">Kay Joy Flowers</a>\n  <nav class="main">\n' + links + '\n  </nav>\n</div></header>')
 
 
 FOOTER = ('<footer class="site"><div class="wrap">\n'

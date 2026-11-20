@@ -103,7 +103,7 @@ def head(title, desc, canonical, og_image, og_alt, jsonld, og_type="website"):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="wrap">
-  <a class="logo" href="/"><img src="/images/kjf-logo-96.png" width="44" height="44" alt="">Kay Joy Flowers</a>
+  <a class="logo" href="/"><img src="/images/kjf-logo-96.png" width="44" height="44" alt="KJF monogram">Kay Joy Flowers</a>
   <nav class="main">
     <a href="/">Home</a>
     <a href="/fearlessly-unfuckwithable.html">Fearlessly Unfuckwithable</a>
