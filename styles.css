@@ -206,3 +206,4 @@ footer.site a{color:var(--muted)}
 .postcard{overflow:hidden}
 .postcard .cardlink{display:block;margin:-24px -24px 20px}
 .postcard .postcardimg{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--line)}
+.logo{display:inline-flex;align-items:center;gap:10px}.logo img{width:44px;height:44px;flex:none}

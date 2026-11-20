@@ -30,7 +30,7 @@ import markdown
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "content", "blog")
 SITE = "https://kayjoyflowers.online"
-CSS_VERSION = "10"
+CSS_VERSION = "11"
 KAY = "https://kayjoyflowers.online/#kay"
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
@@ -43,15 +43,21 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
 
 NAV = [("/", "Home"), ("/fearlessly-unfuckwithable.html", "Fearlessly Unfuckwithable"),
        ("/genius-insight.html", "Energetic Scans"), ("/library.html", "The Library"),
-       ("/blog/", "Journal"), ("/about.html", "About")]
+       ("/blog/", "Journal"), ("/podcast/", "Podcast"), ("/about.html", "About")]
 
 E = html.escape
+
+
+# Podcast episodes that discuss an essay; the player is inserted into that essay.
+LISTEN = {
+    "who-are-you-beyond-your-roles": '<h2>Listen to the conversation</h2>\n<p>This essay is the subject of the first episode of the <a href="/podcast/">Living Cosmology of Remembrance</a> podcast. Two AI hosts, Iris and Jonah, talk it through, quoting the essay word for word.</p>\n<audio controls preload="none" src="/podcast/audio/s01e001.mp3" style="width:100%;margin:6px 0"></audio>\n<p class="muted"><a href="/podcast/s01e001/">Show notes, chapters and transcript</a></p>\n',
+}
 
 
 def header(current):
     links = "\n".join(f'    <a href="{h}"{" aria-current=\"page\"" if h == current else ""}>{t}</a>' for h, t in NAV)
     return ('<a class="skip" href="#main">Skip to content</a>\n<header class="site"><div class="wrap">\n'
-            '  <a class="logo" href="/">Kay Joy Flowers</a>\n  <nav class="main">\n' + links + '\n  </nav>\n</div></header>')
+            '  <a class="logo" href="/"><img src="/images/kjf-logo-96.png" width="44" height="44" alt="">Kay Joy Flowers</a>\n  <nav class="main">\n' + links + '\n  </nav>\n</div></header>')
 
 
 FOOTER = ('<footer class="site"><div class="wrap">\n'
@@ -199,6 +205,8 @@ def main():
                            for o, _, _ in posts if o["slug"] != slug)
         og_alt = heroes[slug]["alt"] if slug in heroes else f'{fm["title"]} By Kay Joy Flowers.'
         body = render_body(md, fm, published)
+        if slug in LISTEN:  # podcast player before the closing "Explore" section
+            body = body.replace("<h2>Explore A Living Cosmology", LISTEN[slug] + "<h2>Explore A Living Cosmology", 1)
         hero = hero_img(slug, heroes, "(min-width: 760px) 712px, calc(100vw - 48px)", "heroimg", True)
         if hero:
             # hero image right after the byline and date, before the opening answer
