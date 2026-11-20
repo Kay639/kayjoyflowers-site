@@ -30,6 +30,8 @@ jobs:
         run: python3 tools/seo_audit.py --root . --offline --fail-on high --json audit.json
       - name: Sitemap lists every indexable page
         run: python3 tools/build_sitemap.py --check
+      - name: Published book links and offers
+        run: python3 tools/check_book_links.py
       - name: JSON-LD matches schema.org
         working-directory: tools/jsonld-check
         run: npm ci --no-audit --no-fund && node check.mjs
