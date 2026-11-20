@@ -12,8 +12,7 @@ prepared_on: "2026-11-18"
 primary_search_term: "who am I beyond my roles"
 secondary_search_terms: ["identity outside work and motherhood", "how to reconnect with yourself", "who am I without my job"]
 primary_cta_text: "Explore A Living Cosmology of Remembrance"
-primary_cta_url: "https://kayjoyflowers.online/library.html"
-book_page: "/fearlessly-unfuckwithable.html"
+primary_cta_url: "https://kayjoyflowers.online/fearlessly-unfuckwithable.html#offers"
 schema_type: "BlogPosting"
 ---
 
@@ -133,6 +132,6 @@ You can miss it. Recognising that you are more than a role does not erase its si
 
 *Who Are You?* belongs to my wider inquiry into identity, creation and remembrance. The books and collections open different ways into the same living question: what becomes possible when you participate in authoring your own life?
 
-[Explore A Living Cosmology of Remembrance](https://kayjoyflowers.online/library.html).
+[Explore A Living Cosmology of Remembrance](https://kayjoyflowers.online/fearlessly-unfuckwithable.html#offers).
 
 *Kay Joy Flowers is an author, creator and educator, and the creator of A Living Cosmology of Remembrance.*

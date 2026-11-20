@@ -13,7 +13,6 @@ primary_search_term: "overwhelmed can't think clearly"
 secondary_search_terms: ["what to do when overwhelmed", "grounding exercise for overwhelm", "how to choose one next step"]
 primary_cta_text: "Explore the book and embodied practices"
 primary_cta_url: "https://kayjoyflowers.online/fearlessly-unfuckwithable.html"
-book_page: "/fearlessly-unfuckwithable.html"
 schema_type: "BlogPosting"
 ---
 

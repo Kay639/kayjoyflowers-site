@@ -13,7 +13,6 @@ primary_search_term: "frequency healing evidence"
 secondary_search_terms: ["what is frequency healing", "528 Hz DNA repair evidence", "432 Hz healing music", "sound and wellbeing"]
 primary_cta_text: "Read Frequency — The Future of Medicine"
 primary_cta_url: "https://kayjoyflowers.online/frequency.html"
-book_page: "/frequency.html"
 schema_type: "BlogPosting"
 ---
 

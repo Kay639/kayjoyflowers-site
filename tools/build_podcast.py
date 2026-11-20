@@ -12,8 +12,6 @@ import html, json, os, re, uuid
 from datetime import datetime, timezone
 from email.utils import format_datetime
 
-from book_links import book_link
-
 SITE = "https://kayjoyflowers.online"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FEED_URL = f"{SITE}/podcast/feed.xml"
@@ -210,7 +208,6 @@ def episode_page(ep):
 <div class="transcript">
 {transcript_html(slug)}
 </div>
-{book_link(ep["book"], "podcast", slug)}
 </div></article>
 </main>
 """

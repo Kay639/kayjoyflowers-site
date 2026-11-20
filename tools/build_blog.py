@@ -24,10 +24,9 @@ import html
 import json
 import os
 import re
+from urllib.parse import parse_qsl, urlencode, urlsplit
 
 import markdown
-
-from book_links import book_link
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "content", "blog")
@@ -131,7 +130,12 @@ def render_body(md, fm, published):
     # closing call to action: the paragraph that is only the CTA link
     cta = fm["primary_cta_url"].replace(SITE, "")
     pat = re.compile(r'<p><a href="' + re.escape(cta) + r'">' + re.escape(E(fm["primary_cta_text"], quote=False)) + r'</a>\.?</p>')
-    body, n = pat.subn(f'<p class="cta"><a class="btn primary" href="{cta}">{E(fm["primary_cta_text"], quote=False)}</a></p>', body)
+    destination = urlsplit(cta)
+    query = urlencode(dict(parse_qsl(destination.query)) | {
+        "utm_source": "journal", "utm_medium": "website", "utm_content": fm["slug"],
+    })
+    tracked_cta = E(destination._replace(query=query).geturl())
+    body, n = pat.subn(f'<p class="cta"><a class="btn primary" href="{tracked_cta}">{E(fm["primary_cta_text"], quote=False)}</a></p>', body)
     assert n == 1, f"{fm['slug']}: CTA paragraph not found"
     # author note (the final italic paragraph)
     body, n = re.subn(r'<p><em>(Kay Joy Flowers is [^<]*)</em></p>\s*$', r'<p class="bio"><em>\1</em></p>', body.rstrip())
@@ -217,7 +221,6 @@ def main():
                 + header("/blog/") + '\n\n<main id="main">\n<article class="post"><div class="wrap narrow prose">\n'
                 + '<p class="eyebrow"><a href="/blog/">Journal</a></p>\n'
                 + body
-                + "\n" + book_link(fm["book_page"], "journal", slug)
                 + '\n</div></article>\n\n<section class="related"><div class="wrap narrow">\n'
                 + '  <p class="eyebrow">More from the Journal</p>\n  <ul class="postlinks">\n' + others + '\n  </ul>\n</div></section>\n</main>\n\n'
                 + FOOTER + "\n</body>\n</html>\n")

@@ -13,7 +13,6 @@ primary_search_term: "why is it hard to accept help"
 secondary_search_terms: ["guilt receiving money", "feeling indebted when receiving gifts", "why receiving feels unsafe"]
 primary_cta_text: "Explore the Sovereignty Bundle"
 primary_cta_url: "https://kayjoyflowers.online/fearlessly-unfuckwithable.html"
-book_page: "/fearlessly-unfuckwithable.html"
 schema_type: "BlogPosting"
 ---
 

@@ -4,11 +4,11 @@ import re
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
-from book_links import BOOKS
 from seo_audit import CHECKOUT_HOSTS, PageParser, walk_jsonld
 
 ROOT = Path(__file__).resolve().parent.parent
 BUNDLE_PAGE = "/fearlessly-unfuckwithable.html"
+BOOK_PAGES = (BUNDLE_PAGE, "/medicine-woman.html", "/frequency.html")
 
 
 def read_page(path):
@@ -82,7 +82,7 @@ class LibraryCards(PageParser):
 def main():
     errors = []
     published = set()
-    for path in BOOKS:
+    for path in BOOK_PAGES:
         page = read_page(ROOT / path.lstrip("/"))
         if has_offer(page, "Book", "33"):
             published.add(path)
@@ -99,7 +99,7 @@ def main():
             links = [
                 urlsplit(attrs.get("href", ""))
                 for attrs, _, footer, _, nav in read_page(path).anchors
-                if "data-book-link" in attrs and not footer and not nav
+                if {"btn", "primary"} <= set(attrs.get("class", "").split()) and not footer and not nav
             ]
             if len(links) != 1 or not (
                 not links[0].scheme and not links[0].netloc
