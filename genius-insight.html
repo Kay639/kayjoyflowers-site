@@ -177,6 +177,38 @@
   .faq details p{margin:12px 0 0;color:var(--muted)}
   .hardware .card{background:transparent}
   .disclose{font-size:14px;color:var(--muted);margin-top:20px}
+  /* ---- Session gallery: "A Window Into Your Energetic Landscape" (27 Nov 2026) ---- */
+  section.gallery{position:relative;overflow:hidden;isolation:isolate;border-top:0;color:#F6EEDF;
+    background:radial-gradient(70% 45% at 50% 0%,rgba(205,150,80,.28),transparent 70%),
+      radial-gradient(60% 50% at 15% 85%,rgba(120,60,140,.45),transparent 70%),
+      radial-gradient(60% 50% at 90% 70%,rgba(40,50,120,.5),transparent 70%),
+      linear-gradient(180deg,#1A1233 0%,#2A1640 45%,#3A1B45 75%,#1C1330 100%)}
+  section.gallery + section{border-top:0}
+  .gallery .stars{position:absolute;inset:0;z-index:-1;opacity:.6;pointer-events:none;
+    background-image:radial-gradient(1px 1px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 78% 12%,#fff,transparent),radial-gradient(1.5px 1.5px at 35% 40%,#FBE3B0,transparent),radial-gradient(1px 1px at 88% 48%,#fff,transparent),radial-gradient(1px 1px at 22% 72%,#fff,transparent),radial-gradient(1.5px 1.5px at 64% 82%,#FBE3B0,transparent),radial-gradient(1px 1px at 52% 8%,#fff,transparent),radial-gradient(1px 1px at 6% 52%,#fff,transparent),radial-gradient(1px 1px at 95% 90%,#fff,transparent),radial-gradient(1px 1px at 44% 62%,#fff,transparent)}
+  .gallery .geometry{position:absolute;left:50%;top:-120px;width:760px;max-width:140%;transform:translateX(-50%);z-index:-1;color:#D9AA55;opacity:.22;pointer-events:none}
+  .gallery .eyebrow{color:#E6BE6E;text-align:center}
+  .gallery h2{color:#FBEBCB;text-align:center;font-size:clamp(32px,4.6vw,50px);text-shadow:0 2px 18px rgba(217,170,85,.35)}
+  .gallery .rule{display:flex;align-items:center;gap:16px;justify-content:center;margin:16px auto 18px;max-width:760px}
+  .gallery .rule::before,.gallery .rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#D9AA55,transparent)}
+  .gallery .rule p{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(20px,2.4vw,26px);color:#F6EEDF;text-align:center}
+  .gallery .intro{max-width:760px;margin:0 auto;text-align:center;color:#E9DDF0;font-size:18px}
+  .gallery .intro p{margin:0 0 12px}
+  .shots{list-style:none;padding:0;margin:44px 0 0;display:grid;gap:28px 22px;grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media (max-width:900px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:360px){.shots{grid-template-columns:1fr}}
+  .shot figure{margin:0}
+  .shot .frame{display:block;padding:7px;border-radius:30px;background:linear-gradient(145deg,#F3D58C,#B9852F 40%,#F0CD82 60%,#8E6020);box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 28px rgba(217,170,85,.25)}
+  .shot img{display:block;width:100%;height:auto;aspect-ratio:922/1446;border-radius:24px;background:#120C22}
+  .shot figcaption{text-align:center;margin-top:16px}
+  .shot .label{display:inline-block;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.12em;text-transform:uppercase;color:#FBEBCB;padding:4px 16px;border:1px solid rgba(217,170,85,.7);border-radius:8px;background:rgba(58,27,69,.7)}
+  @media (max-width:900px){.shot .label{font-size:14px;letter-spacing:.06em;padding:3px 10px}.shot .desc{font-size:14px}.gallery .intro{font-size:17px}}
+  .shot .desc{display:block;margin-top:10px;font-size:15px;line-height:1.55;color:#E9DDF0}
+  .gallery .cta{text-align:center;margin-top:48px}
+  .gallery .btn.gold{font-family:var(--display);font-size:22px;font-weight:600;padding:14px 34px;border:0;color:#2A1640;background:linear-gradient(180deg,#F7DE9B,#D9AA55 55%,#B9852F);box-shadow:0 10px 30px rgba(217,170,85,.35)}
+  .gallery .btn.gold:hover{opacity:.95}
+  .gallery .btn.gold:focus-visible{outline-color:#F7DE9B}
+  .gallery .note{max-width:760px;margin:28px auto 0;text-align:center;font-size:14px;font-style:italic;color:#C9B8D2}
 </style>
 </head>
 <body>
@@ -224,6 +256,37 @@
     <div class="card"><h3>I scan</h3><p class="muted">I run a full Genius Insight scan across Bio Field, Body and Mind, then look more closely at whatever stands out.</p></div>
     <div class="card"><h3>You receive</h3><p class="muted">Personal written feedback and your aura image, and I run a harmonising frequency session for you. With a Capsule, you can also listen to your frequencies at home whenever you choose.</p></div>
   </div>
+</div></section>
+
+<section id="session-gallery" class="gallery"><div class="stars" aria-hidden="true"></div><svg class="geometry" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width=".5" aria-hidden="true"><circle cx="100.00" cy="100.00" r="30"/><circle cx="130.00" cy="100.00" r="30"/><circle cx="70.00" cy="100.00" r="30"/><circle cx="115.00" cy="125.98" r="30"/><circle cx="85.00" cy="125.98" r="30"/><circle cx="115.00" cy="74.02" r="30"/><circle cx="85.00" cy="74.02" r="30"/><circle cx="145.00" cy="125.98" r="30"/><circle cx="55.00" cy="125.98" r="30"/><circle cx="145.00" cy="74.02" r="30"/><circle cx="55.00" cy="74.02" r="30"/><circle cx="100.00" cy="151.96" r="30"/><circle cx="100.00" cy="48.04" r="30"/><circle cx="130.00" cy="151.96" r="30"/><circle cx="70.00" cy="151.96" r="30"/><circle cx="130.00" cy="48.04" r="30"/><circle cx="70.00" cy="48.04" r="30"/><circle cx="160.00" cy="100.00" r="30"/><circle cx="40.00" cy="100.00" r="30"/><circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="94"/></svg><div class="wrap">
+  <p class="eyebrow">Frequency · Energetic Harmonizing</p>
+  <h2>A Window Into Your Energetic Landscape</h2>
+  <div class="rule"><p>What does an Energetic Harmonizing session actually look like?</p></div>
+  <div class="intro">
+    <p>These images are taken from my own personal sessions using Genius Insight.</p>
+    <p>From colourful aura visualisations to the exploration of body, mind and biofield categories, each session offers an opportunity for personal reflection and energetic exploration.</p>
+    <p>I invite you to experience this for yourself.</p>
+  </div>
+  <ul class="shots">
+    <li class="shot"><figure>
+      <a class="frame" href="/images/genius-insight/aura-field-720.webp" aria-label="Open the Aura Field screenshot full size"><img src="/images/genius-insight/aura-field-420.webp" srcset="/images/genius-insight/aura-field-420.webp 420w, /images/genius-insight/aura-field-720.webp 720w" sizes="(max-width:900px) 45vw, 240px" width="420" height="658" loading="lazy" decoding="async" alt="Genius Insight screenshot from one of Kay's own sessions: Aura Field"></a>
+      <figcaption><span class="label">Aura Field</span><span class="desc">A colourful visualisation of the energetic field generated by Genius Insight.</span></figcaption>
+    </figure></li>
+    <li class="shot"><figure>
+      <a class="frame" href="/images/genius-insight/aura-layers-720.webp" aria-label="Open the Aura Layers screenshot full size"><img src="/images/genius-insight/aura-layers-420.webp" srcset="/images/genius-insight/aura-layers-420.webp 420w, /images/genius-insight/aura-layers-720.webp 720w" sizes="(max-width:900px) 45vw, 240px" width="420" height="658" loading="lazy" decoding="async" alt="Genius Insight screenshot from one of Kay's own sessions: Aura Layers"></a>
+      <figcaption><span class="label">Aura Layers</span><span class="desc">An exploration of the software's layered aura visualisation.</span></figcaption>
+    </figure></li>
+    <li class="shot"><figure>
+      <a class="frame" href="/images/genius-insight/body-overview-720.webp" aria-label="Open the Body Overview screenshot full size"><img src="/images/genius-insight/body-overview-420.webp" srcset="/images/genius-insight/body-overview-420.webp 420w, /images/genius-insight/body-overview-720.webp 720w" sizes="(max-width:900px) 45vw, 240px" width="420" height="658" loading="lazy" decoding="async" alt="Genius Insight screenshot from one of Kay's own sessions: Body Overview"></a>
+      <figcaption><span class="label">Body Overview</span><span class="desc">A glimpse into the body-related categories explored during a session.</span></figcaption>
+    </figure></li>
+    <li class="shot"><figure>
+      <a class="frame" href="/images/genius-insight/mind-biofield-720.webp" aria-label="Open the Mind &amp; Biofield screenshot full size"><img src="/images/genius-insight/mind-biofield-420.webp" srcset="/images/genius-insight/mind-biofield-420.webp 420w, /images/genius-insight/mind-biofield-720.webp 720w" sizes="(max-width:900px) 45vw, 240px" width="420" height="658" loading="lazy" decoding="async" alt="Genius Insight screenshot from one of Kay's own sessions: Mind &amp; Biofield"></a>
+      <figcaption><span class="label">Mind &amp; Biofield</span><span class="desc">An overview of the emotional, mental and biofield categories within the software.</span></figcaption>
+    </figure></li>
+  </ul>
+  <div class="cta"><a class="btn gold" href="#offers">See the two ways to begin</a></div>
+  <p class="note">These visualisations are generated by Genius Insight software for wellness exploration. They are not medically validated diagnostic measurements or medical diagnoses.</p>
 </div></section>
 
 <section id="offers"><div class="wrap">
