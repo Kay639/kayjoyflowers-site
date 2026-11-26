@@ -37,7 +37,7 @@ from html.parser import HTMLParser
 SITE = "https://kayjoyflowers.online"
 
 # Pages that must never be indexed (payment-gated forms, sign-in, redirects).
-PRIVATE_PATHS = ["/scan-intake.html", "/companion/", "/companion-sovereign/"]
+PRIVATE_PATHS = ["/scan-intake.html", "/companion/", "/companion-sovereign/", "/wonderbox-test/"]
 # Folders the Jekyll build excludes (see _config.yml); never published.
 UNPUBLISHED_DIRS = ("reports", "docs", "tools", ".github", "node_modules")
 

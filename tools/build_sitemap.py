@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 
 SITE = "https://kayjoyflowers.online"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {"reports", "docs", "tools", "content", "node_modules"}
+SKIP_DIRS = {"reports", "docs", "tools", "content", "node_modules", "wonderbox-test"}
 ORDER = ["/", "/fearlessly-unfuckwithable.html", "/genius-insight.html", "/library.html", "/about.html", "/privacy.html"]
 
 
