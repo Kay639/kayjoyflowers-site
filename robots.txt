@@ -3,6 +3,7 @@
 # AI model-training crawlers are not.
 User-agent: *
 Allow: /
+Disallow: /wonderbox-test/
 
 # AI search and answer engines (allowed: these power citations and links back)
 User-agent: OAI-SearchBot
