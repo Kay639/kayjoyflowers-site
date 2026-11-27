@@ -1,0 +1,19 @@
+name: Commercial catalogue safeguards
+on:
+  push:
+    paths: ['tools/catalogue/**', '.github/workflows/catalogue-checks.yml']
+  pull_request:
+    paths: ['tools/catalogue/**', '.github/workflows/catalogue-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  safeguards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check publication boundaries with synthetic data
+        run: python -m unittest discover -s tools/catalogue -p 'test_*.py' -v
