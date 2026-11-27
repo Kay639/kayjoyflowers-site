@@ -40,6 +40,19 @@ class PublicationTests(unittest.TestCase):
     def test_coming_soon_checkout_rejected(self):
         self.master['items'][0]['status']='coming_soon'
         with self.assertRaisesRegex(ValueError,'Coming Soon'):self.run_build()
+    def test_approved_future_price_is_information_not_an_offer(self):
+        item=copy.deepcopy(self.master['items'][0])
+        item.update(id='future-gift',status='coming_soon',purchase_url=None,pricing_approval='approved',approval_evidence='Creative Director approved future price')
+        item['pricing']['amount']='99.00'
+        self.master['items'].append(item)
+        self.assertEqual(self.run_build()['feed_rows'],1)
+        draft=(self.root/'out/business_info_FOR_APPROVAL.txt').read_text()
+        self.assertIn('US$99',draft)
+        self.assertIn('not available to purchase',draft)
+    def test_unapproved_future_price_is_rejected(self):
+        item=self.master['items'][0]
+        item.update(status='coming_soon',purchase_url=None)
+        with self.assertRaisesRegex(ValueError,'explicit approval'):self.run_build()
     def test_retirement_does_not_publish_empty_snapshot(self):
         self.master['items'][0]['status']='retired'
         with self.assertRaisesRegex(ValueError,'no eligible rows'):self.run_build()
