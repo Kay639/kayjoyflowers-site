@@ -13,7 +13,9 @@ def validate(m):
         for key,limit in [('name',150),('description',5000)]:
             if not isinstance(p.get(key),str) or not p[key].strip() or len(p[key])>limit:errors.append('Missing or overlong '+key+': '+p['id'])
         if p['status'] not in STATUSES:errors.append('Invalid status: '+p['id'])
-        if p['status']=='coming_soon' and (p.get('purchase_url') or p.get('pricing')):errors.append('Coming Soon item must not carry price or checkout: '+p['id'])
+        if p['status']=='coming_soon':
+            if p.get('purchase_url'):errors.append('Coming Soon item must not carry checkout: '+p['id'])
+            if p.get('pricing') and (p.get('pricing_approval')!='approved' or not p.get('approval_evidence')):errors.append('Coming Soon price needs explicit approval evidence: '+p['id'])
         for key in ['detail_url','purchase_url','access_url','image_url']:
             value=p.get(key)
             if value and (urlparse(value).scheme!='https' or not urlparse(value).netloc):errors.append('Invalid HTTPS '+key+': '+p['id'])
@@ -55,7 +57,13 @@ def business_info(m):
     lines=['PROPOSED BUSINESS INFO ADDITION — APPROVAL REQUIRED','Add to the existing Business info; preserve agent instructions and unrelated business information.','']
     for p in m['items']:
         if not p['business_info']['include'] or p['status'] not in ['available','coming_soon']:continue
-        lines += [p['name']+(' — Coming Soon' if p['status']=='coming_soon' else ''),p['description'],('Included in the Sovereignty Bundle; no separate purchase price verified.' if p['kind']=='included_component' else price_text(p.get('pricing')))]
+        price=price_text(p.get('pricing'))
+        if p['kind']=='included_component':
+            price='Included in the Sovereignty Bundle.'
+            if p.get('standalone_offer'):
+                price+=' Approved standalone price: '+price_text(p['standalone_offer']['pricing'])+' Standalone checkout is not verified; do not offer a standalone purchase link.'
+        if p['status']=='coming_soon':price+=' Coming Soon; not available to purchase. No confirmed launch date or purchase link.'
+        lines += [p['name']+(' — Coming Soon' if p['status']=='coming_soon' else ''),p['description'],price]
         if p.get('purchase_url'):lines.append('Purchase: '+p['purchase_url'])
         if p.get('access_url'):lines.append('Access: '+p['access_url'])
         if p.get('detail_url'):lines.append('Details: '+p['detail_url'])
