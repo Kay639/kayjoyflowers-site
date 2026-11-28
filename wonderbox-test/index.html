@@ -334,8 +334,13 @@ const fmt = (iso, tz) => new Date(iso).toLocaleString("en-NZ", { timeZone: tz ||
 
 // Links carry secrets after "#", which never reach any server log; remove them from the address bar at once.
 const H = location.hash;
-const key = (H.match(/k=([A-Za-z0-9_-]{20,100})/) || [])[1] || "";
-const mtok = (H.match(/m=([A-Za-z0-9_-]{20,100})/) || [])[1] || "";
+// Remember the key on this device (and the gift-page token for this browser session only),
+// so a refresh or a return visit still finds the door after the address bar has been cleaned.
+const remember = (store, name, val) => { try { if (val) store.setItem(name, val); return val || store.getItem(name) || ""; } catch (e) { return val || ""; } };
+const fromHash = re => (H.match(re) || [])[1] || "";
+const hk = fromHash(/k=([A-Za-z0-9_-]{20,100})/), hm = fromHash(/m=([A-Za-z0-9_-]{20,100})/);
+const key = hm ? "" : remember(localStorage, "wb-key", hk);
+const mtok = hk ? "" : remember(sessionStorage, "wb-manage", hm);
 const studio = (H.match(/studio(?:=(\w+))?/) || [])[0] ? ((H.match(/studio=(\w+)/) || [])[1] || "new") : "";
 try { if (key || mtok) history.replaceState(null, "", location.pathname); } catch (e) {}
 
@@ -350,7 +355,7 @@ const door = (action, extra = {}) => post("wb-test-door", { action, key, device,
 async function startDoor() {
   let res; try { res = await door("peek"); } catch (e) { return show("s-offline"); }
   const d = res.data;
-  if (d.state === "invalid") return show("s-invalid");
+  if (d.state === "invalid") { if (!hk) { try { localStorage.removeItem("wb-key"); } catch (e) {} return show("s-private"); } return show("s-invalid"); }
   if (d.state === "opened") {
     const e = await door("enter").catch(() => null);
     if (e && e.data.state === "opened") { box = e.data; return openBox(false); }
@@ -543,9 +548,9 @@ $("mg-cancel-sure").addEventListener("change", () => { $("mg-cancel-go").disable
 $("mg-cancel-go").addEventListener("click", () => act("cancel", {}, "Cancelled. Your full refund is on its way."));
 
 /* ===================== route ===================== */
-if (key) startDoor();
+if (studio) startStudio();
+else if (key) startDoor();
 else if (mtok) startManage();
-else if (studio) startStudio();
 else show("s-private");
 }
 </script>
