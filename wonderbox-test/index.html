@@ -87,8 +87,11 @@ a{color:var(--gold2)}
 .section-h{margin:40px 0 4px;text-align:left}
 
 /* ---------- Card detail ---------- */
-dialog{border:0;padding:0;background:transparent;color:var(--ivory);max-width:min(520px,94vw);width:100%;max-height:94vh}
+dialog{position:fixed;overflow:visible;border:0;padding:0;background:transparent;color:var(--ivory);max-width:min(520px,94vw);width:100%;max-height:94vh}
 dialog::backdrop{background:rgba(5,10,25,.84);backdrop-filter:blur(4px)}
+.more{position:absolute;left:1px;right:1px;bottom:1px;display:block;border:0;border-radius:0 0 25px 25px;padding:34px 16px 14px;margin:0;cursor:pointer;font:600 14px var(--sans);color:var(--gold2);
+  background:linear-gradient(180deg,rgba(14,30,61,0),rgba(14,30,61,.92) 45%,#0E1E3D);text-shadow:0 1px 6px #000}
+.more[hidden]{display:none}
 .sheet{border-radius:26px;overflow:auto;max-height:94vh;background:linear-gradient(180deg,#132A52,#0E1E3D);box-shadow:inset 0 0 0 1px rgba(217,170,85,.55),0 30px 60px rgba(0,0,0,.5)}
 .sheet .art{aspect-ratio:7/7;max-height:44vh;width:100%;overflow:hidden;background:#0F2240}.sheet .art img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
 .sheet .body{padding:22px 24px 26px;text-align:center}
@@ -320,6 +323,7 @@ label{display:block;text-align:left;font-size:14px;color:var(--soft);margin:14px
       <div class="row" style="margin-top:8px"><button class="btn ghost" id="d-close" type="button">Back to the box</button></div>
     </div>
   </div>
+  <button class="more" id="d-more" type="button" hidden>The adventure continues below <span aria-hidden="true">↓</span></button>
 </dialog>
 
 <script>
@@ -444,7 +448,21 @@ function openCard(i, entry) {
   $("d-write").hidden = !!editing;
   $("detail").showModal();
   $("detail").querySelector(".sheet").scrollTop = 0;
+  updateMore();
 }
+// The card scrolls inside its frame: show a gentle cue until the Player reaches the keepsake, so no one
+// mistakes the opening paragraphs for the whole adventure.
+const sheetEl = $("detail").querySelector(".sheet");
+function updateMore() {
+  const keep = $("d-keep").hidden ? $("d-inv") : $("d-keep");
+  const atEnd = sheetEl.scrollTop + sheetEl.clientHeight >= sheetEl.scrollHeight - 4;
+  const hiddenBelow = !atEnd && keep.getBoundingClientRect().bottom > sheetEl.getBoundingClientRect().bottom - 70;
+  $("d-more").hidden = !hiddenBelow;
+}
+sheetEl.addEventListener("scroll", updateMore, { passive: true });
+addEventListener("resize", () => { if ($("detail").open) updateMore(); });
+$("d-art").addEventListener("load", updateMore, true);
+$("d-more").addEventListener("click", () => { $("d-inv").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); });
 $("grid").addEventListener("click", e => { const b = e.target.closest(".card"); if (b) openCard(+b.dataset.i); });
 $("to-box").addEventListener("click", () => show("s-box"));
 $("reread").addEventListener("click", () => show("s-dedication"));
