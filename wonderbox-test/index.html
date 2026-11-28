@@ -76,7 +76,9 @@ a{color:var(--gold2)}
 .card[aria-disabled="true"]{cursor:default}
 .face{position:relative;aspect-ratio:7/12;border-radius:14px;overflow:hidden;background:#0F2240;box-shadow:0 0 0 2px rgba(217,170,85,.75),0 10px 24px rgba(0,0,0,.4);transition:transform .25s ease}
 .card:not([aria-disabled="true"]):hover .face{transform:translateY(-4px)}
-.face img{width:100%;height:100%;object-fit:cover;display:block}
+.face{background-size:cover;background-position:center}
+.face img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s ease}
+.face img.in,.face.sealed img{opacity:1}
 .face.sealed img{filter:saturate(.55) brightness(.6)}
 .face .num{position:absolute;top:8px;left:10px;font:600 12px var(--sans);color:var(--gold2);text-shadow:0 1px 4px #000}
 .face .done{position:absolute;bottom:8px;right:8px;font:600 11px var(--sans);color:#0B1730;background:var(--mint);border-radius:999px;padding:1px 8px}
@@ -407,7 +409,9 @@ async function startDoor() {
 function cardFace(c, i, sealed) {
   const img = sealed ? box.card_back : c.art_url;
   const done = !sealed && book.some(b => b.card_id === c.id);
-  return `<div class="face${sealed ? " sealed" : ""}">${img ? `<img src="${esc(img)}" alt="${sealed ? "" : esc(c.alt_text || c.title)}" loading="lazy">` : ""}<span class="num">${i}</span>${done ? '<span class="done">In my book</span>' : ""}</div>`;
+  // The approved card back sits behind every card, so a card is never an empty frame while its artwork loads.
+  const back = !sealed && box.card_back ? ` style="background-image:url('${esc(box.card_back)}')"` : "";
+  return `<div class="face${sealed ? " sealed" : ""}"${back}>${img ? `<img src="${esc(img)}" alt="${sealed ? "" : esc(c.alt_text || c.title)}" loading="lazy" onload="this.classList.add('in')">` : ""}<span class="num">${i}</span>${done ? '<span class="done">In my book</span>' : ""}</div>`;
 }
 function renderGrid() {
   $("grid").innerHTML = cards.map((c, i) =>
